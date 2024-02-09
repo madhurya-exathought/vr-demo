@@ -1,11 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-function Header () {
-    return(
-        <>
-        <div className='flex items-center justify-center'>React StaterKit with Typescript</div>
-        </>
-    )
+function Header() {
+  return <div className="flex items-center justify-center">React StarterKit with Typescript</div>;
 }
 
-export default Header
+export default Header;
