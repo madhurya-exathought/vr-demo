@@ -1,15 +1,15 @@
-import React from 'react';
 import './App.css';
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
-import Home from './components/pages/Home/Home';
-function App() {
+import { CounterProvider } from './context/CounterContext';
+import AppRouter from './navigation/AppRouter';
+
+const App = () => {
   return (
-    <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-    </BrowserRouter>
+    <div>
+      <CounterProvider>
+        <AppRouter />
+      </CounterProvider>
+    </div>
   );
-}
+};
 
 export default App;
