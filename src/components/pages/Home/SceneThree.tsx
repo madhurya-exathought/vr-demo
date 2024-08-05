@@ -5,11 +5,12 @@ import { Entity } from 'aframe-react';
 interface SceneThreeProps {
   onSceneChange: () => void;
   visible: boolean;
+  
 }
 
 const SceneThree: React.FC<SceneThreeProps> = ({ onSceneChange, visible }) => {
   const handleImageClick = () => {
-    console.log('Image clicked in scene 1');
+    console.log('Image clicked in scene 3');
     onSceneChange();
   };
 
@@ -27,7 +28,7 @@ const SceneThree: React.FC<SceneThreeProps> = ({ onSceneChange, visible }) => {
 
         <Entity
           geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-          material={{ src: '#image3' }}
+          material={{ src: '#imageRooms' }}
           position="-2.5 0 0.01"
           rotation="0 0 0"
           className="clickable"
@@ -38,7 +39,7 @@ const SceneThree: React.FC<SceneThreeProps> = ({ onSceneChange, visible }) => {
 
 <Entity
           geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-          material={{ src: '#image3' }}
+          material={{ src: '#imageRooms' }}
           position="-0.5 0 0.01"
           rotation="0 0 0"
           className="clickable"
@@ -49,7 +50,7 @@ const SceneThree: React.FC<SceneThreeProps> = ({ onSceneChange, visible }) => {
 
 <Entity
           geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-          material={{ src: '#image3' }}
+          material={{ src: '#imageRooms' }}
           position="1.5 0 0.01"
           rotation="0 0 0"
           className="clickable"
@@ -58,6 +59,18 @@ const SceneThree: React.FC<SceneThreeProps> = ({ onSceneChange, visible }) => {
           events={{ click: handleImageClick, triggerdown: handleImageClick }}
         />
       </Entity>
+      {/*  Back button */}
+      <Entity
+          geometry={{ primitive: 'plane', width: 1, height: 0.25 }}
+          material={{ color: 'black' }}
+          position="-3 4 -4"
+          className="clickable"
+         
+          text={{ value: 'Back', align: 'center', color: 'white', width: '3' }}
+          animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
+          animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
+          
+        />
     </Entity>
   );
 };

@@ -12,13 +12,13 @@ interface SceneDescriptionProps {
 
 const SceneDescription: React.FC<SceneDescriptionProps> = ({ onSceneChange, visible }) => {
   const handleClick = () => {
-    console.log(' clicked or trigger pressed');
+    console.log(' clicked or trigger pressed in scene ');
     onSceneChange();
   };
 
   return (
     <>
-      <Header />
+    
 
       <Entity visible={visible}>
         <Entity primitive="a-sky" src="#sky4" />
@@ -44,12 +44,12 @@ const SceneDescription: React.FC<SceneDescriptionProps> = ({ onSceneChange, visi
           make-visible="target: #descriptionBox2"
         />
 
-        <Entity id="descriptionBox1" visible="false" position="-1.5 2 -4">
+        <Entity id="descriptionBox1" visible={false} position="-1.5 2 -4">
           <Entity primitive="a-plane" width="3" height="2" material="color: beige; opacity: 0.5" />
           <Entity primitive="a-text" value="This is a chair!" color="black" width="6" position="-1.3 0.5 0.01" />
         </Entity>
 
-        <Entity id="descriptionBox2" visible="false" position="1.5 1 -4">
+        <Entity id="descriptionBox2" visible={false} position="1.5 1 -4">
           <Entity primitive="a-plane" width="3" height="2" material="color: beige; opacity: 0.5" />
           <Entity primitive="a-text" value="This is a bag!" color="black" width="6" position="-1.3 0.5 0.01" />
         </Entity>

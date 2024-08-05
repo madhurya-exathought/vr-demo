@@ -1,7 +1,33 @@
 import 'aframe';
 
 
+
 AFRAME.registerComponent('make-visible', {
+  schema: {
+    target: {type: 'selector'}
+  },
+  
+  init: function() {
+    this.toggleVisibility = this.toggleVisibility.bind(this);
+    this.el.addEventListener('click', this.toggleVisibility);
+  },
+
+  toggleVisibility: function() {
+    const targetEl = this.data.target;
+    if (targetEl) {
+      const currentVisibility = targetEl.getAttribute('visible');
+      targetEl.setAttribute('visible', !currentVisibility);
+  
+    } else {
+      console.warn('descriptionbox not found');
+    }
+  },
+
+  remove: function() {
+    this.el.removeEventListener('click', this.toggleVisibility);
+  }
+});
+/* AFRAME.registerComponent('make-visible', {
   schema: {
     target: {type: 'string', default: '#descriptionBox1'}
   },
@@ -30,7 +56,7 @@ AFRAME.registerComponent('make-visible', {
       this.el.removeEventListener('click', this.toggleVisibility);
     }
   }
-)
+) */
 
 /* 
 
