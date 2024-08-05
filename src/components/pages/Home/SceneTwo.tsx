@@ -3,7 +3,8 @@ import 'aframe';
 import { Entity } from 'aframe-react';
 
 interface SceneTwoProps {
-  onSceneChange: () => void;
+  onSceneChange: ( ) => void;
+
   visible: boolean;
 }
 
@@ -35,7 +36,7 @@ const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange, visible }) => {
          { /* Image 1  */}
           <Entity
             geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-            material={{ src: '#image2' }}
+            material={{ src: '#imageProperty' }}
             position="-1.5 0 0.01"
             rotation="0 0 0"
             className="clickable"
@@ -48,7 +49,7 @@ const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange, visible }) => {
           {/* Image 2 */}
           <Entity
             geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-            material={{ src: '#image2' }}
+            material={{ src: '#imageProperty' }}
             position="0 0 0.01"
             rotation="0 0 0"
             className="clickable"
@@ -62,7 +63,7 @@ const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange, visible }) => {
           {/* Image 3 */}
           <Entity
             geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-            material={{ src: '#image2' }}
+            material={{ src: '#imageProperty' }}
             position="1.5 0 0.01"
             rotation="0 0 0"
             className="clickable"
@@ -72,6 +73,18 @@ const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange, visible }) => {
               events={{ click: handleImageClick, triggerdown: handleImageClick }}
           />
     </Entity>
+       {/*  Back button */}
+    <Entity
+          geometry={{ primitive: 'plane', width: 1, height: 0.25 }}
+          material={{ color: 'black' }}
+          position="-3 4 -4"
+          className="clickable"
+         
+          text={{ value: 'Back', align: 'center', color: 'white', width: '3' }}
+          animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
+          animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
+         
+        />
 
     </Entity>
   );
