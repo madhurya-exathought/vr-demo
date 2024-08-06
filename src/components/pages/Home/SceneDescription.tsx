@@ -1,26 +1,13 @@
 import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
-import Header from '../../common/Header';
 
 import './aframe-components';
 
-interface SceneDescriptionProps {
-  onSceneChange: () => void;
-  visible: boolean;
-}
-
-const SceneDescription: React.FC<SceneDescriptionProps> = ({ onSceneChange, visible }) => {
-  const handleClick = () => {
-    console.log(' clicked or trigger pressed in scene ');
-    onSceneChange();
-  };
-
+const SceneDescription: React.FC = () => {
   return (
     <>
-    
-
-      <Entity visible={visible}>
+      <Entity>
         <Entity primitive="a-sky" src="#sky4" />
 
         <Entity
@@ -55,7 +42,7 @@ const SceneDescription: React.FC<SceneDescriptionProps> = ({ onSceneChange, visi
         </Entity>
 
         {/* Back Button */}
-        <Entity
+         <Entity
           geometry={{ primitive: 'plane', width: 1, height: 0.25 }}
           material={{ color: 'black' }}
           position="-3 4 -4"
@@ -64,7 +51,7 @@ const SceneDescription: React.FC<SceneDescriptionProps> = ({ onSceneChange, visi
           text={{ value: 'Back', align: 'center', color: 'white', width: '3' }}
           animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
           animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
-          events={{ click: handleClick, triggerdown: handleClick }}
+        
         />
       </Entity>
     </>
