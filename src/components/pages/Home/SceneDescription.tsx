@@ -53,6 +53,29 @@ const SceneDescription: React.FC = () => {
           animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
         
         />
+
+
+<Entity
+          geometry={{ primitive: 'plane', width: 0.4, height: 0.3 }}
+          material={{ src: '#arrowIcon', color: 'beige', opacity: 0.8 }}
+          position="-3 1 -4"
+          className="clickable "
+          animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
+          animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
+          make-visible="target: #selectionPlane"
+        />
+
+        <Entity id='selectionPlane' visible={false}
+          geometry={{ primitive: 'plane', width: 8, height: 2 }}
+          material={{ color: 'beige', opacity: 0.5 }}
+          position="1.1 0.2 -4.2"
+          rotation="0 0 0"
+        >
+
+
+
+        </Entity>
+
       </Entity>
     </>
   );

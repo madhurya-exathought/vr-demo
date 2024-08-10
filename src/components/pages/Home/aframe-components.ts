@@ -27,36 +27,38 @@ AFRAME.registerComponent('make-visible', {
     this.el.removeEventListener('click', this.toggleVisibility);
   }
 });
-/* AFRAME.registerComponent('make-visible', {
+
+
+AFRAME.registerComponent('move-and-rotate', {
   schema: {
-    target: {type: 'string', default: '#descriptionBox1'}
+    defaultPosition: {type: 'vec3', default: {x: -4, y: -1, z: -4}},
+    defaultRotation: {type: 'vec3', default: {x: 0, y: 0, z: -90}},
+    targetPosition: {type: 'vec3', default: {x: -4, y: .75, z: -4}},
+    targetRotation: {type: 'vec3', default: {x: 0, y: 0, z: 90}}
   },
-
-
   
   init: function() {
-    const el = this.el
-    const descriptionBox = document.querySelector(this.data.target);
-    
-    if (el && descriptionBox) {
-      const toggleVisibility = () => {
-        const isVisible = descriptionBox.getAttribute('visible') ;
-        console.log(isVisible)
-        descriptionBox.setAttribute('visible', (!isVisible).toString());
-      };
+    this.state = 'default';
+    this.toggleMoveAndRotate = this.toggleMoveAndRotate.bind(this);
+    this.el.addEventListener('click', this.toggleMoveAndRotate);
+  },
 
-      this.toggleVisibility=toggleVisibility
-
-      el.addEventListener('click', toggleVisibility);
+  toggleMoveAndRotate: function() {
+    if (this.state === 'default') {
+      this.el.setAttribute('position', this.data.targetPosition);
+      this.el.setAttribute('rotation', this.data.targetRotation);
+      this.state = 'target';
+    } else {
+      this.el.setAttribute('position', this.data.defaultPosition);
+      this.el.setAttribute('rotation', this.data.defaultRotation);
+      this.state = 'default';
     }
   },
 
   remove: function() {
-  
-      this.el.removeEventListener('click', this.toggleVisibility);
-    }
+    this.el.removeEventListener('click', this.toggleMoveAndRotate);
   }
-) */
+});
 
 
   AFRAME.registerComponent('clickable', {

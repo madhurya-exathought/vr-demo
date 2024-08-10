@@ -22,14 +22,16 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange}) => {
 
       <Entity
         geometry={{ primitive: 'plane', width: 8, height: 2 }}
-        material={{ color: 'white', opacity: 0.5 }}
+        material={{ color: 'beige', opacity: 0.8 }}
         position="0 2 -3"
         rotation="0 0 0"
       >
         <Entity primitive="a-text" value="Select City" color="black" align="center" position="0 0.8 0.01" width="4" />
+       
+      {/*  image1 */}
         <Entity
           geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-          material={{ src: '#image1' }}
+          material={{ src: '#Bengaluru' }}
           position="-3 0 0.01"
           rotation="0 0 0"
           className="clickable"
@@ -42,7 +44,7 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange}) => {
     {/* Image 2 */}
 <Entity
           geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-          material={{ src: '#image2' }}
+          material={{ src: '#Chennai' }}
           position="-1.5 0 0.01"
           rotation="0 0 0"
           className="clickable"
@@ -55,7 +57,7 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange}) => {
 {/* Image 3 */}
 <Entity
           geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-          material={{ src: '#image3' }}
+          material={{ src: '#Mumbai' }}
           position="0 0 0.01"
           rotation="0 0 0"
           className="clickable"
@@ -69,7 +71,7 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange}) => {
 {/* Image 4 */}
 <Entity
           geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-          material={{ src: '#image4' }}
+          material={{ src: '#Hyderabad' }}
           position="1.5 0 0.01"
           rotation="0 0 0"
           className="clickable"
@@ -82,7 +84,7 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange}) => {
         {/* Image 5 */}
 <Entity
           geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-          material={{ src: '#image5' }}
+          material={{ src: '#NewDelhi' }}
           position="3 0 0.01"
           rotation="0 0 0"
           className="clickable"

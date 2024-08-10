@@ -3,73 +3,112 @@ import SceneOne from './SceneOne';
 import SceneTwo from './SceneTwo';
 import SceneThree from './SceneThree';
 import SceneFour from './SceneFour';
-import { SceneDescription } from './SceneDescription';
+import SceneLivingRoom from './SceneLivingRoom';
 import { Scene } from 'aframe-react';
 import VRSetup from './VRSetUp';
 import Header from '../../common/Header';
+import SceneBedroom1 from './SceneBedroom1';
+import SceneBedroom2 from './SceneBedroom2';
+import SceneBathroom from './SceneBathroom';
+import SceneGarden from './SceneGarden';
+import SharedOptions from './SharedOptions';
+import { SceneType } from './scenetype.type';
 
-
-
-type SceneType = 'sceneOne' | 'sceneTwo' | 'sceneThree' | 'sceneFour'|'sceneDescription'
-
+/* type SceneType =
+  | 'sceneOne'
+  | 'sceneTwo'
+  | 'sceneThree'
+  | 'sceneFour'
+  | 'sceneLivingRoom'
+  | 'sceneBedroom1'
+  | 'sceneBedroom2'
+  | 'sceneBathroom'
+  | 'sceneGarden';
+ */
 const ScenesControl = () => {
   const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
+ 
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
-  setCurrentScene(nextScene);
+    setCurrentScene(nextScene);
   };
 
- 
-  
+
   return (
     <>
       <Header />
+      {/*    {isWebXRSupported ? ( */}
       <Scene vr-mode-ui="enabled: true">
         <a-assets>
-        <img id="sky1" src={require('../../../assets/images/background1.jpg')} alt="sky1" />
-          <img id="sky2" src={require('../../../assets/images/background2.jpg')} alt="sky2" />
-          <img id="sky3" src={require('../../../assets/images/background3.jpg')} alt="sky3" />
-          <img id="sky4" src={require('../../../assets/images/b3.jpeg')} alt="sky4" />
-          <img id="sky5" src={require('../../../assets/images/background4.jpg')} alt="sky5" />
+          <img id="sky1" src={require('../../../assets/images/backgroundScenes.jpg')} alt="sky1" />
+          <img id="skyLivingRoom" src={require('../../../assets/images/backgroundLivingroom.jpg')} alt="skyLivingRoom" />
+          <img id="skyBathroom" src={require('../../../assets/images/backgroundBathroom.jpg')} alt="skyBathroom" />
+          <img id="skyBedroom1" src={require('../../../assets/images/backgroundBedroom1.jpg')} alt="skyBedroom1" />
+          <img id="skyBedroom2" src={require('../../../assets/images/backgroundBedroom2.jpg')} alt="skyBedroom2" />
+          <img id="skyGarden" src={require('../../../assets/images/Backgroundgarden.jpg')} alt="skyGarden" />
 
 
-          <img id="image1" src={require('../../../assets/images/blorePoster.jpg')} alt="image1" />
-          <img id="image2" src={require('../../../assets/images/chposter.jpg')} alt="image2" />
-          <img id="image3" src={require('../../../assets/images/mumposter.jpg')} alt="image3" />
-          <img id='image4' src={require('../../../assets/images/hydposter.jpg')} alt='image4' />
-          <img id='image5' src={require('../../../assets/images/delhiposter.jpg')} alt='image5' />
+          <img id="Bengaluru" src={require('../../../assets/images/Bengaluru.jpg')} alt="image1" />
+          <img id="Chennai" src={require('../../../assets/images/Chennai.jpg')} alt="image2" />
+          <img id="Mumbai" src={require('../../../assets/images/Mumbai.jpg')} alt="image3" />
+          <img id="Hyderabad" src={require('../../../assets/images/Hyderabad.jpg')} alt="image4" />
+          <img id="NewDelhi" src={require('../../../assets/images/NewDelhi.jpg')} alt="image5" />
 
-          <img id='imageProperty' src={require('../../../assets/images/property.jpg')} alt='imageProperty' />
-          <img id='imageRooms' src={require('../../../assets/images/rooms.jpg')} alt='imageRooms' />
- 
+          <img id="Villa" src={require('../../../assets/images/Villa.jpg')} alt="imageProperty" />
+          <img id="Apartment" src={require('../../../assets/images/Apartment.jpg')} alt="imageProperty" />
+          <img id="Studio" src={require('../../../assets/images/Studio.jpg')} alt="imageProperty" />
+
+
+
+          <img id="1BHK" src={require('../../../assets/images/1BHK.jpg')} alt="imageRooms" />
+          <img id="2BHK" src={require('../../../assets/images/2BHK.jpg')} alt="imageRooms" />
+          <img id="3BHK" src={require('../../../assets/images/3BHK.jpg')} alt="imageRooms" />
+
+       
+          <img id="backButton" src={require('../../../assets/images/backbutton.png')} alt="backButton" />
+         
+
+
+
+          <img id="imagelivingroom" src={require('../../../assets/images/livingroom1.jpg')} alt="imagelivingroom" />
+          <img id="imagegarden" src={require('../../../assets/images/garden1.jpg')} alt="imagegarden" />
+          <img id="imagebedroom1" src={require('../../../assets/images/bedroom1_1.jpg')} alt="imagebedroom1" />
+          <img id="imagebedroom2" src={require('../../../assets/images/bedroom2_1.jpg')} alt="imagebedroom2" />
+          <img id="imagebathroom" src={require('../../../assets/images/bathroom1.jpg')} alt="imagebathroom" />
 
           <a-mixin
             id="ring"
             geometry="primitive: ring; width: 1.5; height: 1.5"
-            material="color: teal; shader: flat"
+            material="color: blue; shader: flat"
             animation__scale="property: scale; to: 1.7 1.7 1.7; dur: 200; startEvents: mouseenter"
             animation__scale_reverse="property: scale; to: 1.3 1.3 1.3; dur: 200; startEvents: mouseleave"
           ></a-mixin>
         </a-assets>
 
+        {currentScene === 'sceneOne' && <SceneOne onSceneChange={() => handleSceneChange('sceneTwo')} />}
+        {currentScene === 'sceneTwo' && <SceneTwo onSceneChange={() => handleSceneChange('sceneThree')} onBack={() => handleSceneChange('sceneOne')} />}
 
-        {currentScene === 'sceneOne' && (
-          <SceneOne onSceneChange={() => handleSceneChange('sceneTwo')} />
-        )}
-        {currentScene === 'sceneTwo' && (
-          <SceneTwo onSceneChange={() => handleSceneChange('sceneThree')} />
-        )}
-        {currentScene === 'sceneThree' && (
-          <SceneThree onSceneChange={() => handleSceneChange('sceneFour')} />
-        )}
-         {currentScene === 'sceneFour' && (
-          <SceneFour onSceneChange={() => handleSceneChange('sceneDescription')} />
-        )}
+        {currentScene === 'sceneThree' && <SceneThree onSceneChange={() => handleSceneChange('sceneFour')} onBack={() => handleSceneChange('sceneTwo')} />}
+        {currentScene === 'sceneFour' && <SceneFour onSceneChange={() => handleSceneChange('sceneLivingRoom')} onBack={() => handleSceneChange('sceneTwo')} />}
 
-        {currentScene ==='sceneDescription' && (<SceneDescription />)}
+        {currentScene === 'sceneLivingRoom' && <SceneLivingRoom onBack={() => handleSceneChange('sceneFour')} >  
+          <SharedOptions onSceneChange={handleSceneChange} /> </SceneLivingRoom>}
+
+        {currentScene === 'sceneBedroom1' && <SceneBedroom1 onBack={() => handleSceneChange('sceneLivingRoom')} >
+          <SharedOptions onSceneChange={handleSceneChange} /> </SceneBedroom1>}
+
+        {currentScene === 'sceneBedroom2' && <SceneBedroom2 onBack={() => handleSceneChange('sceneBedroom1')} >
+          <SharedOptions onSceneChange={handleSceneChange} /> </SceneBedroom2>}
+
+        {currentScene === 'sceneBathroom' && <SceneBathroom onBack={() => handleSceneChange('sceneBedroom2')} >
+          <SharedOptions onSceneChange={handleSceneChange} /> </SceneBathroom>}
+
+        {currentScene === 'sceneGarden' && <SceneGarden onBack={() => handleSceneChange('sceneBathroom')} >
+          <SharedOptions onSceneChange={handleSceneChange} /> </SceneGarden>}
         <VRSetup />
       </Scene>
+     
     </>
   );
 };
