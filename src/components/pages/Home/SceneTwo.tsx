@@ -1,12 +1,12 @@
 import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
+import BackButton from './BackButton';
+import { SceneTwoThreeProps } from './scenetype.type';
 
-interface SceneTwoProps {
-  onSceneChange: () => void;
-}
 
-const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange }) => {
+
+const SceneTwo: React.FC<SceneTwoThreeProps> = ({ onSceneChange ,onBack}) => {
   console.log('SceneTwo rendered');
 
   const handleImageClickSceneTwo = () => {
@@ -14,9 +14,11 @@ const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange }) => {
     onSceneChange();
   };
 
+
+
   return (
     <Entity>
-      <Entity primitive="a-sky" src="#sky2" />
+      <Entity primitive="a-sky" src="#sky1" />
 
       <Entity
         geometry={{ primitive: 'plane', width: 5, height: 2 }}
@@ -26,9 +28,16 @@ const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange }) => {
       >
         <Entity primitive="a-text" value="Select Property" color="black" align="center" position="0 0.8 0.01" width="4" />
 
+
+
+         {/*  Back button */}
+
+         <BackButton onBack={onBack} />
+ {/* Image 1 */}
+     
         <Entity
           geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-          material={{ src: '#imageProperty' }}
+          material={{ src: '#Apartment' }}
           position="0 0 0.01"
           rotation="0 0 0"
           className="clickable"
@@ -41,7 +50,7 @@ const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange }) => {
   {/* Image 2 */}
   <Entity 
             geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-            material={{ src: '#imageProperty' }}
+            material={{ src: '#Villa' }}
             position="-1.5 0 0.01"
             rotation="0 0 0"
             className="clickable"
@@ -57,7 +66,7 @@ const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange }) => {
           {/* Image 3 */}
           <Entity 
             geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-            material={{ src: '#imageProperty' }}
+            material={{ src: '#Studio' }}
             position="1.5 0 0.01"
             rotation="0 0 0"
             className="clickable"
@@ -69,18 +78,10 @@ const SceneTwo: React.FC<SceneTwoProps> = ({ onSceneChange }) => {
           }}
           />
     </Entity>
-       {/*  Back button */}
-    <Entity
-          geometry={{ primitive: 'plane', width: 1, height: 0.25 }}
-          material={{ color: 'black' }}
-          position="-3 4 -4"
-          className="clickable"
-         
-          text={{ value: 'Back', align: 'center', color: 'white', width: '3' }}
-          animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
-          animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
-         
-        />
+      
+  
+
+
 
     </Entity>
   );

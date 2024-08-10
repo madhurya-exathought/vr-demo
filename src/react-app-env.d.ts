@@ -1,5 +1,8 @@
 /// <reference types="react-scripts" />
 
+
+
+
 declare namespace JSX {
   interface IntrinsicElements {
     'a-scene': any;
@@ -52,9 +55,4 @@ declare module 'aframe-react' {
   export class Scene extends React.Component<SceneProps> {}
 }
 
-/* declare module 'aframe'{
-  export  interface AFrameElement extends HTMLElement {
-    sceneEl?: AFRAME.Scene;
-  }
 
-} */
