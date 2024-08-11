@@ -4,16 +4,10 @@ import { Entity } from 'aframe-react';
 import BackButton from './BackButton';
 import { SceneSpacesProps } from './scenetype.type';
 
-
-const SceneGarden: React.FC<SceneSpacesProps> = ({children,onBack}) => {
-
-
-
-   
+const SceneGarden: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
   return (
-  
-    <Entity >
-      <Entity primitive="a-sky" src="#skyGarden"  rotation="0 -180 0" />
+    <Entity>
+      <Entity primitive="a-sky" src="#skyGarden" rotation="0 -180 0" />
 
       <Entity
         geometry={{ primitive: 'plane', width: 0.6, height: 0.2 }}
@@ -25,11 +19,9 @@ const SceneGarden: React.FC<SceneSpacesProps> = ({children,onBack}) => {
       </Entity>
       {children}
 
-   {/*  Back button */}
-   <BackButton onBack={onBack} />
-
+      {/*  Back button */}
+      <BackButton onBack={onBack} />
     </Entity>
-
   );
 };
 

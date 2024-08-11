@@ -1,3 +1,5 @@
+/* Scene in Works 
+ */
 import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';

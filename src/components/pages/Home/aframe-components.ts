@@ -60,7 +60,7 @@ AFRAME.registerComponent('move-and-rotate', {
   }
 });
 
-
+/* Not used */
   AFRAME.registerComponent('clickable', {
     init: function () {
       this.el.classList.add('clickable');
@@ -69,21 +69,6 @@ AFRAME.registerComponent('move-and-rotate', {
       this.el.classList.remove('clickable');
     }
   });
-
-
-AFRAME.registerComponent("click-log", {
-  init: function() {
-    this.myFunction = function() {
-      console.log("clicked scene 2");
-    };
-
-    this.el.addEventListener("click", this.myFunction);
-  },
-
-  remove: function() {
-    this.el.removeEventListener("click", this.myFunction);
-  }
-});
 
 
 

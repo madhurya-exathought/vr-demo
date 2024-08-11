@@ -9,6 +9,8 @@ interface SharedOptionsProps {
   onSceneChange: (nextScene: SceneType) => void;
 }
 
+
+
 const SharedOptions: React.FC<SharedOptionsProps> = ({ onSceneChange }) => {
   const handleImageClickSceneGarden = () => {
     console.log('Image clicked in Garden');

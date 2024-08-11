@@ -4,22 +4,14 @@ import { Entity } from 'aframe-react';
 import BackButton from './BackButton';
 import { SceneSpacesProps } from './scenetype.type';
 
-import './aframe-components'
+import './aframe-components';
 
-
-
-const SceneLivingRoom:React.FC<SceneSpacesProps> = ({children,onBack}) => {
-
-
-
-
+const SceneLivingRoom: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
   return (
     <>
-
       <Entity>
-     
-        <Entity primitive="a-sky" src="#skyLivingRoom" rotation='0 0 0' />
-       {/*  Dots */}
+        <Entity primitive="a-sky" src="#skyLivingRoom" rotation="0 0 0" />
+        {/*  Dots */}
         <Entity
           primitive="a-ring"
           color="blue"
@@ -30,7 +22,7 @@ const SceneLivingRoom:React.FC<SceneSpacesProps> = ({children,onBack}) => {
           className="clickable"
           make-visible="target: #descriptionBox1"
         />
-          <Entity id="descriptionBox1" visible={false} position="2.5 3.5 -4">
+        <Entity id="descriptionBox1" visible={false} position="2.5 3.5 -4">
           <Entity primitive="a-plane" width="3" height="2" material="color: beige; opacity: 0.5" />
           <Entity primitive="a-text" value="This is a window!" color="black" width="6" position="-1.3 0.5 0.01" />
         </Entity>
@@ -45,20 +37,16 @@ const SceneLivingRoom:React.FC<SceneSpacesProps> = ({children,onBack}) => {
           make-visible="target: #descriptionBox2"
         />
 
-          <Entity id="descriptionBox2" visible={false} position="-1 3 -5">
+        <Entity id="descriptionBox2" visible={false} position="-1 3 -5">
           <Entity primitive="a-plane" width="3" height="2" material="color: beige; opacity: 0.5" />
           <Entity primitive="a-text" value="This is a cabinet!" color="black" width="6" position="-1.3 0.5 0.01" />
         </Entity>
 
-     
+        {/*  Back button */}
+        <BackButton onBack={onBack} />
 
-  
-      {/*  Back button */}
-      <BackButton onBack={onBack} />
-
-
+        {/*  Shared options */}
         {children}
-       
       </Entity>
     </>
   );

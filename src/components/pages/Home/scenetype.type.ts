@@ -9,15 +9,18 @@ export type SceneType =
   | 'sceneBathroom'
   | 'sceneGarden';
 
+export type SceneTwoThreeProps = {
+  onSceneChange: () => void;
+  onBack: () => void;
+};
 
-  export type SceneTwoThreeProps = {
-    onSceneChange: () => void;
-    onBack: () => void;
-  };
+export type SceneSpacesProps = {
+  onBack: () => void;
+  children?: React.ReactNode;
+};
 
-export type SceneSpacesProps={
- 
-    onBack:() => void;
-    children?: React.ReactNode;  
-  
-}
+export type ImageEntityProps = {
+  src: string;
+  position: string;
+  handleClick: () => void;
+};
