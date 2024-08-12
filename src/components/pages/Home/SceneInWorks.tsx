@@ -4,7 +4,7 @@ import { Entity } from 'aframe-react';
 import BackButton from './BackButton';
 import { SceneTwoThreeProps } from './scenetype.type';
 
-const SceneFour: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => {
+const SceneInWorks: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const handleMouseEnter = () => {
@@ -24,7 +24,7 @@ const SceneFour: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => {
 
   return (
     <Entity>
-      <Entity primitive="a-sky" src="#officeEntry" rotation='0 30 0' />
+      <Entity primitive="a-sky" src="#officeEntry2" rotation='0 90 0' />
 
       <Entity
         geometry={{ primitive: 'plane', width: 0.4, height: 0.4 }}
@@ -47,14 +47,14 @@ const SceneFour: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => {
           material={{ color: 'white', opacity: 0.7 }}
           position="0.5 0.5 -3"
         >
-          <Entity primitive="a-text" value="Enter Office" color="black" align="center" position="0 0 0.01" width="4" />
+          <Entity primitive="a-text" value="Corridor" color="black" align="center" position="0 0 0.01" width="4" />
         </Entity>
       )}
 
       {/* Back button */}
-      <BackButton onBack={onBack} setPosition="-2 3 -3"/>
+      <BackButton onBack={onBack} setPosition="-3 4 -3"/>
     </Entity>
   );
 };
 
-export default SceneFour;
+export default SceneInWorks;

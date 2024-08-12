@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Header from '../../common/Header';
-
+/* import {checkWebXRSupport} from './WebXRSupport' */
 import { Scene ,Entity} from 'aframe-react';
 import VRSetup from './VRSetUp';
 
@@ -15,11 +15,13 @@ import SceneBathroom from './SceneBathroom';
 import SceneGarden from './SceneGarden';
 import SharedOptions from './SharedOptions';
 import { SceneType } from './scenetype.type';
+import SceneInWorks from './SceneInWorks';
 
 
 /* type SceneType =  | 'sceneOne'  | 'sceneTwo'  | 'sceneThree'  | 'sceneFour'  
 | 'sceneLivingRoom'  | 'sceneBedroom1'  | 'sceneBedroom2'  | 'sceneBathroom'  | 'sceneGarden';
  */
+
 const ScenesControl = () => {
   const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
 
@@ -28,6 +30,10 @@ const ScenesControl = () => {
     setCurrentScene(nextScene);
   };
 
+/*   useEffect(() => {
+    checkWebXRSupport();
+  }, []);
+ */
   return (
     <>
       <Header />
@@ -57,15 +63,20 @@ const ScenesControl = () => {
   <Entity primitive="a-img" id="3BHK" src={require('../../../assets/images/sceneThree/3BHK.jpg')} alt="imageRooms" />
 
   <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton.png')} alt="backButton" />
+  <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton2" />
 
   <Entity primitive="a-img" id="imagelivingroom" src={require('../../../assets/images/sceneSpaces/livingroom1.jpg')} alt="imagelivingroom" />
   <Entity primitive="a-img" id="imagegarden" src={require('../../../assets/images/sceneSpaces/garden1.jpg')} alt="imagegarden" />
   <Entity primitive="a-img" id="imagebedroom1" src={require('../../../assets/images/sceneSpaces/bedroom1_1.jpg')} alt="imagebedroom1" />
   <Entity primitive="a-img" id="imagebedroom2" src={require('../../../assets/images/sceneSpaces/bedroom2_1.jpg')} alt="imagebedroom2" />
   <Entity primitive="a-img" id="imagebathroom" src={require('../../../assets/images/sceneSpaces/bathroom1.jpg')} alt="imagebathroom" />
+  <Entity primitive='a-img' id='officeEntry' src={require('../../../assets/images/sky/officeEntry1.jpg') } /> 
 
-    <Entity primitive='a-img' id='officeEntry' src={require('../../../assets/images/sky/officeEntry1.jpg') } />
-  <Entity primitive="a-mixin" id="ring" geometry="primitive: ring; width: 1.5; height: 1.5" material="color: blue; shader: flat" 
+  {/*     <Entity primitive='a-img' id='officeEntry2' src={require('../../../assets/images/sky/officeEntry2.jpg') } /> */}
+{/* <Entity primitive='a-img' id='WallDetails' src={require('../../../assets/images/icons/WallDetails.png') } />
+ */}
+
+  <Entity primitive="a-mixin" id="ring" geometry="primitive: ring; width: 1.5; height: 1.5" material="color: beige; shader: flat" 
     animation__scale="property: scale; to: 1.7 1.7 1.7; dur: 200; startEvents: mouseenter" 
     animation__scale_reverse="property: scale; to: 1.3 1.3 1.3; dur: 200; startEvents: mouseleave" />
 </Entity>
@@ -80,8 +91,14 @@ const ScenesControl = () => {
           <SceneThree onSceneChange={() => handleSceneChange('sceneFour')} onBack={() => handleSceneChange('sceneTwo')} />
         )}
         {currentScene === 'sceneFour' && (
-          <SceneFour onSceneChange={() => handleSceneChange('sceneLivingRoom')} onBack={() => handleSceneChange('sceneTwo')} />
+          <SceneFour onSceneChange={() => handleSceneChange('sceneLivingRoom')} onBack={() => handleSceneChange('sceneThree')} />
         )}
+{/* 
+{currentScene === 'sceneInWorks' && (
+          <SceneInWorks onSceneChange={() => handleSceneChange('sceneLivingRoom')} onBack={() => handleSceneChange('sceneFour')} />
+        )} */}
+
+
 
         {currentScene === 'sceneLivingRoom' && (
           <SceneLivingRoom onBack={() => handleSceneChange('sceneFour')}>

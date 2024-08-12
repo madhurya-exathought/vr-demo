@@ -42,9 +42,9 @@ const SharedOptions: React.FC<SharedOptionsProps> = ({ onSceneChange }) => {
       {/* arrow */}
 
       <Entity
-        geometry={{ primitive: 'plane', width: 0.4, height: 0.4 }}
-        material={{ src: '#backButton', color: 'beige', opacity: 0.8 }}
-        position="-4 -1 -4"
+        geometry={{ primitive: 'plane', width: 0.5, height: 0.5 }}
+        material={{ src: '#backButton2', color: 'black', opacity: 0.8 }}
+        position="-4 -1.5 -4"
         rotation="0 0 -90"
         className="clickable "
         animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
@@ -57,7 +57,7 @@ const SharedOptions: React.FC<SharedOptionsProps> = ({ onSceneChange }) => {
         id="selectionPlane"
         visible={false}
         geometry={{ primitive: 'plane', width: 13, height: 2 }}
-        material={{ color: 'white', opacity: 0.5 }}
+        material={{ color: 'beige', opacity: 0.5 }}
         position="2 0 -4.2"
         rotation="0 0 0"
       >

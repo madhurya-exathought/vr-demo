@@ -8,7 +8,7 @@ import { ImageEntityProps } from './scenetype.type';
 const ImageEntity: React.FC<ImageEntityProps> = ({ src, position, handleClick }) => (
   <Entity
     geometry={{ primitive: 'plane', width: 0.9, height: 0.9 }}
-    material={{ src }}
+    material={{ src, color: 'beige'}}
     position={position}
     rotation="0 0 0"
     className="clickable"

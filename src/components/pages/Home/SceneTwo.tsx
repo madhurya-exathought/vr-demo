@@ -25,7 +25,7 @@ const SceneTwo: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => {
 
       <Entity
         geometry={{ primitive: 'plane', width: 5, height: 2 }}
-        material={{ color: 'beige', opacity: 0.5 }}
+        material={{ color: 'beige', opacity: 1 }}
         position="0 2 -3"
         rotation="0 0 0"
       >
@@ -33,7 +33,7 @@ const SceneTwo: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => {
 
         {/*  Back button */}
 
-        <BackButton onBack={onBack} />
+        <BackButton onBack={onBack} setPosition="-1 0.8 0.01"/>
 
         {/* Images */}
 

@@ -23,7 +23,7 @@ const SceneBedroom1: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
 
       {/*  Back button */}
 
-      <BackButton onBack={onBack} />
+      <BackButton onBack={onBack} setPosition="-3 4 -3"/>
     </Entity>
   );
 };

@@ -7,7 +7,8 @@ export type SceneType =
   | 'sceneBedroom1'
   | 'sceneBedroom2'
   | 'sceneBathroom'
-  | 'sceneGarden';
+  | 'sceneGarden'
+  | 'sceneInWorks'
 
 export type SceneTwoThreeProps = {
   onSceneChange: () => void;

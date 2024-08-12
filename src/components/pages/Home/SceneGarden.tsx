@@ -20,7 +20,7 @@ const SceneGarden: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
       {children}
 
       {/*  Back button */}
-      <BackButton onBack={onBack} />
+      <BackButton onBack={onBack} setPosition="-3 4 -3"/>
     </Entity>
   );
 };
