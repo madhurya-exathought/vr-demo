@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react';
 import Header from '../../common/Header';
-import {checkWebXRSupport} from './WebXRSupport'
 import { Scene ,Entity} from 'aframe-react';
 import VRSetup from './VRSetUp';
 
