@@ -4,13 +4,9 @@ import { Entity } from 'aframe-react';
 import BackButton from './BackButton';
 import { SceneSpacesProps } from './scenetype.type';
 
-
-
-
-const SceneBedroom2: React.FC<SceneSpacesProps> = ({children ,onBack}) => {
-  
+const SceneBedroom2: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
   return (
-    <Entity >
+    <Entity>
       <Entity primitive="a-sky" src="#skyBedroom2" />
 
       <Entity
@@ -22,10 +18,10 @@ const SceneBedroom2: React.FC<SceneSpacesProps> = ({children ,onBack}) => {
         <Entity primitive="a-text" value="Bedroom2" color="black" align="center" position="0 0 0.01" width="4" />
       </Entity>
 
-  {/*  Back button */}
-  <BackButton onBack={onBack} />
-
-{children}
+      {/*  Back button */}
+      <BackButton onBack={onBack} setPosition="-3 4 -3"/>
+      {/*  Shared Options */}
+      {children}
     </Entity>
   );
 };
