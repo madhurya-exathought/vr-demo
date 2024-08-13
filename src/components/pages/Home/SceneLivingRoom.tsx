@@ -16,7 +16,7 @@ const SceneLivingRoom: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
           primitive="a-ring"
           color="blue"
           position="2 2 -3.5"
-          radius-inner="0.13"
+          radius-inner="0.0013"
           radius-outer="0.2"
           mixin="ring"
           className="clickable"
@@ -26,6 +26,9 @@ const SceneLivingRoom: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
           <Entity primitive="a-plane" width="3" height="2" material="color: beige; opacity: 0.5" />
           <Entity primitive="a-text" value="This is a window!" color="black" width="6" position="-1.3 0.5 0.01" />
         </Entity>
+
+
+
         <Entity
           primitive="a-ring"
           position="0.5 2 -8.5"
@@ -36,18 +39,11 @@ const SceneLivingRoom: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
           make-visible="target: #descriptionBox2"
         />
 
-        <Entity id="descriptionBox2" visible={false} position="-1 3 -5">
-          {/*         <Entity
-    geometry={{ primitive: 'plane', width: 4  , height: 3 }}
-    material={{src :"#WallDetails"}}
-    position="-1.3 0.5 0.01"
-    rotation="0 0 0"
-  
-  /> */}
-
-          <Entity primitive="a-plane" width="3" height="2" material="color: beige; opacity: 0.5" />
-          <Entity primitive="a-text" value="This is a Wall!" color="black" width="6" position="-1.3 0.5 0.01" />
+        <Entity id="descriptionBox2" visible={false} position="-2.5 3 -5">
+        <Entity primitive="a-plane" width="3" height="2" material="color: beige; opacity: 0.5" />
+          <Entity primitive="a-text" value="This is a Wall!" color="black" width="6" position="-1 0.5 0.01" />
         </Entity>
+    
 
         {/*  Back button */}
         <BackButton onBack={onBack} setPosition="-2 3 -2" />

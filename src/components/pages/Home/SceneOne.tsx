@@ -2,6 +2,7 @@ import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
 import ImageEntity from './ImageEntity';
+import './aframe-components'
 
 type SceneOneProps = {
   onSceneChange: () => void;
@@ -27,7 +28,7 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
 
       <Entity
         geometry={{ primitive: 'plane', width: 8, height: 2 }}
-        material={{ color: 'beige', opacity: 1 }}
+        material={{ color: 'beige', opacity: 0.8 }}
         position="0 2 -3"
         rotation="0 0 0"
       >

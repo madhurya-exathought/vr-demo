@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import Header from '../../common/Header';
-/* import {checkWebXRSupport} from './WebXRSupport' */
+import {checkWebXRSupport} from './WebXRSupport'
 import { Scene ,Entity} from 'aframe-react';
 import VRSetup from './VRSetUp';
 
@@ -17,12 +17,17 @@ import SharedOptions from './SharedOptions';
 import { SceneType } from './scenetype.type';
 import SceneInWorks from './SceneInWorks';
 
+import OfficeEntry from '../../../assets/images/sky/officeEntry1.jpg'
+
 
 /* type SceneType =  | 'sceneOne'  | 'sceneTwo'  | 'sceneThree'  | 'sceneFour'  
 | 'sceneLivingRoom'  | 'sceneBedroom1'  | 'sceneBedroom2'  | 'sceneBathroom'  | 'sceneGarden';
  */
 
 const ScenesControl = () => {
+
+  const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
+
   const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
 
   const handleSceneChange = (nextScene: SceneType) => {
@@ -30,15 +35,39 @@ const ScenesControl = () => {
     setCurrentScene(nextScene);
   };
 
-/*   useEffect(() => {
+  useEffect(() => {
     checkWebXRSupport();
   }, []);
- */
+
+
+  const checkWebXRSupport = () => {
+    if ('xr' in navigator) {
+      const xr = (navigator as any).xr;
+      xr.isSessionSupported('immersive-vr').then((supported: boolean) => {
+      if (supported) {
+        setIsWebXRSupported(supported);
+        console.log('WebXR  supported');
+       
+      } else {
+        setIsWebXRSupported(false);
+        console.log('WebXR  not supported');
+        
+      }
+    })}}
+
+  if (isWebXRSupported === null) {
+    return <div>Checking WebXR support...</div>;
+  }
+
+  if (!isWebXRSupported) {
+    return <div>WebXR is not supported in your browser.</div>;
+  }
+
   return (
     <>
       <Header />
      
-      <Scene vr-mode-ui="enabled: true">
+      <Scene vr-mode-ui="enabled: true" assets-loader>
 
   <Entity primitive="a-assets">
   <Entity primitive="a-img" id="sky1" src={require('../../../assets/images/sky/backgroundScenes.jpg')} alt="sky1" />
@@ -64,13 +93,17 @@ const ScenesControl = () => {
 
   <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton.png')} alt="backButton" />
   <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton2" />
+  <Entity primitive="a-img" id="info" src={require('../../../assets/images/icons/info.png')} alt="info" />
+
+
 
   <Entity primitive="a-img" id="imagelivingroom" src={require('../../../assets/images/sceneSpaces/livingroom1.jpg')} alt="imagelivingroom" />
   <Entity primitive="a-img" id="imagegarden" src={require('../../../assets/images/sceneSpaces/garden1.jpg')} alt="imagegarden" />
   <Entity primitive="a-img" id="imagebedroom1" src={require('../../../assets/images/sceneSpaces/bedroom1_1.jpg')} alt="imagebedroom1" />
   <Entity primitive="a-img" id="imagebedroom2" src={require('../../../assets/images/sceneSpaces/bedroom2_1.jpg')} alt="imagebedroom2" />
   <Entity primitive="a-img" id="imagebathroom" src={require('../../../assets/images/sceneSpaces/bathroom1.jpg')} alt="imagebathroom" />
-  <Entity primitive='a-img' id='officeEntry' src={require('../../../assets/images/sky/officeEntry1.jpg') } /> 
+ 
+  <Entity primitive='a-img' id='officeEntry' src={OfficeEntry } /> 
 
   {/*     <Entity primitive='a-img' id='officeEntry2' src={require('../../../assets/images/sky/officeEntry2.jpg') } /> */}
 {/* <Entity primitive='a-img' id='WallDetails' src={require('../../../assets/images/icons/WallDetails.png') } />

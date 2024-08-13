@@ -73,3 +73,30 @@ AFRAME.registerComponent('move-and-rotate', {
 
 
 
+  // rounded-rect-shader.js
+AFRAME.registerShader('rounded', {
+  schema: {
+    color: { type: 'color', default: '#FFF' },
+    radius: { type: 'number', default: 0.1 },
+  },
+  vertexShader: `
+    varying vec2 vUv;
+    void main() {
+      vUv = uv;
+      gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+    }
+  `,
+  fragmentShader: `
+    precision highp float;
+    varying vec2 vUv;
+    uniform vec3 color;
+    uniform float radius;
+
+    void main() {
+      vec2 p = vUv * 2.0 - 1.0;
+      float len = length(p);
+      float r = smoothstep(radius, radius + 0.01, len);
+      gl_FragColor = vec4(color, 1.0 - r);
+    }
+  `
+});
