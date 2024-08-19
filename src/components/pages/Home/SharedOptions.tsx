@@ -56,10 +56,11 @@ const SharedOptions: React.FC<SharedOptionsProps> = ({ onSceneChange }) => {
       <Entity
         id="selectionPlane"
         visible={false}
-        geometry={{ primitive: 'plane', width: 13, height: 2 }}
-        material={{ color: 'beige', opacity: 0.5 }}
+        geometry={{ primitive: 'plane', width: 13, height: 2.25 }}
+        material={{ color: 'beige', opacity: 1 }}
         position="2 0 -4.2"
         rotation="0 0 0"
+        animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
       >
         <Entity
           geometry={{ primitive: 'plane', width: 1.5, height: 1 }}

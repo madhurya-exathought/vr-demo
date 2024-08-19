@@ -7,7 +7,15 @@ import { SceneSpacesProps } from './scenetype.type';
 const SceneBathroom: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
   return (
     <Entity>
-      <Entity primitive="a-sky" src="#skyBathroom" />
+      <Entity primitive="a-sky" src="#skyBathroom" rotation='0 -90 0'   material="opacity: 1"
+  animation__fade={{
+    property: 'material.opacity',
+    from: 0.5,
+    to: 1,
+    dur: 1000,
+    easing: 'easeInOutQuad',
+    startEvents: 'loaded'
+  }}/>
 
       <Entity
         geometry={{ primitive: 'plane', width: 1, height: 0.2 }}
