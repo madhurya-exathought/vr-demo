@@ -19,13 +19,14 @@ declare namespace JSX {
     'a-image': any;
     'a-ring': any;
     'a-text': any;
-    
+    'a-asset-item':any
+    'a-light':any
     // Add more A-Frame elements as needed
   }
 }
 
 // Optional: remove if not using `AFRAME` directly
-declare var AFRAME: any;
+declare const AFRAME: any;
 
 declare module 'aframe-react' {
   import * as React from 'react';
@@ -54,5 +55,7 @@ declare module 'aframe-react' {
 
   export class Scene extends React.Component<SceneProps> {}
 }
-
-
+declare module '*.glb' {
+  const value: string;
+  export default value;
+}

@@ -27,7 +27,7 @@ const ScenesControl = () => {
 
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneFour');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
@@ -49,7 +49,7 @@ const ScenesControl = () => {
        
       } else {
         setIsWebXRSupported(false);
-        console.log('WebXR  not supported');
+        console.log('WebXR not supported');
         
       }
     })}}
@@ -75,6 +75,7 @@ const ScenesControl = () => {
   <Entity primitive="a-img" id="skyBedroom1" src={require('../../../assets/images/sky/backgroundBedroom1.jpg')} alt="skyBedroom1" />
   <Entity primitive="a-img" id="skyBedroom2" src={require('../../../assets/images/sky/backgroundBedroom2.jpg')} alt="skyBedroom2" />
   <Entity primitive="a-img" id="skyGarden" src={require('../../../assets/images/sky/Backgroundgarden.jpg')} alt="skyGarden" />
+  <Entity primitive="a-img" id="skyroom" src={require('../../../assets/images/sky/room.jpg')} alt="skyGarden" />
 
   <Entity primitive="a-img" id="Bengaluru" src={require('../../../assets/images/sceneOne/Bengaluru.jpg')} alt="image1" />
   <Entity primitive="a-img" id="Chennai" src={require('../../../assets/images/sceneOne/Chennai.jpg')} alt="image2" />
@@ -104,10 +105,7 @@ const ScenesControl = () => {
  
   <Entity primitive='a-img' id='officeEntry' src={OfficeEntry } /> 
 
-  {/*     <Entity primitive='a-img' id='officeEntry2' src={require('../../../assets/images/sky/officeEntry2.jpg') } /> */}
-{/* <Entity primitive='a-img' id='WallDetails' src={require('../../../assets/images/icons/WallDetails.png') } />
- */}
-
+ 
   <Entity primitive="a-mixin" id="ring" geometry="primitive: ring; width: 1.5; height: 1.5" material="color: beige; shader: flat" 
     animation__scale="property: scale; to: 1.7 1.7 1.7; dur: 200; startEvents: mouseenter" 
     animation__scale_reverse="property: scale; to: 1.3 1.3 1.3; dur: 200; startEvents: mouseleave" />

@@ -26,9 +26,10 @@ const SceneTwo: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => {
       <Entity
         geometry={{ primitive: 'plane', width: 5, height: 2 }}
         material={{ color: 'beige', opacity: 1 }}
-        position="0 2 -3"
-        rotation="0 0 0"
-      >
+        position="0 2 -6"
+        
+         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
+             >
         <Entity primitive="a-text" value="Select Property" color="black" align="center" position="0 0.8 0.01" width="4" />
 
         {/*  Back button */}

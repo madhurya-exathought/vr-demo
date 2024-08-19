@@ -27,8 +27,8 @@ const VRSetup: React.FC = () => (
   /> */}
 
   
-    <Entity primitive="a-camera">
-      <Entity primitive="a-cursor" raycaster="objects: .clickable" />
+    <Entity primitive="a-camera" position='0 4.6 0'>
+      <Entity primitive="a-cursor"  position="1 1 1 " raycaster="objects: .clickable" />
     </Entity>
   </>
 );

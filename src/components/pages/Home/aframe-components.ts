@@ -60,6 +60,25 @@ AFRAME.registerComponent('move-and-rotate', {
   }
 });
 
+
+AFRAME.registerComponent('dynamic-sky', {
+  schema: {
+    speed: {type: 'number', default: 0.1}
+  },
+
+  tick: function () {
+    var skyEl = this.el;
+    var cameraEl = document.querySelector('[camera]');
+    var cameraPos = cameraEl.object3D.position;
+    
+    // Calculate offset based on camera y-position
+    var yOffset = cameraPos.y * this.data.speed;
+    
+    // Apply offset to sky texture
+    skyEl.object3D.rotation.y = yOffset;
+  }
+});
+
 /* Not used */
   AFRAME.registerComponent('clickable', {
     init: function () {
@@ -71,8 +90,22 @@ AFRAME.registerComponent('move-and-rotate', {
   });
 
 
+  AFRAME.registerComponent('hotspot', {
+    schema: {
+      target: {type: 'string'},
+      label: {type: 'string'}
+    },
+    init: function() {
+      this.el.addEventListener('click', () => {
+        // Handle click event
+        console.log(`Clicked hotspot to ${this.data.target}`);
+        // You can add logic here to change rooms or show info
+      });
+    }
+  });
 
-
+ 
+/* 
   // rounded-rect-shader.js
 AFRAME.registerShader('rounded', {
   schema: {
@@ -100,3 +133,4 @@ AFRAME.registerShader('rounded', {
     }
   `
 });
+ */

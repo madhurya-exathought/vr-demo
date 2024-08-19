@@ -1,12 +1,12 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ScenesControl from '../components/pages/Home/ScenesControl';
-import SceneGarden from '../components/pages/Home/SceneGarden';
-import SceneLivingRoom from '../components/pages/Home/SceneLivingRoom';
+
+import SceneABC from '../components/pages/Home/SceneABC';
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<ScenesControl />} />
+        <Route path="/" element={<SceneABC />} />
       </Routes>
     </BrowserRouter>
   );
