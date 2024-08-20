@@ -22,8 +22,13 @@ export type SceneType =
       |'sceneInsidePathway'
       | 'sceneMeetingRoomAtEntrance'
 
-export type SceneTwoThreeProps = {
+export type ScenesProps = {
   onSceneChange: () => void;
+  onBack: () => void;
+};
+
+export type SceneNavProps = {
+  onSceneChange: (nextScene: SceneType) => void;
   onBack: () => void;
 };
 
@@ -41,4 +46,12 @@ export type ImageEntityProps = {
 export type SkyEntityProps={
   src:string;
   setRotation?:string;
+}
+
+
+export interface NavigationButtonProps {
+  onBack: () => void;
+  setPosition :string;
+  setRotation?:string;
+  events?:object;
 }

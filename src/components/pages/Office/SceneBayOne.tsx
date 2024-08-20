@@ -1,14 +1,12 @@
 import React from 'react';
-import './aframe-components';
+
 import { Entity } from 'aframe-react';
 import NavigationButton from './NavigationButton';
 import SkyEntity from './SkyEntity';
-type SceneProps = {
-  onSceneChange: () => void;
-  onBack: () => void;
-};
+import { ScenesProps } from './scenetype.type';
 
-const SceneBayOne: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
+
+const SceneBayOne: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   console.log('SceneBayOne rendered');
   const handleNavigation = () => {
     console.log('Button clicked in SceneBayOne');

@@ -1,15 +1,13 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
 import NavigationButton from './NavigationButton';
-import './aframe-components';
+
 import SkyEntity from './SkyEntity';
+import { ScenesProps } from './scenetype.type';
 
-type SceneProps = {
-  onSceneChange: () => void;
-  onBack: () => void;
-};
 
-const SceneEntranceOutside: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
+
+const SceneEntranceOutside: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   console.log('EntranceOutside rendered');
   const handleNavigation = () => {
     console.log('Button clicked in EntranceOutside');

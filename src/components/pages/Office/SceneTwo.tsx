@@ -2,7 +2,7 @@ import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
 import NavigationButton from './NavigationButton';
-import { SceneTwoThreeProps } from './scenetype.type';
+import { ScenesProps } from './scenetype.type';
 import ImageEntity from './ImageEntity';
 import SkyEntity from './SkyEntity';
 
@@ -12,7 +12,7 @@ const imagesSceneTwo = [
   { src: '#Studio', position: '1.5 0 0.01' },
 ];
 
-const SceneTwo: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => {
+const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   console.log('SceneTwo rendered');
 
   const handleImageClickSceneTwo = () => {

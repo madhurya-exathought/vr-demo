@@ -1,15 +1,13 @@
 import React from 'react';
-import './aframe-components';
+
 import { Entity } from 'aframe-react';
 import NavigationButton from './NavigationButton';
-import { SceneType } from './scenetype.type';
-import SkyEntity from './SkyEntity';
 
-type SceneProps = {
-  onSceneChange: () => void;
-  onBack: () => void;
-};
-const SceneMeetingRoomBig1: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
+import SkyEntity from './SkyEntity';
+import { ScenesProps } from './scenetype.type';
+
+
+const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   console.log('SceneMeetingRoomBig1 rendered');
   const handleNavigation = () => {
     console.log('Button1 clicked in SceneMeetingRoomBig1');

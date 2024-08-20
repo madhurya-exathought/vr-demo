@@ -3,7 +3,6 @@ import 'aframe';
 import { Entity } from 'aframe-react';
 import { SceneType } from './scenetype.type';
 
-import './aframe-components';
 
 interface SharedOptionsProps {
   onSceneChange: (nextScene: SceneType) => void;

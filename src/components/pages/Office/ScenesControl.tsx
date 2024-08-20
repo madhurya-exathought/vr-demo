@@ -38,7 +38,7 @@ const ScenesControl = () => {
 
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneInsidePathway');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);

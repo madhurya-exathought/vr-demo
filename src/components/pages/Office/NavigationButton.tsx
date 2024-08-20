@@ -1,13 +1,8 @@
 import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
+import { NavigationButtonProps } from './scenetype.type';
 
-interface NavigationButtonProps {
-  onBack: () => void;
-  setPosition :string;
-  setRotation?:string;
-  events?:object;
-}
 
 const NavigationButton: React.FC<NavigationButtonProps> = ({ onBack,setPosition,setRotation='0 0 0',events }) => {
 

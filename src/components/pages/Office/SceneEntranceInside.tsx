@@ -1,15 +1,13 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
 import NavigationButton from './NavigationButton';
-import './aframe-components';
-import SkyEntity from './SkyEntity';
-import { SceneType } from './scenetype.type';
-export type SceneProps = {
-  onSceneChange: (nextScene: SceneType) => void;
-  onBack: () => void;
-};
 
-const SceneEntranceInside: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
+import SkyEntity from './SkyEntity';
+
+import { SceneNavProps } from './scenetype.type';
+
+
+const SceneEntranceInside: React.FC<SceneNavProps> = ({ onSceneChange, onBack }) => {
   console.log('EntranceInside rendered');
   const handleNavigation = () => {
     console.log('Button clicked in EntranceInside');
@@ -31,7 +29,7 @@ const SceneEntranceInside: React.FC<SceneProps> = ({ onSceneChange, onBack }) =>
 
       <NavigationButton onBack={handleNavigation} setPosition="0 1 -2" setRotation="0 0 -90" />
 
-      <NavigationButton onBack={handleNavigation1} setPosition="0.5 1 -1" setRotation="0 0 120" />
+      <NavigationButton onBack={handleNavigation1} setPosition="0.5 1 -1.2" setRotation="0 0 135" />
     </Entity>
   );
 };

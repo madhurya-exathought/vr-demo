@@ -1,16 +1,12 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
 import NavigationButton from './NavigationButton';
-import './aframe-components';
+
 import SkyEntity from './SkyEntity';
-import { SceneType } from './scenetype.type';
+import { ScenesProps } from './scenetype.type';
 
-export type SceneProps = {
-  onSceneChange: () => void;
-  onBack: () => void;
-};
 
-const SceneInsidePathway: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
+const SceneInsidePathway: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   console.log('SceneInsidePathway rendered');
 
   const handleNavigation = () => {

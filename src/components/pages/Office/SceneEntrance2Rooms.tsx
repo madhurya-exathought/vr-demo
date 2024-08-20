@@ -1,16 +1,12 @@
 import React from 'react';
-import './aframe-components';
+
 import { Entity } from 'aframe-react';
 import NavigationButton from './NavigationButton';
 import { SceneType } from './scenetype.type';
 import SkyEntity from './SkyEntity';
+import { SceneNavProps } from './scenetype.type';
 
-type SceneProps = {
-  onSceneChange: (nextScene: SceneType) => void;
-  onBack: () => void;
-};
-
-const SceneEntrance2Rooms: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
+const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ onSceneChange, onBack }) => {
   console.log('SceneEntrance2Rooms rendered');
   const handleNavigation1 = () => {
     console.log('Button1 clicked in SceneEntrance2Rooms');
