@@ -1,7 +1,7 @@
 import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
-import NavigationButton from './NavigationButton';
+import {NavigationButton2} from './NavigationButton';
 import { ScenesProps } from './scenetype.type';
 import ImageEntity from './ImageEntity';
 import SkyEntity from './SkyEntity';
@@ -31,11 +31,11 @@ const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
         rotation="0 0 0"
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
       >
-        <Entity primitive="a-text" value="Select Number of Rooms" color="black" align="center" position="0 0.8 0.01" width="4" />
+        <Entity primitive="a-text" value="Select Number of Floors" color="black" align="center" position="0 0.8 0.01" width="4" />
 
         {/*  Back button */}
 
-        <NavigationButton onBack={onBack} setPosition="-1.3 0.8 0.01" />
+        <NavigationButton2 onBack={onBack} setPosition="-1.3 0.8 0.01" />
 
         {/* Images */}
 

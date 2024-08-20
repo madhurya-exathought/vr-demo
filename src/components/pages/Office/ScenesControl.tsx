@@ -38,7 +38,7 @@ const ScenesControl = () => {
 
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneEntraceOutside');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
@@ -93,8 +93,7 @@ const ScenesControl = () => {
   <Entity primitive="a-img" id="MeetingRoomLeft" src={require('../../../assets/images/exathought/RoomLeft.jpg')} alt="MeetingRoomLeft" />
   <Entity primitive="a-img" id="MeetingRoomRight" src={require('../../../assets/images/exathought/RoomRight.jpg')} alt="MeetingRoomRight" />
   <Entity primitive="a-img" id="MeetingRoomAtEntrance" src={require('../../../assets/images/exathought/RoomatEntrance.jpg')} alt="MeetingRoomAtEntrance" />
- 
-  <Entity primitive="a-img" id="InsidePathway" src={require('../../../assets/images/exathought/InsidePathway.jpg')} alt="InsidePathway" />
+   <Entity primitive="a-img" id="InsidePathway" src={require('../../../assets/images/exathought/InsidePathway.jpg')} alt="InsidePathway" />
   
 
 
@@ -119,10 +118,10 @@ const ScenesControl = () => {
   <Entity primitive="a-img" id="2BHK" src={require('../../../assets/images/sceneThree/2BHK.jpg')} alt="imageRooms" />
   <Entity primitive="a-img" id="3BHK" src={require('../../../assets/images/sceneThree/3BHK.jpg')} alt="imageRooms" />
 
-  <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton.png')} alt="backButton" />
-  <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton2" />
+  <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton" />
+  <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/Group.png')} alt="backButton2" />
   <Entity primitive="a-img" id="info" src={require('../../../assets/images/icons/info.png')} alt="info" />
-
+  <Entity primitive='a-img' id='upDown' src={require('../../../assets/images/icons/Main.png')} alt='updownIcon' />
 
 
   <Entity primitive="a-img" id="imagelivingroom" src={require('../../../assets/images/sceneSpaces/livingroom1.jpg')} alt="imagelivingroom" />
@@ -132,6 +131,20 @@ const ScenesControl = () => {
   <Entity primitive="a-img" id="imagebathroom" src={require('../../../assets/images/sceneSpaces/bathroom1.jpg')} alt="imagebathroom" />
  
   <Entity primitive='a-img' id='officeEntry' src={OfficeEntry } /> 
+
+
+
+  <Entity primitive="a-img" id="cabin1" src={require('../../../assets/images/sceneSpaces/Cabin1.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="cabin2" src={require('../../../assets/images/sceneSpaces/Cabin2.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="cabin3" src={require('../../../assets/images/sceneSpaces/Cabin3.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="ConferenceRoom" src={require('../../../assets/images/sceneSpaces/ConferenceRoom.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView1" src={require('../../../assets/images/sceneSpaces/FloorView1.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView2" src={require('../../../assets/images/sceneSpaces/FloorView2.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView3" src={require('../../../assets/images/sceneSpaces/FloorView3.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView4" src={require('../../../assets/images/sceneSpaces/FloorView4.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView5" src={require('../../../assets/images/sceneSpaces/FloorView5.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="OfficeEntrance" src={require('../../../assets/images/sceneSpaces/OfficeEntrance.jpg')} alt="imagebathroom" />
+ 
 
  
   <Entity primitive="a-mixin" id="ring" geometry="primitive: ring; width: 1.5; height: 1.5" material="color: beige; shader: flat" 
@@ -150,7 +163,9 @@ const ScenesControl = () => {
         )}
 
         {currentScene === 'sceneEntraceOutside' && (
-          <SceneEntranceOutside onSceneChange={()=>handleSceneChange('sceneEntraceInside')} onBack={() =>handleSceneChange('sceneThree')}    /> 
+          <SceneEntranceOutside onSceneChange={()=>handleSceneChange('sceneEntraceInside')} onBack={() =>handleSceneChange('sceneThree')}>
+            <SharedOptions onSceneChange={handleSceneChange} />{' '}
+            </SceneEntranceOutside> 
         )}
 
 {currentScene === 'sceneEntraceInside' && (

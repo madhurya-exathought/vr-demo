@@ -94,6 +94,7 @@ const ScenesControl = () => {
   <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton.png')} alt="backButton" />
   <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton2" />
   <Entity primitive="a-img" id="info" src={require('../../../assets/images/icons/info.png')} alt="info" />
+  <Entity primitive='a-img' id='upDown' src={require('../../../assets/images/icons/Main.png')} alt='updownIcon' />
 
 
 

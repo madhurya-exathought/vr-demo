@@ -25,6 +25,7 @@ export type SceneType =
 export type ScenesProps = {
   onSceneChange: () => void;
   onBack: () => void;
+  children?: React.ReactNode;
 };
 
 export type SceneNavProps = {

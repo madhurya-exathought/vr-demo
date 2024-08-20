@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Entity } from 'aframe-react';
-import NavigationButton from './NavigationButton';
+import {NavigationButton} from './NavigationButton';
 import { SceneType } from './scenetype.type';
 import SkyEntity from './SkyEntity';
 import { SceneNavProps } from './scenetype.type';
