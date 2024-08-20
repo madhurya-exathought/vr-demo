@@ -4,6 +4,7 @@ import { Entity } from 'aframe-react';
 import BackButton from './BackButton';
 import { SceneTwoThreeProps } from './scenetype.type';
 import ImageEntity from './ImageEntity';
+import SkyEntity from '../Office/SkyEntity';
 
 const imagesSceneTwo = [
   { src: '#Villa', position: '-1.5 0 0.01' },
@@ -21,8 +22,9 @@ const SceneTwo: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => {
 
   return (
     <Entity>
-      <Entity primitive="a-sky" src="#sky1" />
-
+       <SkyEntity src='#sky1'  />
+ 
+     
       <Entity
         geometry={{ primitive: 'plane', width: 5, height: 2 }}
         material={{ color: 'beige', opacity: 1 }}
