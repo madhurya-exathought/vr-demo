@@ -1,7 +1,7 @@
 import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
-import BackButton from './BackButton';
+import NavigationButton from './NavigationButton';
 import { SceneTwoThreeProps } from './scenetype.type';
 import ImageEntity from './ImageEntity';
 import SkyEntity from './SkyEntity';
@@ -22,8 +22,8 @@ const SceneThree: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => 
 
   return (
     <Entity>
-       <SkyEntity src='#sky1'  />
- 
+      <SkyEntity src="#sky1" />
+
       <Entity
         geometry={{ primitive: 'plane', width: 5, height: 2 }}
         material={{ color: 'beige', opacity: 1 }}
@@ -35,7 +35,7 @@ const SceneThree: React.FC<SceneTwoThreeProps> = ({ onSceneChange, onBack }) => 
 
         {/*  Back button */}
 
-        <BackButton onBack={onBack} setPosition="-1.3 0.8 0.01"/>
+        <NavigationButton onBack={onBack} setPosition="-1.3 0.8 0.01" />
 
         {/* Images */}
 

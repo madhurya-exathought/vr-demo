@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import './aframe-components';
 import { Entity } from 'aframe-react';
-import BackButton from './BackButton';
+import NavigationButton from './NavigationButton';
 import SkyEntity from './SkyEntity';
 
 type SceneProps = {
@@ -9,9 +9,7 @@ type SceneProps = {
   onBack: () => void;
 };
 
-
 const SceneBayThree: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
-
   console.log('SceneBayThree rendered');
   const handleNavigation = () => {
     console.log('Button clicked in SceneBayThree');
@@ -19,15 +17,15 @@ const SceneBayThree: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
   };
   return (
     <Entity>
-      <SkyEntity src='#Bay3' setRotation='0 90 0' />
+      <SkyEntity src="#Bay3" setRotation="0 90 0" />
 
       {/*  Back button */}
 
-      <BackButton onBack={onBack} setPosition="1 0.5 -2" setRotation='0 0 90'/>
+      <NavigationButton onBack={onBack} setPosition="1 0.5 -2" setRotation="0 0 90" />
 
-      <BackButton onBack={handleNavigation} setPosition="1 1 -2" setRotation='0 0 -90'/>
+      <NavigationButton onBack={handleNavigation} setPosition="1 1 -2" setRotation="0 0 -90" />
     </Entity>
-  )
-}
+  );
+};
 
-export default SceneBayThree
+export default SceneBayThree;

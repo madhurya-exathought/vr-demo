@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import './aframe-components';
 import { Entity } from 'aframe-react';
-import BackButton from './BackButton';
+import NavigationButton from './NavigationButton';
 import { SceneType } from './scenetype.type';
 import SkyEntity from './SkyEntity';
 
@@ -10,31 +10,23 @@ type SceneProps = {
   onBack: () => void;
 };
 const SceneMeetingRoomBig1: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
-
   console.log('SceneMeetingRoomBig1 rendered');
   const handleNavigation = () => {
     console.log('Button1 clicked in SceneMeetingRoomBig1');
     onSceneChange();
   };
 
-
   return (
-   <Entity>
-    <SkyEntity  src="#MeetingRoomBig1" setRotation='0 -120 0' />
+    <Entity>
+      <SkyEntity src="#MeetingRoomBig1" setRotation="0 -120 0" />
 
+      {/*  Back button */}
 
-    {/*  Back button */}
+      <NavigationButton onBack={onBack} setPosition="-2 3 -3" />
 
-    <BackButton onBack={onBack} setPosition="-2 3 -3" />
+      <NavigationButton setPosition="1 1 -2" onBack={handleNavigation} />
+    </Entity>
+  );
+};
 
-
-    <BackButton setPosition='1 1 -2'  onBack={handleNavigation} />
-
-
-
-
-   </Entity>
-  )
-}
-
-export default SceneMeetingRoomBig1
+export default SceneMeetingRoomBig1;

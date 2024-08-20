@@ -2,16 +2,16 @@ import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
 
-interface BackButtonProps {
+interface NavigationButtonProps {
   onBack: () => void;
   setPosition :string;
   setRotation?:string;
   events?:object;
 }
 
-const BackButton: React.FC<BackButtonProps> = ({ onBack,setPosition,setRotation='0 0 0',events }) => {
+const NavigationButton: React.FC<NavigationButtonProps> = ({ onBack,setPosition,setRotation='0 0 0',events }) => {
 
-  const handleBackButton = () => {
+  const handleNavigationButton = () => {
     console.log('back button pressed');
     onBack();
   };
@@ -25,9 +25,9 @@ const BackButton: React.FC<BackButtonProps> = ({ onBack,setPosition,setRotation=
       rotation={setRotation}
       animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
       animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
-      events={{ click: handleBackButton , ...events}}
+      events={{ click: handleNavigationButton , ...events}}
     />
   );
 };
 
-export default BackButton;
+export default NavigationButton;

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
-import BackButton from './BackButton';
+import NavigationButton from './NavigationButton';
 import './aframe-components';
 import SkyEntity from './SkyEntity';
 
@@ -18,13 +18,13 @@ const SceneEntranceOutside: React.FC<SceneProps> = ({ onSceneChange, onBack }) =
 
   return (
     <Entity>
-      <SkyEntity src='#skyEntranceOutside'  />
-     
+      <SkyEntity src="#skyEntranceOutside" />
+
       {/*  Back button */}
 
-      <BackButton onBack={onBack} setPosition="-2 3 -3" />
+      <NavigationButton onBack={onBack} setPosition="-2 3 -3" />
 
-      <BackButton onBack={handleNavigation} setPosition="1 1 -2" setRotation='0 0 -90'/>
+      <NavigationButton onBack={handleNavigation} setPosition="1 1 -2" setRotation="0 0 -90" />
     </Entity>
   );
 };
