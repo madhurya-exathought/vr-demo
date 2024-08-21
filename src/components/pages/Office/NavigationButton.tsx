@@ -9,7 +9,10 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ onBack,setPosition,
 
   const handleNavigationButton = () => {
     console.log('back button pressed');
-    onBack();
+    if (onBack){
+      onBack();
+    }
+    
   };
 
   return (
@@ -33,7 +36,9 @@ const NavigationButton2: React.FC<NavigationButtonProps> = ({ onBack,setPosition
 
   const handleNavigationButton = () => {
     console.log('back button pressed');
-    onBack();
+    if (onBack){
+      onBack();
+    }
   };
 
   return (
