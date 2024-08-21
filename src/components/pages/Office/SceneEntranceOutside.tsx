@@ -1,15 +1,13 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
-import BackButton from './BackButton';
-import './aframe-components';
+import {NavigationButton,NavigationButton2} from './NavigationButton';
+
 import SkyEntity from './SkyEntity';
+import { ScenesProps } from './scenetype.type';
 
-type SceneProps = {
-  onSceneChange: () => void;
-  onBack: () => void;
-};
 
-const SceneEntranceOutside: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
+
+const SceneEntranceOutside: React.FC<ScenesProps> = ({children, onSceneChange, onBack }) => {
   console.log('EntranceOutside rendered');
   const handleNavigation = () => {
     console.log('Button clicked in EntranceOutside');
@@ -18,13 +16,15 @@ const SceneEntranceOutside: React.FC<SceneProps> = ({ onSceneChange, onBack }) =
 
   return (
     <Entity>
-      <SkyEntity src='#skyEntranceOutside'  />
-     
+      <SkyEntity src="#skyEntranceOutside" />
+
       {/*  Back button */}
 
-      <BackButton onBack={onBack} setPosition="-2 3 -3" />
+      <NavigationButton2 onBack={onBack} setPosition="-2 3 -3" />
 
-      <BackButton onBack={handleNavigation} setPosition="1 1 -2" setRotation='0 0 -90'/>
+      <NavigationButton onBack={handleNavigation} setPosition="0.75 1 -1.5" setRotation="-90 0 90" />
+    
+      {children}    
     </Entity>
   );
 };

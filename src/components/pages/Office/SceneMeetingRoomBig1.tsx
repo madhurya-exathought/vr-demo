@@ -1,40 +1,30 @@
-import React from 'react'
-import './aframe-components';
+import React from 'react';
+
 import { Entity } from 'aframe-react';
-import BackButton from './BackButton';
-import { SceneType } from './scenetype.type';
+import {NavigationButton} from './NavigationButton';
+
 import SkyEntity from './SkyEntity';
+import { ScenesProps } from './scenetype.type';
 
-type SceneProps = {
-  onSceneChange: () => void;
-  onBack: () => void;
-};
-const SceneMeetingRoomBig1: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
 
+const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   console.log('SceneMeetingRoomBig1 rendered');
   const handleNavigation = () => {
     console.log('Button1 clicked in SceneMeetingRoomBig1');
     onSceneChange();
   };
 
-
   return (
-   <Entity>
-    <SkyEntity  src="#MeetingRoomBig1" setRotation='0 -120 0' />
+    <Entity>
+      <SkyEntity src="#MeetingRoomBig1" setRotation="0 -120 0" />
 
+      {/*  Back button */}
 
-    {/*  Back button */}
+      <NavigationButton onBack={onBack} setPosition="-1 0.05 1" setRotation="-90 0 -140" />
 
-    <BackButton onBack={onBack} setPosition="-2 3 -3" />
+      <NavigationButton setPosition="0 0.05 -1" onBack={handleNavigation} setRotation="-90 0 70"  />
+    </Entity>
+  );
+};
 
-
-    <BackButton setPosition='1 1 -2'  onBack={handleNavigation} />
-
-
-
-
-   </Entity>
-  )
-}
-
-export default SceneMeetingRoomBig1
+export default SceneMeetingRoomBig1;

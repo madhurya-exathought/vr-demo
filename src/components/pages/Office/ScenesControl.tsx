@@ -8,16 +8,8 @@ import SceneTwo from './SceneTwo';
 import SceneThree from './SceneThree';
 import SceneEntranceOutside from './SceneEntranceOutside';
 import SceneEntranceInside from './SceneEntranceInside';
-/* import SceneFour from './SceneFour';
-import SceneLivingRoom from './SceneLivingRoom';
-import SceneBedroom1 from './SceneBedroom1';
-import SceneBedroom2 from './SceneBedroom2';
-import SceneBathroom from './SceneBathroom';
-import SceneGarden from './SceneGarden'; */
 import SharedOptions from './SharedOptions';
 import { SceneType } from './scenetype.type';
-
-
 import OfficeEntry from '../../../assets/images/sky/officeEntry1.jpg'
 import SceneBayOne from './SceneBayOne';
 import SceneBayTwo from './SceneBayTwo';
@@ -38,7 +30,7 @@ const ScenesControl = () => {
 
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneInsidePathway');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneBay1');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
@@ -86,15 +78,13 @@ const ScenesControl = () => {
   <Entity primitive="a-img" id="Bay1" src={require('../../../assets/images/exathought/Bay1.jpg')} alt="Bay1" />
   <Entity primitive="a-img" id="Bay2" src={require('../../../assets/images/exathought/Bay2.jpg')} alt="Bay2" />
   <Entity primitive="a-img" id="Bay3" src={require('../../../assets/images/exathought/Bay3.jpg')} alt="Bay3" />
-  <Entity primitive="a-img" id="Entrance2Rooms" src={require('../../../assets/images/exathought/Entrace2Rooms.jpg')} alt="Bay3" />
-  
+  <Entity primitive="a-img" id="Entrance2Rooms" src={require('../../../assets/images/exathought/Entrance2Rooms.jpg')} alt="Bay3" />
   <Entity primitive="a-img" id="MeetingRoomBig1" src={require('../../../assets/images/exathought/MeetingRoomBig2.jpg')} alt="MeetingRoomBig1" />
   <Entity primitive="a-img" id="MeetingRoomBig2" src={require('../../../assets/images/exathought/MeetingRoomBig.jpg')} alt="MeetingRoomBig2" />
   <Entity primitive="a-img" id="MeetingRoomLeft" src={require('../../../assets/images/exathought/RoomLeft.jpg')} alt="MeetingRoomLeft" />
   <Entity primitive="a-img" id="MeetingRoomRight" src={require('../../../assets/images/exathought/RoomRight.jpg')} alt="MeetingRoomRight" />
   <Entity primitive="a-img" id="MeetingRoomAtEntrance" src={require('../../../assets/images/exathought/RoomatEntrance.jpg')} alt="MeetingRoomAtEntrance" />
- 
-  <Entity primitive="a-img" id="InsidePathway" src={require('../../../assets/images/exathought/InsidePathway.jpg')} alt="InsidePathway" />
+   <Entity primitive="a-img" id="InsidePathway" src={require('../../../assets/images/exathought/InsidePathway.jpg')} alt="InsidePathway" />
   
 
 
@@ -119,19 +109,27 @@ const ScenesControl = () => {
   <Entity primitive="a-img" id="2BHK" src={require('../../../assets/images/sceneThree/2BHK.jpg')} alt="imageRooms" />
   <Entity primitive="a-img" id="3BHK" src={require('../../../assets/images/sceneThree/3BHK.jpg')} alt="imageRooms" />
 
-  <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton.png')} alt="backButton" />
-  <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton2" />
-  <Entity primitive="a-img" id="info" src={require('../../../assets/images/icons/info.png')} alt="info" />
+  <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton" />
+  <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/Group.png')} alt="backButton2" />
+   <Entity primitive='a-img' id='upDown' src={require('../../../assets/images/icons/Main.png')} alt='updownIcon' />
 
 
-
-  <Entity primitive="a-img" id="imagelivingroom" src={require('../../../assets/images/sceneSpaces/livingroom1.jpg')} alt="imagelivingroom" />
-  <Entity primitive="a-img" id="imagegarden" src={require('../../../assets/images/sceneSpaces/garden1.jpg')} alt="imagegarden" />
-  <Entity primitive="a-img" id="imagebedroom1" src={require('../../../assets/images/sceneSpaces/bedroom1_1.jpg')} alt="imagebedroom1" />
-  <Entity primitive="a-img" id="imagebedroom2" src={require('../../../assets/images/sceneSpaces/bedroom2_1.jpg')} alt="imagebedroom2" />
-  <Entity primitive="a-img" id="imagebathroom" src={require('../../../assets/images/sceneSpaces/bathroom1.jpg')} alt="imagebathroom" />
  
   <Entity primitive='a-img' id='officeEntry' src={OfficeEntry } /> 
+
+
+
+  <Entity primitive="a-img" id="cabin1" src={require('../../../assets/images/sceneSpaces/Cabin1.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="cabin2" src={require('../../../assets/images/sceneSpaces/Cabin2.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="cabin3" src={require('../../../assets/images/sceneSpaces/Cabin3.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="ConferenceRoom" src={require('../../../assets/images/sceneSpaces/ConferenceRoom.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView1" src={require('../../../assets/images/sceneSpaces/FloorView1.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView2" src={require('../../../assets/images/sceneSpaces/FloorView2.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView3" src={require('../../../assets/images/sceneSpaces/FloorView3.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView4" src={require('../../../assets/images/sceneSpaces/FloorView4.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView5" src={require('../../../assets/images/sceneSpaces/FloorView5.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="OfficeEntrance" src={require('../../../assets/images/sceneSpaces/OfficeEntrance.jpg')} alt="imagebathroom" />
+ 
 
  
   <Entity primitive="a-mixin" id="ring" geometry="primitive: ring; width: 1.5; height: 1.5" material="color: beige; shader: flat" 
@@ -146,57 +144,81 @@ const ScenesControl = () => {
         )}
 
         {currentScene === 'sceneThree' && (
-          <SceneThree onSceneChange={() => handleSceneChange('sceneEntraceOutside')} onBack={() => handleSceneChange('sceneTwo')} />
+          <SceneThree onSceneChange={() => handleSceneChange('sceneEntranceOutside')} onBack={() => handleSceneChange('sceneTwo')} />
         )}
 
-        {currentScene === 'sceneEntraceOutside' && (
-          <SceneEntranceOutside onSceneChange={()=>handleSceneChange('sceneEntraceInside')} onBack={() =>handleSceneChange('sceneThree')}    /> 
+        {currentScene === 'sceneEntranceOutside' && (
+          <SceneEntranceOutside onSceneChange={()=>handleSceneChange('sceneEntranceInside')} onBack={() =>handleSceneChange('sceneThree')}>
+            <SharedOptions onSceneChange={handleSceneChange} />{' '}
+            </SceneEntranceOutside> 
         )}
 
-{currentScene === 'sceneEntraceInside' && (
-          <SceneEntranceInside onSceneChange={handleSceneChange} onBack={() =>handleSceneChange('sceneEntraceOutside')}    /> 
+{currentScene === 'sceneEntranceInside' && (
+          <SceneEntranceInside onSceneChange={handleSceneChange} onBack={() =>handleSceneChange('sceneEntranceOutside')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneEntranceInside>         
         )}
 
 {currentScene === 'sceneBay1' && (
-          <SceneBayOne onSceneChange={()=>handleSceneChange('sceneBay2')} onBack={() =>handleSceneChange('sceneEntraceInside')}    /> 
+          <SceneBayOne onSceneChange={()=>handleSceneChange('sceneBay2')} onBack={() =>handleSceneChange('sceneEntranceInside')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneBayOne> 
         )}
 
 
 {currentScene === 'sceneBay2' && (
-          <SceneBayTwo onSceneChange={()=>handleSceneChange('sceneBay3')} onBack={() =>handleSceneChange('sceneBay1')}    /> 
+          <SceneBayTwo onSceneChange={()=>handleSceneChange('sceneBay3')} onBack={() =>handleSceneChange('sceneBay1')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneBayTwo> 
         )}
 {currentScene === 'sceneBay3' && (
-          <SceneBayThree onSceneChange={()=>handleSceneChange('sceneEntrance2Rooms')} onBack={() =>handleSceneChange('sceneBay2')}    /> 
+          <SceneBayThree onSceneChange={()=>handleSceneChange('sceneEntrance2Rooms')} onBack={() =>handleSceneChange('sceneBay2')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneBayThree> 
         )}
 
 {currentScene === 'sceneEntrance2Rooms' && (
-          <SceneEntrance2Rooms onSceneChange={handleSceneChange} onBack={() =>handleSceneChange('sceneBay3')}    /> 
+          <SceneEntrance2Rooms onSceneChange={handleSceneChange} onBack={() =>handleSceneChange('sceneBay3')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneEntrance2Rooms> 
         )}
 
 
 {currentScene === 'sceneMeetingRoomBig1' && (
-          <SceneMeetingRoomBig1 onSceneChange={()=>handleSceneChange('sceneMeetingRoomBig2')} onBack={() =>handleSceneChange('sceneEntrance2Rooms')}    /> 
+          <SceneMeetingRoomBig1 onSceneChange={()=>handleSceneChange('sceneMeetingRoomBig2')} onBack={() =>handleSceneChange('sceneEntrance2Rooms')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneMeetingRoomBig1> 
         )}
 
 {currentScene === 'sceneMeetingRoomBig2' && (
-          <SceneMeetingRoomBig2 onSceneChange={()=>handleSceneChange('sceneEntrance2Rooms')} onBack={() =>handleSceneChange('sceneEntrance2Rooms')}    /> 
+          <SceneMeetingRoomBig2 onSceneChange={()=>handleSceneChange('sceneEntrance2Rooms')} onBack={() =>handleSceneChange('sceneEntrance2Rooms')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneMeetingRoomBig2> 
         )}
 
 {currentScene === 'sceneMeetingRoomLeft' && (
-          <SceneMeetingRoomLeft onBack={() =>handleSceneChange('sceneEntrance2Rooms')}    />
+          <SceneMeetingRoomLeft onBack={() =>handleSceneChange('sceneEntrance2Rooms')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneMeetingRoomLeft>
           
           
         )}
 {currentScene === 'sceneMeetingRoomRight' && (
-          <SceneMeetingRoomRight  onBack={() =>handleSceneChange('sceneEntrance2Rooms')}    /> 
+          <SceneMeetingRoomRight  onBack={() =>handleSceneChange('sceneEntrance2Rooms')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneMeetingRoomRight> 
         )}
 
 {currentScene === 'sceneInsidePathway' && (
-          <SceneInsidePathway onSceneChange={()=>handleSceneChange('sceneMeetingRoomAtEntrance')} onBack={() =>handleSceneChange('sceneEntraceInside')}    /> 
+          <SceneInsidePathway onSceneChange={()=>handleSceneChange('sceneMeetingRoomAtEntrance')} onBack={() =>handleSceneChange('sceneEntranceInside')}    >
+            <SharedOptions onSceneChange={handleSceneChange} />{' '}
+           </SceneInsidePathway> 
         )}
 
 {currentScene === 'sceneMeetingRoomAtEntrance' && (
-          <SceneMeetingRoomAtEntrance onBack={() =>handleSceneChange('sceneInsidePathway')}    /> 
+          <SceneMeetingRoomAtEntrance onBack={() =>handleSceneChange('sceneInsidePathway')}    >
+             <SharedOptions onSceneChange={handleSceneChange} />{' '}
+             </SceneMeetingRoomAtEntrance> 
         )}
 
 

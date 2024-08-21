@@ -1,34 +1,26 @@
-import React from 'react'
-import './aframe-components';
+import React from 'react';
+
 import { Entity } from 'aframe-react';
-import BackButton from './BackButton';
-import { SceneType } from './scenetype.type';
+import {NavigationButton} from './NavigationButton';
+
 import SkyEntity from './SkyEntity';
+import { SceneSpacesProps } from './scenetype.type';
 
-type SceneProps = {
 
-  onBack: () => void;
-};
-const SceneMeetingRoomLeft: React.FC<SceneProps> = ({  onBack }) => {
+const SceneMeetingRoomLeft: React.FC<SceneSpacesProps> = ({ children,onBack }) => {
   console.log('SceneMeetingRoomLeft rendered');
 
-  
   return (
-   <Entity>
+    <Entity>
+      <SkyEntity src="#MeetingRoomLeft" setRotation="0 -50 0" />
 
-<SkyEntity src='#MeetingRoomLeft' setRotation='0 -50 0' />
-    
+      {/*  Back button */}
 
+      <NavigationButton onBack={onBack} setPosition="0.7 0.05 1" setRotation="-90 0 -60" />
 
-    {/*  Back button */}
+      {children}
+    </Entity>
+  );
+};
 
-    
-    <BackButton onBack={onBack} setPosition="2 0.5 -2" setRotation='0 0 90'/>
-
-
-    
-   </Entity>
-  )
-}
-
-export default SceneMeetingRoomLeft
+export default SceneMeetingRoomLeft;

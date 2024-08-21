@@ -2,6 +2,7 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
 import { SkyEntityProps } from './scenetype.type';
+import './aframe-components'
 
 
 
@@ -21,6 +22,7 @@ const SkyEntity: React.FC<SkyEntityProps> = ({ src, setRotation='0 0 0' }) => (
       easing: 'easeInOutQuad',
       startEvents: 'loaded',
     }}
+   /*  dynamic-sky */
   />
  
 );

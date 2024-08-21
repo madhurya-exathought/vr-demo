@@ -43,9 +43,9 @@ const SharedOptions: React.FC<SharedOptionsProps> = ({ onSceneChange }) => {
 
       <Entity
         geometry={{ primitive: 'plane', width: 0.5, height: 0.5 }}
-        material={{ src: '#backButton2', color: 'black', opacity: 0.8 }}
+        material={{ src: '#upDown', color: 'grey', opacity: 0.8 }}
         position="-4 -1.5 -4"
-        rotation="0 0 -90"
+        rotation="0 0 0"
         className="clickable "
         animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
         animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"

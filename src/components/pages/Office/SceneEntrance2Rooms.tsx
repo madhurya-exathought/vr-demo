@@ -1,18 +1,12 @@
-import React from 'react'
-import './aframe-components';
+import React from 'react';
+
 import { Entity } from 'aframe-react';
-import BackButton from './BackButton';
+import {NavigationButton} from './NavigationButton';
 import { SceneType } from './scenetype.type';
 import SkyEntity from './SkyEntity';
+import { SceneNavProps } from './scenetype.type';
 
-
-type SceneProps = {
-  onSceneChange: (nextScene: SceneType) => void;
-  onBack: () => void;
-};
-
-const SceneEntrance2Rooms: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
-
+const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({children, onSceneChange, onBack }) => {
   console.log('SceneEntrance2Rooms rendered');
   const handleNavigation1 = () => {
     console.log('Button1 clicked in SceneEntrance2Rooms');
@@ -28,25 +22,23 @@ const SceneEntrance2Rooms: React.FC<SceneProps> = ({ onSceneChange, onBack }) =>
     onSceneChange('sceneMeetingRoomLeft');
   };
 
-
   return (
     <Entity>
-       <SkyEntity src='#Entrance2Rooms' setRotation='0 -40 0' />
+      <SkyEntity src="#Entrance2Rooms" setRotation="0 0 0" />
+
+      {/*  Back button */}
+
+      <NavigationButton onBack={onBack} setPosition="2 -1 -0.5" setRotation="-90 0 -40" />
+
+      <NavigationButton setPosition="-0.5 -1 -2" events={{ click: handleNavigation1 }} onBack={onBack} setRotation="-90 0 140"/>
+
+      <NavigationButton setPosition="0 1 -1 " events={{ click: handleNavigation2 }} setRotation="-90 0 90" onBack={onBack} />
+
+      <NavigationButton setPosition="0 0 1.5" events={{ click: handleNavigation3 }} setRotation="-90 0 -110" onBack={onBack} />
    
-    {/*  Back button */}
+      {children}
+    </Entity>
+  );
+};
 
-    <BackButton onBack={onBack} setPosition="1.5 0.5 -2" setRotation='0 0 180'/>
-
-
-    <BackButton setPosition='1 1 -2' events={{click: handleNavigation1}} onBack={onBack} />
-
-    <BackButton setPosition='1.5 1 -2' events={{click: handleNavigation2}} setRotation='0 0 -90' onBack={onBack} />
-
-    <BackButton setPosition='2 1 -2' events={{click: handleNavigation3}} setRotation='0 0 90' onBack={onBack} />
-
-  
-  </Entity>
-  )
-}
-
-export default SceneEntrance2Rooms
+export default SceneEntrance2Rooms;

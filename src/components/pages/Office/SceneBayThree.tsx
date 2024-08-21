@@ -1,17 +1,12 @@
-import React from 'react'
-import './aframe-components';
+import React from 'react';
+
 import { Entity } from 'aframe-react';
-import BackButton from './BackButton';
+import {NavigationButton} from './NavigationButton';
 import SkyEntity from './SkyEntity';
-
-type SceneProps = {
-  onSceneChange: () => void;
-  onBack: () => void;
-};
+import { ScenesProps } from './scenetype.type';
 
 
-const SceneBayThree: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
-
+const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange,children, onBack }) => {
   console.log('SceneBayThree rendered');
   const handleNavigation = () => {
     console.log('Button clicked in SceneBayThree');
@@ -19,15 +14,16 @@ const SceneBayThree: React.FC<SceneProps> = ({ onSceneChange, onBack }) => {
   };
   return (
     <Entity>
-      <SkyEntity src='#Bay3' setRotation='0 90 0' />
+      <SkyEntity src="#Bay3" setRotation="0 90 0" />
 
       {/*  Back button */}
 
-      <BackButton onBack={onBack} setPosition="1 0.5 -2" setRotation='0 0 90'/>
+      <NavigationButton onBack={onBack} setPosition="0 0.5 2" setRotation="-90 0 -110" />
 
-      <BackButton onBack={handleNavigation} setPosition="1 1 -2" setRotation='0 0 -90'/>
+<NavigationButton onBack={handleNavigation} setPosition="0 0.5 -1.25" setRotation="-90 0 70" />
+{children}
     </Entity>
-  )
-}
+  );
+};
 
-export default SceneBayThree
+export default SceneBayThree;

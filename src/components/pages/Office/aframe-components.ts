@@ -32,9 +32,9 @@ AFRAME.registerComponent('make-visible', {
 AFRAME.registerComponent('move-and-rotate', {
   schema: {
     defaultPosition: {type: 'vec3', default: {x: -4, y: -1, z: -4}},
-    defaultRotation: {type: 'vec3', default: {x: 0, y: 0, z: -90}},
-    targetPosition: {type: 'vec3', default: {x: -4, y: .75, z: -4}},
-    targetRotation: {type: 'vec3', default: {x: 0, y: 0, z: 90}}
+    defaultRotation: {type: 'vec3', default: {x: 0, y: 0, z: 0}},
+    targetPosition: {type: 'vec3', default: {x: -4.75, y: 1.75, z: -4}},
+    targetRotation: {type: 'vec3', default: {x: 0, y: 0, z: 180}}
   },
   
   init: function() {

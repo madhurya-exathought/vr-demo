@@ -9,8 +9,8 @@ export type SceneType =
   | 'sceneBathroom'
   | 'sceneGarden'
   | 'sceneInWorks'
-  | 'sceneEntraceOutside'
-  | 'sceneEntraceInside'
+  | 'sceneEntranceOutside'
+  | 'sceneEntranceInside'
   |'sceneBay1'
     |'sceneBay2'
       |'sceneBay3'
@@ -22,9 +22,16 @@ export type SceneType =
       |'sceneInsidePathway'
       | 'sceneMeetingRoomAtEntrance'
 
-export type SceneTwoThreeProps = {
+export type ScenesProps = {
   onSceneChange: () => void;
   onBack: () => void;
+  children?: React.ReactNode;
+};
+
+export type SceneNavProps = {
+  onSceneChange: (nextScene: SceneType) => void;
+  onBack: () => void;
+  children?: React.ReactNode;
 };
 
 export type SceneSpacesProps = {
@@ -41,4 +48,12 @@ export type ImageEntityProps = {
 export type SkyEntityProps={
   src:string;
   setRotation?:string;
+}
+
+
+export interface NavigationButtonProps {
+  onBack: () => void;
+  setPosition :string;
+  setRotation?:string;
+  events?:object;
 }
