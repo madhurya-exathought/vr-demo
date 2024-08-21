@@ -6,7 +6,7 @@ import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
 
 
-const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
+const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange,children, onBack }) => {
   console.log('SceneBayThree rendered');
   const handleNavigation = () => {
     console.log('Button clicked in SceneBayThree');
@@ -18,9 +18,10 @@ const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
 
       {/*  Back button */}
 
-      <NavigationButton onBack={onBack} setPosition="1 0.5 -2" setRotation="0 0 90" />
+      <NavigationButton onBack={onBack} setPosition="0 0.5 2" setRotation="-90 0 -110" />
 
-      <NavigationButton onBack={handleNavigation} setPosition="1 1 -2" setRotation="0 0 -90" />
+<NavigationButton onBack={handleNavigation} setPosition="0 0.5 -1.25" setRotation="-90 0 70" />
+{children}
     </Entity>
   );
 };

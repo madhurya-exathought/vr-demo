@@ -9,8 +9,8 @@ export type SceneType =
   | 'sceneBathroom'
   | 'sceneGarden'
   | 'sceneInWorks'
-  | 'sceneEntraceOutside'
-  | 'sceneEntraceInside'
+  | 'sceneEntranceOutside'
+  | 'sceneEntranceInside'
   |'sceneBay1'
     |'sceneBay2'
       |'sceneBay3'
@@ -31,6 +31,7 @@ export type ScenesProps = {
 export type SceneNavProps = {
   onSceneChange: (nextScene: SceneType) => void;
   onBack: () => void;
+  children?: React.ReactNode;
 };
 
 export type SceneSpacesProps = {

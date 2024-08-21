@@ -2,11 +2,10 @@ import React from 'react';
 import { Entity } from 'aframe-react';
 import {NavigationButton} from './NavigationButton';
 import SkyEntity from './SkyEntity';
+import { SceneSpacesProps } from './scenetype.type';
 
-type SceneProps = {
-  onBack: () => void;
-};
-const SceneMeetingRoomRight: React.FC<SceneProps> = ({ onBack }) => {
+
+const SceneMeetingRoomRight: React.FC<SceneSpacesProps> = ({ children,onBack }) => {
   console.log('SceneMeetingRoomRight rendered');
 
   return (
@@ -15,7 +14,8 @@ const SceneMeetingRoomRight: React.FC<SceneProps> = ({ onBack }) => {
 
       {/*  Back button */}
 
-      <NavigationButton onBack={onBack} setPosition="1 1 -2" setRotation="0 0 90" />
+      <NavigationButton onBack={onBack} setPosition="-0.5 0.05 0.5" setRotation="-90 0 -140" />
+      {children}
     </Entity>
   );
 };

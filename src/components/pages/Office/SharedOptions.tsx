@@ -6,36 +6,38 @@ import SharedEntity from './SharedEntity';
 
 
 interface SharedOptionsProps {
-  onSceneChange: (nextScene:SceneType) => void;
+  onSceneChange: (nextScene:SceneType ) => void;
 }
+
+type SceneOption = {
+  image: string;
+  position: string;
+  text: string;
+  next: SceneType;
+};
+
+
+
+const SceneOptions:SceneOption[] = [
+  { image: '#OfficeEntrance', position: '-6 1 0.01',text:'Office Entrance',next:'sceneEntranceOutside'},
+  { image: '#FloorView1', position: '-3.5 1 0.01',text:'Floor View 1',next:'sceneEntranceInside'},
+  { image: '#FloorView2', position: '-1 1 0.01',text:'Floor View 2',next:'sceneInsidePathway'},
+  { image: '#cabin1', position: '1.5 1 0.01' ,text:'Cabin 1',next:'sceneMeetingRoomAtEntrance'},
+  { image: '#FloorView3', position: '4 1 0.01',text:'Floor View 3',next:'sceneBay1'},
+  { image: '#Bengaluru', position: '6.5 1 0.01' ,text:'Another View',next:'sceneBay2'},
+
+  { image: '#FloorView4', position:'-6 -1 0.01',text:'Floor View 4',next:'sceneBay3'},
+  { image: '#FloorView5', position: '-3.5 -1 0.01' ,text:'Floor View 5',next:'sceneEntrance2Rooms'},
+  { image: '#cabin2', position: '-1 -1 0.01' ,text:'Cabin 2',next:'sceneMeetingRoomLeft'},
+  { image: '#cabin3', position: '1.5 -1 0.01' ,text:'Cabin 3',next:'sceneMeetingRoomRight'},
+  { image: '#ConferenceRoom', position: '4 -1 0.01' ,text:'Conference Room',next:'sceneMeetingRoomBig1'},
+  { image: '#Mumbai', position: '6.5 -1 0.01' ,text:'Yet Another View',next:'sceneMeetingRoomBig2'},
+ 
+];
 
 
 const SharedOptions: React.FC<SharedOptionsProps> = ({ onSceneChange }) => {
-/*   const handleImageClickSceneGarden = () => {
-    console.log('Image clicked in Garden');
-    onSceneChange('sceneGarden');
-  };
 
-  const handleImageClickSceneLivingRoom = () => {
-    console.log('Image clicked in LivingRoom');
-    onSceneChange('sceneLivingRoom');
-  };
-
-  const handleImageClickSceneBathroom = () => {
-    console.log('Image clicked in Bathroom');
-    onSceneChange('sceneBathroom');
-  };
-
-  const handleImageClickSceneBedroom1 = () => {
-    console.log('Image clicked in Bedroom1');
-    onSceneChange('sceneBedroom1');
-  };
-
-  const handleImageClickSceneBedroom2 = () => {
-    console.log('Image clicked in Bedroom2');
-    onSceneChange('sceneBedroom2');
-  };
- */
   return (
     <Entity>
       {/* arrow */}
@@ -62,7 +64,15 @@ const SharedOptions: React.FC<SharedOptionsProps> = ({ onSceneChange }) => {
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
       >
 
-        <SharedEntity image='#OfficeEntrance' setPosition='-6 1 0.01' textValue='Office Entrance' onSceneChange={onSceneChange} nextScene='sceneEntraceOutside' />
+
+          {/*  image1 */}
+
+          {SceneOptions.map((image, index) => (
+          <SharedEntity key={index} image={image.image} setPosition={image.position} onSceneChange={onSceneChange}
+          textValue={image.text} nextScene={image.next} />
+        ))}
+
+      {/*   <SharedEntity image='#OfficeEntrance' setPosition='-6 1 0.01' textValue='Office Entrance' onSceneChange={onSceneChange} nextScene='sceneEntraceOutside' />
         
         <SharedEntity image='#FloorView1' setPosition='-3.5 1 0.01' textValue='Floor View 1' onSceneChange={onSceneChange} nextScene='sceneEntraceInside' />
         
@@ -72,7 +82,7 @@ const SharedOptions: React.FC<SharedOptionsProps> = ({ onSceneChange }) => {
         
         <SharedEntity image='#FloorView3' setPosition='4 1 0.01' textValue='Floor View 3' onSceneChange={onSceneChange} nextScene='sceneBay1' />
         
-        <SharedEntity image='#imagelivingroom' setPosition='6.5 1 0.01' textValue='Living Room' onSceneChange={onSceneChange} nextScene='sceneBay2' />
+        <SharedEntity image='#Bengaluru' setPosition='6.5 1 0.01' textValue='Another floor' onSceneChange={onSceneChange} nextScene='sceneBay2' />
         
 
 
@@ -88,11 +98,11 @@ const SharedOptions: React.FC<SharedOptionsProps> = ({ onSceneChange }) => {
         
         <SharedEntity image='#ConferenceRoom' setPosition='4 -1 0.01' textValue='Conference Room' onSceneChange={onSceneChange} nextScene='sceneMeetingRoomBig1' />
         
-        <SharedEntity image='#imagelivingroom' setPosition='6.5 -1 0.01' textValue='Living Room' onSceneChange={onSceneChange} nextScene='sceneMeetingRoomBig2' />
+        <SharedEntity image='#Mumbai' setPosition='6.5 -1 0.01' textValue='Another floor' onSceneChange={onSceneChange} nextScene='sceneMeetingRoomBig2' />
         
         
         
-        
+         */}
         
         
        

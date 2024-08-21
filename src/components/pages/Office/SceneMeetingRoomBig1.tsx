@@ -20,9 +20,9 @@ const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({ onSceneChange, onBack }) 
 
       {/*  Back button */}
 
-      <NavigationButton onBack={onBack} setPosition="-2 3 -3" />
+      <NavigationButton onBack={onBack} setPosition="-1 0.05 1" setRotation="-90 0 -140" />
 
-      <NavigationButton setPosition="1 1 -2" onBack={handleNavigation} />
+      <NavigationButton setPosition="0 0.05 -1" onBack={handleNavigation} setRotation="-90 0 70"  />
     </Entity>
   );
 };

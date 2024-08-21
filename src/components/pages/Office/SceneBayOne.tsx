@@ -1,26 +1,55 @@
-import React from 'react';
-
+import React, { useState } from 'react';
+import RoomNameEntity from './RoomNameEntity';
 import { Entity } from 'aframe-react';
-import {NavigationButton} from './NavigationButton';
+import { NavigationButton } from './NavigationButton';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
 
+const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
+  const [forwardNameTag, setForwardNameTag] = useState(false);
+  const [backwardNameTag, setBackwardNameTag] = useState(false);
 
-const SceneBayOne: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   console.log('SceneBayOne rendered');
+
   const handleNavigation = () => {
     console.log('Button clicked in SceneBayOne');
     onSceneChange();
   };
+
   return (
     <Entity>
       <SkyEntity src="#Bay1" setRotation="0 110 0" />
 
       {/*  Back button */}
+      <Entity>
+        <NavigationButton
+          onBack={onBack}
+          setPosition="1 0.5 2"
+          setRotation="-90 0 -110"
+          events={{
+            mouseenter: () => setBackwardNameTag(true),
+            mouseleave: () => setBackwardNameTag(false),
+          }}
+        />
+        {backwardNameTag && <RoomNameEntity setPosition="1 0.5 2.75" text="Towards Entrance" width="3" rotation='0 180 0'/>}
+      </Entity>
 
-      <NavigationButton onBack={onBack} setPosition="1 0.5 -2" setRotation="0 0 90" />
+      {/*  Forward Button */}
+      <Entity>
+        <NavigationButton
+          onBack={handleNavigation}
+          setPosition="0 0.5 -1.25"
+          setRotation="-90 0 70"
+          events={{
+            mouseenter: () => setForwardNameTag(true),
+            mouseleave: () => setForwardNameTag(false),
+          }}
+        />
 
-      <NavigationButton onBack={handleNavigation} setPosition="1 1 -2" setRotation="0 0 -90" />
+        {forwardNameTag && <RoomNameEntity setPosition="0 0.5 -2" text="Towards Bay 2" width="2" />}
+      </Entity>
+
+      {children}
     </Entity>
   );
 };

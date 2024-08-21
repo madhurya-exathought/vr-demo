@@ -20,9 +20,9 @@ const SceneInsidePathway: React.FC<ScenesProps> = ({ onSceneChange, onBack }) =>
 
       {/*  Back button */}
 
-      <NavigationButton onBack={onBack} setPosition="0 0.5 -2" setRotation="0 0 90" />
+      <NavigationButton onBack={onBack} setPosition="0 0.05 1" setRotation="-90 0 -120" />
 
-      <NavigationButton onBack={handleNavigation} setPosition="0 1 -2" setRotation="0 0 -90" />
+      <NavigationButton onBack={handleNavigation} setPosition="0.5 0.05 -2" setRotation="-90 0 70" />
     </Entity>
   );
 };

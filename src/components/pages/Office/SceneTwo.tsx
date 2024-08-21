@@ -9,9 +9,9 @@ import { THREE } from 'aframe';
 
 
 const imagesSceneTwo = [
-  { src: '#Villa', position: '-1.5 0 0.01' },
-  { src: '#Apartment', position: '0 0 0.01' },
-  { src: '#Studio', position: '1.5 0 0.01' },
+  { src: '#Villa', position: '-0.75 0 0.01' },
+  { src: '#Apartment', position: '0.75 0 0.01' },
+  /* { src: '#Studio', position: '1.5 0 0.01' }, */
 ];
 
 const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
@@ -27,7 +27,7 @@ const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
       <SkyEntity src="#sky1" />
 
       <Entity
-        geometry={{ primitive: 'plane', width: 5, height: 2 }}
+        geometry={{ primitive: 'plane', width: 3, height: 2 }}
         material={{ color: 'beige', opacity: 1 }}
         position="0 2 -6"
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
