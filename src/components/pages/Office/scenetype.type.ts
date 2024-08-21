@@ -52,7 +52,7 @@ export type SkyEntityProps={
 
 
 export interface NavigationButtonProps {
-  onBack: () => void;
+  onBack?: () => void;
   setPosition :string;
   setRotation?:string;
   events?:object;
