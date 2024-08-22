@@ -4,6 +4,7 @@ import { NavigationButton, NavigationButton2 } from './NavigationButton';
 import NameTagEntity from './NameTagEntity';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
+import HotspotEntity from './HotspotEntity';
 
 const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
   console.log('EntranceOutside rendered');
@@ -36,6 +37,8 @@ const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, 
       </Entity>
 
       {children}
+
+      <HotspotEntity visible={false} hotspotPosition='0.5 3 -2.5' boxPosition="3.5 3 -5" />
     </Entity>
   );
 };

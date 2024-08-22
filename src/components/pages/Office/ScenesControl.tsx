@@ -30,7 +30,7 @@ const ScenesControl = () => {
 
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneEntrance2Rooms');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneThree');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
@@ -95,40 +95,42 @@ const ScenesControl = () => {
 
 
 
-  <Entity primitive="a-img" id="Bengaluru" src={require('../../../assets/images/sceneOne/Bengaluru.jpg')} alt="image1" />
-  <Entity primitive="a-img" id="Chennai" src={require('../../../assets/images/sceneOne/Chennai.jpg')} alt="image2" />
-  <Entity primitive="a-img" id="Mumbai" src={require('../../../assets/images/sceneOne/Mumbai.jpg')} alt="image3" />
-  <Entity primitive="a-img" id="Hyderabad" src={require('../../../assets/images/sceneOne/Hyderabad.jpg')} alt="image4" />
-  <Entity primitive="a-img" id="NewDelhi" src={require('../../../assets/images/sceneOne/NewDelhi.jpg')} alt="image5" />
+  <Entity primitive="a-img" id="Bengaluru" src={require('../../../assets/images/sceneOne/Bengaluru.png')} alt="image1" />
+  <Entity primitive="a-img" id="Chennai" src={require('../../../assets/images/sceneOne/Chennai.png')} alt="image2" />
+  <Entity primitive="a-img" id="Mumbai" src={require('../../../assets/images/sceneOne/Mumbai.png')} alt="image3" />
+  <Entity primitive="a-img" id="Hyderabad" src={require('../../../assets/images/sceneOne/Hyderabad.png')} alt="image4" />
+  <Entity primitive="a-img" id="NewDelhi" src={require('../../../assets/images/sceneOne/NewDelhi.png')} alt="image5" />
 
-  <Entity primitive="a-img" id="Villa" src={require('../../../assets/images/sceneTwo/Villa.jpg')} alt="imageProperty" />
-  <Entity primitive="a-img" id="Apartment" src={require('../../../assets/images/sceneTwo/Apartment.jpg')} alt="imageProperty" />
-  <Entity primitive="a-img" id="Studio" src={require('../../../assets/images/sceneTwo/Studio.jpg')} alt="imageProperty" />
-
-  <Entity primitive="a-img" id="1BHK" src={require('../../../assets/images/sceneThree/1BHK.jpg')} alt="imageRooms" />
-  <Entity primitive="a-img" id="2BHK" src={require('../../../assets/images/sceneThree/2BHK.jpg')} alt="imageRooms" />
-  <Entity primitive="a-img" id="3BHK" src={require('../../../assets/images/sceneThree/3BHK.jpg')} alt="imageRooms" />
+  <Entity primitive="a-img" id="Villa" src={require('../../../assets/images/sceneTwo/Villa.png')} alt="imageProperty" />
+  <Entity primitive="a-img" id="Apartment" src={require('../../../assets/images/sceneTwo/Apartment.png')} alt="imageProperty" />
+  
+  <Entity primitive="a-img" id="1BHK" src={require('../../../assets/images/sceneThree/1BHK.png')} alt="imageRooms" />
+  <Entity primitive="a-img" id="2BHK" src={require('../../../assets/images/sceneThree/2BHK.png')} alt="imageRooms" />
+  <Entity primitive="a-img" id="3BHK" src={require('../../../assets/images/sceneThree/3BHK.png')} alt="imageRooms" />
 
   <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton" />
   <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/Group.png')} alt="backButton2" />
    <Entity primitive='a-img' id='upDown' src={require('../../../assets/images/icons/Main.png')} alt='updownIcon' />
+    <Entity primitive='a-img' id='hotspot' src={require('../../../assets/images/icons/Hotspot.png')} alt='hotspot' />
+    <Entity primitive='a-img' id='plane' src={require('../../../assets/images/icons/plane.png')} alt='plane' />
+    
 
-
+    <Entity primitive='a-img' id='my-image' src={require('../../../assets/images/icons/my-image.png')} alt='123' />
  
   <Entity primitive='a-img' id='officeEntry' src={OfficeEntry } /> 
 
 
 
-  <Entity primitive="a-img" id="cabin1" src={require('../../../assets/images/sceneSpaces/Cabin1.jpg')} alt="imagebathroom" />
-  <Entity primitive="a-img" id="cabin2" src={require('../../../assets/images/sceneSpaces/Cabin2.jpg')} alt="imagebathroom" />
-  <Entity primitive="a-img" id="cabin3" src={require('../../../assets/images/sceneSpaces/Cabin3.jpg')} alt="imagebathroom" />
-  <Entity primitive="a-img" id="ConferenceRoom" src={require('../../../assets/images/sceneSpaces/ConferenceRoom.jpg')} alt="imagebathroom" />
-  <Entity primitive="a-img" id="FloorView1" src={require('../../../assets/images/sceneSpaces/FloorView1.jpg')} alt="imagebathroom" />
-  <Entity primitive="a-img" id="FloorView2" src={require('../../../assets/images/sceneSpaces/FloorView2.jpg')} alt="imagebathroom" />
-  <Entity primitive="a-img" id="FloorView3" src={require('../../../assets/images/sceneSpaces/FloorView3.jpg')} alt="imagebathroom" />
-  <Entity primitive="a-img" id="FloorView4" src={require('../../../assets/images/sceneSpaces/FloorView4.jpg')} alt="imagebathroom" />
-  <Entity primitive="a-img" id="FloorView5" src={require('../../../assets/images/sceneSpaces/FloorView5.jpg')} alt="imagebathroom" />
-  <Entity primitive="a-img" id="OfficeEntrance" src={require('../../../assets/images/sceneSpaces/OfficeEntrance.jpg')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="cabin1" src={require('../../../assets/images/sceneSpaces/Cabin1.png')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="cabin2" src={require('../../../assets/images/sceneSpaces/Cabin2.png')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="cabin3" src={require('../../../assets/images/sceneSpaces/Cabin3.png')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="ConferenceRoom" src={require('../../../assets/images/sceneSpaces/ConferenceRoom.png')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView1" src={require('../../../assets/images/sceneSpaces/FloorView1.png')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView2" src={require('../../../assets/images/sceneSpaces/FloorView2.png')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView3" src={require('../../../assets/images/sceneSpaces/FloorView3.png')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView4" src={require('../../../assets/images/sceneSpaces/FloorView4.png')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="FloorView5" src={require('../../../assets/images/sceneSpaces/FloorView5.png')} alt="imagebathroom" />
+  <Entity primitive="a-img" id="OfficeEntrance" src={require('../../../assets/images/sceneSpaces/OfficeEntrance.png')} alt="imagebathroom" />
  
 
  

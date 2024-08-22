@@ -10,11 +10,11 @@ type SceneOneProps = {
 };
 
 const imagesSceneOne = [
-  { src: '#Bengaluru', position: '-3 0 0.01' },
-  { src: '#Chennai', position: '-1.5 0 0.01' },
-  { src: '#Mumbai', position: '0 0 0.01' },
-  { src: '#Hyderabad', position: '1.5 0 0.01' },
-  { src: '#NewDelhi', position: '3 0 0.01' },
+  { src: '#Bengaluru', position: '-3 0 0.01' ,text:'Bengaluru'},
+  { src: '#Chennai', position: '-1.5 0 0.01' ,text:'Chennai'},
+  { src: '#Mumbai', position: '0 0 0.01' ,text:'Mumbai'},
+  { src: '#Hyderabad', position: '1.5 0 0.01' ,text:'Hyderabad'},
+  { src: '#NewDelhi', position: '3 0 0.01' ,text:'NewDelhi'},
 ];
 
 const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
@@ -31,20 +31,37 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
 
       <Entity
         geometry={{ primitive: 'plane', width: 8, height: 2 }}
-        material={{ color: 'beige', opacity: 0.8 }}
+        material={{src:'#plane', color: 'black', opacity: 0.9 }}
         position="0 2 -6"
         rotation="0 0 0"
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
         
       >
-        <Entity primitive="a-text" value="Select City" color="black" align="center" position="0 0.8 0.01" width="4" />
+        <Entity primitive="a-text" value="Select City" color="white" align="left" position="-3.5 0.8 0.01" width="4" />
 
         {/*  image1 */}
 
         {imagesSceneOne.map((image, index) => (
-          <ImageEntity key={index} src={image.src} position={image.position} handleClick={handleImageClickSceneOne} />
+          <ImageEntity key={index} src={image.src} position={image.position} handleClick={handleImageClickSceneOne} imageText={image.text} />
         ))}
       </Entity>
+
+     {/*  <Entity
+        geometry={{ primitive: 'plane', width: 8, height: 2 }}
+        material={{src:'#plane', color: 'grey', opacity: 0.8 }}
+        position="0 0 -6"
+        rotation="0 0 0"
+        animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
+        
+      >
+        <Entity primitive="a-text" value="Select City" color="white" align="left" position="-3.5 0.8 0.01" width="4" />
+</Entity> */}
+
+{/* 
+
+      <a-curvedimage src="#my-image" height="2.0" radius="5" theta-length="120"   position="0 0 0"
+                 rotation="0 100 0" scale="0.8 0.8 0.8"></a-curvedimage>
+ */}
 
 
       

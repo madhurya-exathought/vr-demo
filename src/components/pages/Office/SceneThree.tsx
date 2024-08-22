@@ -7,9 +7,9 @@ import ImageEntity from './ImageEntity';
 import SkyEntity from './SkyEntity';
 
 const imagesSceneThree = [
-  { src: '#1BHK', position: '-1.5 0 0.01' },
-  { src: '#2BHK', position: '0 0 0.01' },
-  { src: '#3BHK', position: '1.5 0 0.01' },
+  { src: '#1BHK', position: '-1.5 0 0.01' ,text:'1 Floor'},
+  { src: '#2BHK', position: '0 0 0.01' ,text:'2 Floors'},
+  { src: '#3BHK', position: '1.5 0 0.01',text:'3 Floors' },
 ];
 
 const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
@@ -26,12 +26,12 @@ const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
 
       <Entity
         geometry={{ primitive: 'plane', width: 5, height: 2 }}
-        material={{ color: 'beige', opacity: 1 }}
+        material={{src:'#plane', color: 'black', opacity: 0.9 }}
         position="0 2 -6"
         rotation="0 0 0"
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
       >
-        <Entity primitive="a-text" value="Select Number of Floors" color="black" align="center" position="0 0.8 0.01" width="4" />
+        <Entity primitive="a-text" value="Select Number of Floors" color="white" align="center" position="0 0.8 0.01" width="4" />
 
         {/*  Back button */}
 
@@ -40,7 +40,8 @@ const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
         {/* Images */}
 
         {imagesSceneThree.map((image, index) => (
-          <ImageEntity key={index} src={image.src} position={image.position} handleClick={handleImageClickSceneThree} />
+          <ImageEntity key={index} src={image.src} position={image.position} handleClick={handleImageClickSceneThree} imageText={image.text}/>
+          
         ))}
       </Entity>
     </Entity>

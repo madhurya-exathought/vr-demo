@@ -4,10 +4,13 @@ import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
+import HotspotEntity from './HotspotEntity';
 
 const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
+
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setBackwardNameTag] = useState(false);
+
 
   console.log('SceneBayOne rendered');
 
@@ -38,7 +41,7 @@ const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack })
       <Entity>
         <NavigationButton
           onBack={handleNavigation}
-          setPosition="0 0.5 -1.25"
+          setPosition="0 0.05 -1.25"
           setRotation="-90 0 70"
           events={{
             mouseenter: () => setForwardNameTag(true),
@@ -50,6 +53,8 @@ const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack })
       </Entity>
 
       {children}
+
+      <HotspotEntity visible={false} hotspotPosition='0 3 -2.5' boxPosition="3.5 3 -5" />
     </Entity>
   );
 };

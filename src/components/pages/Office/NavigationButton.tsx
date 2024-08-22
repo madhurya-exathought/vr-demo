@@ -44,7 +44,7 @@ const NavigationButton2: React.FC<NavigationButtonProps> = ({ onBack,setPosition
   return (
     <Entity
       geometry={{ primitive: 'plane', width: 0.2, height: 0.2 }}
-      material={{ src: '#backButton', color: 'light grey', opacity: 0.99 }}
+      material={{ src: '#backButton', color: ' grey', opacity: 0.99 }}
       position={setPosition}/* "-3 4 -3" */
       className="clickable "
       rotation={setRotation}

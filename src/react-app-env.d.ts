@@ -20,7 +20,9 @@ declare namespace JSX {
     'a-ring': any;
     'a-text': any;
     'a-asset-item':any
-    'a-light':any
+    'a-light':any;
+    'a-curvedimage':any
+
     // Add more A-Frame elements as needed
   }
 }
@@ -42,6 +44,7 @@ declare module 'aframe-react' {
     rotation?: string;
     scale?: string;
     events?: any;
+    
     [propName: string]: any;
   }
 

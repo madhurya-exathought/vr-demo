@@ -4,6 +4,7 @@ import { NavigationButton } from './NavigationButton';
 import SkyEntity from './SkyEntity';
 import { SceneSpacesProps } from './scenetype.type';
 import NameTagEntity from './NameTagEntity';
+import HotspotEntity from './HotspotEntity';
 
 const SceneMeetingRoomRight: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
   console.log('SceneMeetingRoomRight rendered');
@@ -27,6 +28,8 @@ const SceneMeetingRoomRight: React.FC<SceneSpacesProps> = ({ children, onBack })
       />
       {NameTag && <NameTagEntity text="Towards Hallway" width="2" setPosition="-0.75 0.5 1 " rotation="0 150 0" />}
       {children}
+
+      <HotspotEntity visible={false} hotspotPosition='0 3 -2.5' boxPosition="3.5 3 -5" />
     </Entity>
   );
 };

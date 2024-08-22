@@ -9,9 +9,9 @@ import { THREE } from 'aframe';
 
 
 const imagesSceneTwo = [
-  { src: '#Villa', position: '-0.75 0 0.01' },
-  { src: '#Apartment', position: '0.75 0 0.01' },
-  /* { src: '#Studio', position: '1.5 0 0.01' }, */
+  { src: '#Villa', position: '-0.75 0 0.01' ,text:'Residential'},
+  { src: '#Apartment', position: '0.75 0 0.01' ,text:'Commercial'},
+ 
 ];
 
 const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
@@ -28,7 +28,7 @@ const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
 
       <Entity
         geometry={{ primitive: 'plane', width: 3, height: 2 }}
-        material={{ color: 'beige', opacity: 1 }}
+        material={{src:'#plane', color: 'black', opacity: 0.9 }}
         position="0 2 -6"
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
       >
@@ -55,7 +55,7 @@ const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   }}
 > */}
 
-        <Entity primitive="a-text" value="Select Property" color="black" align="center" position="0 0.8 0.01" width="4" />
+        <Entity primitive="a-text" value="Select Property" color="white" align="center" position="0 0.8 0.01" width="4" />
 
         {/*  Back button */}
 
@@ -64,7 +64,7 @@ const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
         {/* Images */}
 
         {imagesSceneTwo.map((image, index) => (
-          <ImageEntity key={index} src={image.src} position={image.position} handleClick={handleImageClickSceneTwo} />
+          <ImageEntity key={index} src={image.src} position={image.position} handleClick={handleImageClickSceneTwo} imageText={image.text}/>
         ))}
       </Entity>
     </Entity>

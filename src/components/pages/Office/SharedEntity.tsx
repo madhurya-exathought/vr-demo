@@ -5,17 +5,28 @@ import { SceneType } from './scenetype.type';
 interface SharedEntityProps {
   image: string;
   setPosition: string;
- 
   textValue: string;
-    onSceneChange: (nextScene: SceneType) => void;
-    nextScene:SceneType
+  onSceneChange: (nextScene: SceneType) => void;
+  nextScene: SceneType;
+  isSelectionPlaneVisible:  boolean;
 }
 
-const SharedEntity: React.FC<SharedEntityProps> = ({ image, setPosition,  textValue,onSceneChange, nextScene }) => {
-
+const SharedEntity: React.FC<SharedEntityProps> = ({
+  image,
+  setPosition,
+  textValue,
+  onSceneChange,
+  nextScene,
+  isSelectionPlaneVisible,
+}) => {
   const NavigationHandler = () => {
-    console.log('Image clicked in ',textValue);
-    onSceneChange(nextScene);
+
+    console.log(isSelectionPlaneVisible)
+  
+ 
+      console.log('Image clicked in ', textValue);
+      onSceneChange(nextScene);
+    
   };
 
   return (
