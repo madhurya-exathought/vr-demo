@@ -5,6 +5,7 @@ import { NavigationButton } from './NavigationButton';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
 import NameTagEntity from './NameTagEntity';
+import HotspotEntity from './HotspotEntity';
 
 const SceneBayTwo: React.FC<ScenesProps> = ({ onSceneChange, children, onBack }) => {
   console.log('SceneBayThree rendered');
@@ -50,6 +51,8 @@ const SceneBayTwo: React.FC<ScenesProps> = ({ onSceneChange, children, onBack })
       </Entity>
 
       {children}
+
+      <HotspotEntity visible={false} hotspotPosition='0 3 -2.5' boxPosition="3.5 3 -5" />
     </Entity>
   );
 };

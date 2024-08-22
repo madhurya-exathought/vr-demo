@@ -26,9 +26,10 @@ const SceneMeetingRoomAtEntrance: React.FC<SceneSpacesProps> = ({ children, onBa
           mouseleave: () => setNameTag(false),
         }}
       />
-      {NameTag && <NameTagEntity text="Towards Foyer" width="2" setPosition="-1.7 0.5 -2.5 " />}
+      {NameTag && <NameTagEntity text="Towards Hallway 1" width="2" setPosition="-1.7 0.5 -2.5 " />}
 
       {children}
+      
     </Entity>
   );
 };

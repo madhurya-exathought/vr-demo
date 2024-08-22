@@ -43,6 +43,7 @@ export type ImageEntityProps = {
   src: string;
   position: string;
   handleClick: () => void;
+  imageText?:string;
 };
 
 export type SkyEntityProps={

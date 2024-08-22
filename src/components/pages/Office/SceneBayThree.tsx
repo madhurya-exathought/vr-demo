@@ -4,6 +4,7 @@ import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
+import HotspotEntity from './HotspotEntity';
 
 const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange, children, onBack }) => {
   console.log('SceneBayThree rendered');
@@ -49,6 +50,8 @@ const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange, children, onBack 
       </Entity>
 
       {children}
+
+      <HotspotEntity visible={false} hotspotPosition='0 3 -2.5' boxPosition="3.5 3 -5" />
     </Entity>
   );
 };

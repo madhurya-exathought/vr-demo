@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import HotspotEntity from './HotspotEntity';
 import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
 import NameTagEntity from './NameTagEntity';
@@ -34,6 +34,7 @@ const SceneMeetingRoomBig2: React.FC<SceneNavProps> = ({ children, onSceneChange
       />
       {NameTag && <NameTagEntity text="Towards Hallway" width="3" setPosition="0 1 -2.75 " />}
       {children}
+      <HotspotEntity visible={false} hotspotPosition='0 3 -2.5' boxPosition="3.5 3 -5" />
     </Entity>
   );
 };
