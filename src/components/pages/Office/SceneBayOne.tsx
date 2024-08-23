@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import NameTagEntity from './NameTagEntity';
+import TextEntity from './TextEntity';
 import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
 import SkyEntity from './SkyEntity';
@@ -34,7 +34,7 @@ const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack })
             mouseleave: () => setBackwardNameTag(false),
           }}
         />
-        {backwardNameTag && <NameTagEntity setPosition="1 0.5 2.75" text="Towards Foyer" width="3" rotation="0 180 0" />}
+        {backwardNameTag && <TextEntity setPosition="1 0.5 2.75" text="Towards Foyer" width="3" rotation="0 180 0" />}
       </Entity>
 
       {/*  Forward Button */}
@@ -49,7 +49,7 @@ const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack })
           }}
         />
 
-        {forwardNameTag && <NameTagEntity setPosition="0 0.5 -2" text="Towards Bay 2" width="2" />}
+        {forwardNameTag && <TextEntity setPosition="0 0.5 -2" text="Towards Bay 2" width="2" />}
       </Entity>
 
       {children}

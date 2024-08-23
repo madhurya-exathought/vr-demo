@@ -10,7 +10,7 @@ import SceneEntranceOutside from './SceneEntranceOutside';
 import SceneEntranceInside from './SceneEntranceInside';
 import SharedOptions from './SharedOptions';
 import { SceneType } from './scenetype.type';
-import OfficeEntry from '../../../assets/images/sky/officeEntry1.jpg'
+
 import SceneBayOne from './SceneBayOne';
 import SceneBayTwo from './SceneBayTwo';
 import SceneBayThree from './SceneBayThree';
@@ -30,7 +30,7 @@ const ScenesControl = () => {
 
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneThree');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
@@ -113,11 +113,10 @@ const ScenesControl = () => {
    <Entity primitive='a-img' id='upDown' src={require('../../../assets/images/icons/Main.png')} alt='updownIcon' />
     <Entity primitive='a-img' id='hotspot' src={require('../../../assets/images/icons/Hotspot.png')} alt='hotspot' />
     <Entity primitive='a-img' id='plane' src={require('../../../assets/images/icons/plane.png')} alt='plane' />
+    <Entity primitive='a-img' id='box' src={require('../../../assets/images/icons/descriptionBox.png')} alt='box' />
     
 
     <Entity primitive='a-img' id='my-image' src={require('../../../assets/images/icons/my-image.png')} alt='123' />
- 
-  <Entity primitive='a-img' id='officeEntry' src={OfficeEntry } /> 
 
 
 
@@ -133,11 +132,13 @@ const ScenesControl = () => {
   <Entity primitive="a-img" id="OfficeEntrance" src={require('../../../assets/images/sceneSpaces/OfficeEntrance.png')} alt="imagebathroom" />
  
 
- 
+{/*  
   <Entity primitive="a-mixin" id="ring" geometry="primitive: ring; width: 1.5; height: 1.5" material="color: beige; shader: flat" 
     animation__scale="property: scale; to: 1.7 1.7 1.7; dur: 200; startEvents: mouseenter" 
-    animation__scale_reverse="property: scale; to: 1.3 1.3 1.3; dur: 200; startEvents: mouseleave" />
+    animation__scale_reverse="property: scale; to: 1.3 1.3 1.3; dur: 200; startEvents: mouseleave" /> */}
 </Entity>
+
+<VRSetup />
 
 
         {currentScene === 'sceneOne' && <SceneOne onSceneChange={() => handleSceneChange('sceneTwo')} />}
@@ -227,7 +228,7 @@ const ScenesControl = () => {
 
 
 
-        <VRSetup />
+       
       </Scene>
     </>
   );

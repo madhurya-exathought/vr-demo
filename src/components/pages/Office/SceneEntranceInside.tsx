@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
-import NameTagEntity from './NameTagEntity';
+import NameTagEntity from './TextEntity';
 import SkyEntity from './SkyEntity';
-
+import HotspotEntity from './HotspotEntity';
 import { SceneNavProps } from './scenetype.type';
 
 const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {
@@ -11,7 +11,7 @@ const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setbackwardNameTag] = useState(false);
-  const [sideNameTag, setsideNameTag] = useState(false);
+  const [sideNameTag, setsideNameTag] = useState(true);
 
   const handleNavigation = () => {
     console.log('Button clicked in EntranceInside');
@@ -31,45 +31,47 @@ const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange,
       <Entity>
         <NavigationButton
           onBack={onBack}
-          setPosition="0 0.5 1.25"
-          setRotation="-90 0 -120"
+          setPosition="1 0.5 2"
+          setRotation="-90 0 -110"
           events={{
             mouseenter: () => setbackwardNameTag(true),
             mouseleave: () => setbackwardNameTag(false),
           }}
         />
-        {backwardNameTag && <NameTagEntity width="3" text="Towards Exit" setPosition="0 0.5 1.75" rotation="0 180 0" />}
+        {backwardNameTag && <NameTagEntity width="3" text="Towards Exit" setPosition="1 0.5 2.75" rotation="0 180 0" />}
       </Entity>
 
       {/*  Forward Button */}
       <Entity>
         <NavigationButton
           onBack={handleNavigation}
-          setPosition="0 1 -2"
-          setRotation="-90 0 90"
+          setPosition="0 0.05 -1.25"
+          setRotation="-90 0 70"
           events={{
             mouseenter: () => setForwardNameTag(true),
             mouseleave: () => setForwardNameTag(false),
           }}
         />
-        {forwardNameTag && <NameTagEntity width="3" text="Towards Bay 1" setPosition="-0.5 1 -2.75" />}
+        {forwardNameTag && <NameTagEntity width="3" text="Towards Bay 1" setPosition="0 0.5 -2" />}
       </Entity>
 
       {/* Side Button*/}
       <Entity>
         <NavigationButton
           onBack={handleNavigation1}
-          setPosition="0.5 1 -1.2"
-          setRotation="-90 0 -60"
+          setPosition="0.5 0.5 -.5"
+          setRotation="-90 0 -30"
           events={{
             mouseenter: () => setsideNameTag(true),
             mouseleave: () => setsideNameTag(false),
           }}
         />
-        {sideNameTag && <NameTagEntity width="2" text="Towards Hallway 1" setPosition="1.5 1 -1.75" rotation="0 -90 0" />}
+        {sideNameTag && <NameTagEntity width="2" text="Towards Hallway 1" setPosition="1 0.5 -.75" rotation="0 -90 0" />}
       </Entity>
 
       {children}
+
+      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" />
     </Entity>
   );
 };

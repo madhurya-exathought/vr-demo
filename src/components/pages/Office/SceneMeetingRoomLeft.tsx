@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HotspotEntity from './HotspotEntity';
 import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
-import NameTagEntity from './NameTagEntity';
+import NameTagEntity from './TextEntity';
 import SkyEntity from './SkyEntity';
 import { SceneSpacesProps } from './scenetype.type';
 
@@ -29,7 +29,7 @@ const SceneMeetingRoomLeft: React.FC<SceneSpacesProps> = ({ children, onBack }) 
       {NameTag && <NameTagEntity text="Towards Hallway" width="2" setPosition="0.75 0.5 1 " rotation="0 220 0" />}
 
       {children}
-      <HotspotEntity visible={false} hotspotPosition='0 3 -2.5' boxPosition="3.5 3 -5" />
+      <HotspotEntity visible={false} hotspotPosition="0 3 -2.5" boxPosition="3.5 3 -5" />
     </Entity>
   );
 };

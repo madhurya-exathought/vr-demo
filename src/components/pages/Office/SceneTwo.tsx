@@ -27,7 +27,7 @@ const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
       <SkyEntity src="#sky1" />
 
       <Entity
-        geometry={{ primitive: 'plane', width: 3, height: 2 }}
+        geometry={{ primitive: 'plane', width: 3.2, height: 2 }}
         material={{src:'#plane', color: 'black', opacity: 0.9 }}
         position="0 2 -6"
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
@@ -55,11 +55,11 @@ const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   }}
 > */}
 
-        <Entity primitive="a-text" value="Select Property" color="white" align="center" position="0 0.8 0.01" width="4" />
+        <Entity primitive="a-text" value="Select Property" color="white" align="left" position="-1 0.8 0.01" width="4" />
 
         {/*  Back button */}
 
-        <NavigationButton2 onBack={onBack} setPosition="-1 0.8 0.01" />
+        <NavigationButton2 onBack={onBack} setPosition="-1.25 0.8 0.01" />
 
         {/* Images */}
 

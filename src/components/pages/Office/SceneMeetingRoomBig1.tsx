@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import HotspotEntity from './HotspotEntity';
 import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
-import NameTagEntity from './NameTagEntity';
+import NameTagEntity from './TextEntity';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
 
@@ -46,8 +46,7 @@ const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({ onSceneChange, onBack }) 
       />
 
       {forwardNameTag && <NameTagEntity setPosition="0 0 -1.25" text="Inside Conference Room" width="2" />}
-      <HotspotEntity visible={false} hotspotPosition='0 3 -2.5' boxPosition="3.5 3 -5" />
-    
+      <HotspotEntity visible={false} hotspotPosition="0 3 -2.5" boxPosition="3.5 3 -5" />
     </Entity>
   );
 };
