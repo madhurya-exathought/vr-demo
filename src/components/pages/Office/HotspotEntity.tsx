@@ -1,6 +1,7 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
 import './aframe-components';
+import TextEntity from './TextEntity';
 
 type hotspotType = {
   visible: boolean;
@@ -26,9 +27,13 @@ const HotspotEntity: React.FC<hotspotType> = ({ visible, hotspotPosition, rotati
         make-visible="target: #descriptionBox"
       />
 
-      <Entity id="descriptionBox" visible={false} position={boxPosition}>
-     {   <Entity primitive="a-plane" width="3" height="2" material="color: grey; opacity: 0.5" />}
-        <Entity primitive="a-text" value={RandomText} align="center" color="white" width="3" position="0 0 0.01" />
+      <Entity id="descriptionBox" visible={visible} position={boxPosition}>
+
+        <Entity 
+            geometry={{primitive:"plane" ,width:3 ,height:2}}
+             material={{src: '#box', color: 'grey', opacity: 0.5}} />
+     <TextEntity text={RandomText} width='3' setPosition='0 0 0.01' />
+    
       </Entity>
     </Entity>
   );

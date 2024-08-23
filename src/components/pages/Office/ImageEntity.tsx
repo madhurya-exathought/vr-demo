@@ -17,7 +17,7 @@ const ImageEntity: React.FC<ImageEntityProps> = ({ src, position, handleClick,im
     animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
   >
     
-    {imageText &&  <Entity primitive="a-text" value={imageText} color="white" align="center" position="0 0 0.01" width="4" />}
+    {imageText &&  <Entity primitive="a-text" value={imageText} color="white" align="center" position="0 0 0.01" width="3" />}
     </Entity>
 );
 

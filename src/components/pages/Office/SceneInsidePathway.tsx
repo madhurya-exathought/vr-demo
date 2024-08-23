@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
-import NameTagEntity from './NameTagEntity';
+import NameTagEntity from './TextEntity';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
+import HotspotEntity from './HotspotEntity';
 
-const SceneInsidePathway: React.FC<ScenesProps> = ({ children,onSceneChange, onBack }) => {
+const SceneInsidePathway: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
   console.log('SceneInsidePathway rendered');
 
   const [forwardNameTag, setForwardNameTag] = useState(false);
@@ -45,6 +46,8 @@ const SceneInsidePathway: React.FC<ScenesProps> = ({ children,onSceneChange, onB
       {forwardNameTag && <NameTagEntity text="Towards Cabin 1" setPosition="0.5 0 -2.5" width="2" />}
 
       {children}
+
+      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" />
     </Entity>
   );
 };

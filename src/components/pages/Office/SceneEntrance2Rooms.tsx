@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-
+import HotspotEntity from './HotspotEntity';
 import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
 
 import SkyEntity from './SkyEntity';
 import { SceneNavProps } from './scenetype.type';
-import NameTagEntity from './NameTagEntity';
+import NameTagEntity from './TextEntity';
 
 const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {
   console.log('SceneEntrance2Rooms rendered');
@@ -31,14 +31,14 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
   return (
     <Entity>
-      <SkyEntity src="#Entrance2Rooms" setRotation="0 0 0" />
+      <SkyEntity src="#Entrance2Rooms" setRotation="0 -30 0" />
 
       {/*  Back button */}
 
       <NavigationButton
         onBack={onBack}
-        setPosition="2 -1 -0.5"
-        setRotation="-90 0 -40"
+        setPosition="3 -2.5 1.5"
+        setRotation="-90 0 -60"
         events={{
           mouseenter: () => setBackwardNameTag(true),
           mouseleave: () => setBackwardNameTag(false),
@@ -50,7 +50,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       <NavigationButton
         setPosition="-0.5 -1 -2"
-        setRotation="-90 0 140"
+        setRotation="-90 0 80"
         events={{
           mouseenter: () => setForwardNameTag(true),
           mouseleave: () => setForwardNameTag(false),
@@ -73,7 +73,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       {/*  Left Button */}
       <NavigationButton
-        setPosition="0 0 1.5"
+        setPosition="0 0 2"
         setRotation="-90 0 -110"
         events={{
           click: handleNavigation3,
@@ -85,7 +85,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       {children}
 
-      
+      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" />
     </Entity>
   );
 };

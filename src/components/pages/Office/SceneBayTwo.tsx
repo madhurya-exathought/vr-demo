@@ -4,7 +4,7 @@ import { Entity } from 'aframe-react';
 import { NavigationButton } from './NavigationButton';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
-import NameTagEntity from './NameTagEntity';
+import NameTagEntity from './TextEntity';
 import HotspotEntity from './HotspotEntity';
 
 const SceneBayTwo: React.FC<ScenesProps> = ({ onSceneChange, children, onBack }) => {
@@ -52,7 +52,7 @@ const SceneBayTwo: React.FC<ScenesProps> = ({ onSceneChange, children, onBack })
 
       {children}
 
-      <HotspotEntity visible={false} hotspotPosition='0 3 -2.5' boxPosition="3.5 3 -5" />
+      <HotspotEntity visible={false} hotspotPosition="0 3 -2.5" boxPosition="3.5 3 -5" />
     </Entity>
   );
 };
