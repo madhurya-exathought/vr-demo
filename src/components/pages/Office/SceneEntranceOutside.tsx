@@ -5,6 +5,7 @@ import NameTagEntity from './TextEntity';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
 import HotspotEntity from './HotspotEntity';
+import { Entrance } from './HotspotText';
 
 const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
   console.log('EntranceOutside rendered');
@@ -17,7 +18,7 @@ const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, 
 
   return (
     <Entity>
-      <SkyEntity src="#skyEntranceOutside" />
+      <SkyEntity src="#skyEntranceOutside" setRotation='0 0 0'/>
 
       {/*  Back button */}
 
@@ -38,7 +39,7 @@ const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, 
 
       {children}
 
-      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" />
+      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" text={Entrance} />
     </Entity>
   );
 };

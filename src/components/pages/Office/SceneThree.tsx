@@ -5,11 +5,12 @@ import {NavigationButton2} from './NavigationButton';
 import { ScenesProps } from './scenetype.type';
 import ImageEntity from './ImageEntity';
 import SkyEntity from './SkyEntity';
+import TextEntity from './TextEntity';
 
 const imagesSceneThree = [
-  { src: '#1BHK', position: '-1.5 -0.5 0.01' ,text:'1 Floor'},
-  { src: '#2BHK', position: '0 -0.5 0.01' ,text:'2 Floors'},
-  { src: '#3BHK', position: '1.5 -0.5 0.01',text:'3 Floors' },
+  { src: '#1BHK', position: '-1.5 0 0.01' ,text:'1 Floor'},
+  { src: '#2BHK', position: '0 0 0.01' ,text:'2 Floors'},
+  { src: '#3BHK', position: '1.5 0 0.01',text:'3 Floors' },
 ];
 
 const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
@@ -22,17 +23,17 @@ const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
 
   return (
     <Entity>
-      <SkyEntity src="#sky1" />
+      <SkyEntity src="#sky1" setRotation='0 50 0 ' />
 
       <Entity
-        geometry={{ primitive: 'plane', width: 5.5, height: 2.27 }}
+        geometry={{ primitive: 'plane', width: 5, height: 2. }}
         material={{src:'#plane', color: 'black', opacity: 0.9 }}
         position="0 2 -6"
         rotation="0 0 0"
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
       >
-        <Entity primitive="a-text" value="Select Number of Floors" color="white" align="center" position="-0.75 0.8 0.01" width="4" />
-
+         <TextEntity setPosition='-0.75 0.8 0.01' text='Select Number of Floors"' color="#FEFEFE" align="center" width="4"/>
+       
         {/*  Back button */}
 
         <NavigationButton2 onBack={onBack} setPosition="-2 0.8 0.01" />

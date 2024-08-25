@@ -5,6 +5,7 @@ import { NavigationButton } from './NavigationButton';
 import { SceneSpacesProps } from './scenetype.type';
 import SkyEntity from './SkyEntity';
 import NameTagEntity from './TextEntity';
+import { Cabin1HotspotText } from './HotspotText';
 
 const SceneMeetingRoomAtEntrance: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
   console.log('MeetingRoomAtEntrance rendered');
@@ -30,7 +31,7 @@ const SceneMeetingRoomAtEntrance: React.FC<SceneSpacesProps> = ({ children, onBa
 
       {children}
 
-      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" />
+      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" height='1.5' width='3.25' text={Cabin1HotspotText} />
     </Entity>
   );
 };

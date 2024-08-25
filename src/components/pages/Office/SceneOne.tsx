@@ -4,6 +4,7 @@ import { Entity } from 'aframe-react';
 import ImageEntity from './ImageEntity';
 import './aframe-components';
 import SkyEntity from './SkyEntity';
+import TextEntity from './TextEntity';
 
 type SceneOneProps = {
   onSceneChange: () => void;
@@ -25,16 +26,22 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
 
   return (
     <Entity>
-      <SkyEntity src="#sky1" />
+      <SkyEntity src="#sky1" setRotation='0 50 0 ' />
 
       <Entity
         geometry={{ primitive: 'plane', width: 8, height: 2 }}
-        material={{ src: '#plane', color: 'black', opacity: 0.9 }}
+        material={{ src: '#plane'  ,  transparent: true,
+          opacity: 1,
+          color: '#000000',
+          shader: 'standard',
+          metalness: 1,
+          roughness: 1}}
         position="0 2 -6"
         rotation="0 0 0"
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
       >
-        <Entity primitive="a-text" value="Select City" color="#FEFEFE" align="left" position="-3.5 0.8 0.01" width="4" />
+
+        <TextEntity setPosition='-3.5 0.8 0.01' text='Select City' color="#FEFEFE" align="left" width="4"/>
 
         {/*  images */}
 

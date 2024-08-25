@@ -5,7 +5,7 @@ import {NavigationButton2} from './NavigationButton';
 import { ScenesProps } from './scenetype.type';
 import ImageEntity from './ImageEntity';
 import SkyEntity from './SkyEntity';
-import { THREE } from 'aframe';
+import TextEntity from './TextEntity';
 
 
 const imagesSceneTwo = [
@@ -24,7 +24,7 @@ const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
 
   return (
     <Entity>
-      <SkyEntity src="#sky1" />
+      <SkyEntity src="#sky1" setRotation='0 50 0 '  />
 
       <Entity
         geometry={{ primitive: 'plane', width: 3.2, height: 2 }}
@@ -54,9 +54,10 @@ const SceneTwo: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
     },
   }}
 > */}
+         <TextEntity setPosition='-1 0.8 0.01' text='Select Property' color="#FEFEFE" align="left" width="4"/>
 
-        <Entity primitive="a-text" value="Select Property" color="white" align="left" position="-1 0.8 0.01" width="4" />
-
+       {/*  <Entity primitive="a-text" value="Select Property" color="white" align="left" position="-1 0.8 0.01" width="4" />
+ */}
         {/*  Back button */}
 
         <NavigationButton2 onBack={onBack} setPosition="-1.25 0.8 0.01" />

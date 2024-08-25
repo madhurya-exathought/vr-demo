@@ -5,13 +5,14 @@ import NameTagEntity from './TextEntity';
 import SkyEntity from './SkyEntity';
 import HotspotEntity from './HotspotEntity';
 import { SceneNavProps } from './scenetype.type';
+import { FoyerHotspotText } from './HotspotText';
 
 const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {
   console.log('EntranceInside rendered');
 
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setbackwardNameTag] = useState(false);
-  const [sideNameTag, setsideNameTag] = useState(true);
+  const [sideNameTag, setsideNameTag] = useState(false);
 
   const handleNavigation = () => {
     console.log('Button clicked in EntranceInside');
@@ -71,7 +72,7 @@ const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       {children}
 
-      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" />
+      <HotspotEntity visible={false} hotspotPosition="-1 0 -6" boxPosition=" 1 0 -6.5"  text={FoyerHotspotText}/>
     </Entity>
   );
 };

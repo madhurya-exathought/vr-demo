@@ -44,48 +44,48 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
           mouseleave: () => setBackwardNameTag(false),
         }}
       />
-      {backwardNameTag && <NameTagEntity width="3" text="Towards Bay 3" setPosition="3.5 -2 -1" rotation="0 -90 0" />}
+      {backwardNameTag && <NameTagEntity width="3" text="Towards Bay 3" setPosition="3 -2 1.5" rotation="0 -120 0" />}
 
       {/*  Forward Button */}
 
       <NavigationButton
-        setPosition="-0.5 -1 -2"
-        setRotation="-90 0 80"
+        setPosition="0 0 -1"
+        setRotation="-90 0 110"
         events={{
           mouseenter: () => setForwardNameTag(true),
           mouseleave: () => setForwardNameTag(false),
           click: handleNavigation1,
         }}
       />
-      {forwardNameTag && <NameTagEntity width="3" text="Towards Conference Room" setPosition="-1 0 -2" rotation="0 90 0" />}
+      {forwardNameTag && <NameTagEntity width="3" text="Towards Conference Room" setPosition="0 0 -1.5" rotation="0 60 0" />}
 
       {/*  Right Button */}
       <NavigationButton
-        setPosition="0 1 -1 "
-        setRotation="-90 0 60"
+        setPosition="0.7 0 -1 "
+        setRotation="-90 0 30"
         events={{
           click: handleNavigation2,
           mouseenter: () => setRightSideNameTag(true),
           mouseleave: () => setRightSideNameTag(false),
         }}
       />
-      {RightsideNameTag && <NameTagEntity width="2" text="Towards Cabin 3" setPosition="0 1 -1.5" rotation="0 0 0" />}
+      {RightsideNameTag && <NameTagEntity width="2" text="Towards Cabin 3" setPosition="1 0 -1.5" rotation="0 -30 0" />}
 
       {/*  Left Button */}
       <NavigationButton
-        setPosition="0 0 2"
-        setRotation="-90 0 -110"
+        setPosition="-0.25 0.5 1"
+        setRotation="-90 0 -140"
         events={{
           click: handleNavigation3,
           mouseenter: () => setLeftSideNameTag(true),
           mouseleave: () => setLeftSideNameTag(false),
         }}
       />
-      {LeftsideNameTag && <NameTagEntity width="3" text="Towards Cabin 2" setPosition="0 0 2" rotation="0 180 0" />}
+      {LeftsideNameTag && <NameTagEntity width="3" text="Towards Cabin 2" setPosition="-1 0 2" rotation="0 150 0" />}
 
       {children}
 
-      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" />
+   
     </Entity>
   );
 };
