@@ -20,6 +20,7 @@ export type SceneType =
       |'sceneMeetingRoomLeft'
       |'sceneMeetingRoomRight'
       |'sceneInsidePathway'
+       |'sceneInsidePathway2'
       | 'sceneMeetingRoomAtEntrance'
 
 export type ScenesProps = {
@@ -43,7 +44,7 @@ export type ImageEntityProps = {
   src: string;
   position: string;
   handleClick: () => void;
-  imageText?:string;
+  imageText:string;
 };
 
 export type SkyEntityProps={

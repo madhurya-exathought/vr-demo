@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
 import { SceneType } from './scenetype.type';
-import SharedEntity from './SharedEntity';
+import TextEntity from './TextEntity';
 
 
 interface SharedOptionsType {
@@ -19,18 +19,18 @@ type SceneOption = {
 
 
 const SceneOptions:SceneOption[] = [
-  { image: '#OfficeEntrance', position: '-5 1 0.01',text:'Office Entrance',next:'sceneEntranceOutside'},
-  { image: '#FloorView1', position: '-2.5 1 0.01',text:'Floor View 1',next:'sceneEntranceInside'},
+  { image: '#OfficeEntrance', position: '-4 1 0.01',text:'Office Entrance',next:'sceneEntranceOutside'},
+  { image: '#FloorView1', position: '-2 1 0.01',text:'Floor View 1',next:'sceneEntranceInside'},
   { image: '#FloorView2', position: '0 1 0.01',text:'Floor View 2',next:'sceneInsidePathway'},
-  { image: '#cabin1', position: '2.5 1 0.01' ,text:'Cabin 1',next:'sceneMeetingRoomAtEntrance'},
-  { image: '#FloorView3', position: '5 1 0.01',text:'Floor View 3',next:'sceneBay1'},
+  { image: '#cabin1', position: '2 1 0.01' ,text:'Cabin 1',next:'sceneMeetingRoomAtEntrance'},
+  { image: '#FloorView3', position: '4 1 0.01',text:'Floor View 3',next:'sceneBay1'},
  /*  { image: '#Bengaluru', position: '6.5 1 0.01' ,text:'Another View',next:'sceneBay2'}, */
 
-  { image: '#FloorView4', position:'-5 -1 0.01',text:'Floor View 4',next:'sceneBay3'},
-  { image: '#FloorView5', position: '-2.5 -1 0.01' ,text:'Floor View 5',next:'sceneEntrance2Rooms'},
+  { image: '#FloorView4', position:'-4 -1 0.01',text:'Floor View 4',next:'sceneBay3'},
+  { image: '#FloorView5', position: '-2 -1 0.01' ,text:'Floor View 5',next:'sceneEntrance2Rooms'},
   { image: '#cabin2', position: '0 -1 0.01' ,text:'Cabin 2',next:'sceneMeetingRoomLeft'},
-  { image: '#cabin3', position: '2.5 -1 0.01' ,text:'Cabin 3',next:'sceneMeetingRoomRight'},
-  { image: '#ConferenceRoom', position: '5 -1 0.01' ,text:'Conference Room',next:'sceneMeetingRoomBig1'},
+  { image: '#cabin3', position: '2 -1 0.01' ,text:'Cabin 3',next:'sceneMeetingRoomRight'},
+  { image: '#ConferenceRoom', position: '4 -1 0.01' ,text:'Conference Room',next:'sceneMeetingRoomBig1'},
   /* { image: '#Mumbai', position: '6.5 -1 0.01' ,text:'Yet Another View',next:'sceneMeetingRoomBig2'}, */
  
 ];
@@ -49,7 +49,7 @@ const [mainEntityState, setMainEntityState] = useState({
 const toggleMoveAndRotate = () => {
   if (mainEntityState.position.x === -4) {
     setMainEntityState({
-      position: { x: -3.85, y: 1.75, z: -4 },
+      position: { x: -2.25, y: 1.85, z: -4 },
       rotation: { x: 0, y: 0, z: 180 },
     });
   } else {
@@ -71,13 +71,15 @@ const toggleVisibilityAndClickEvents = () => {
       <Entity
       id='Main'
         geometry={{ primitive: 'plane', width: 0.5, height: 0.5 }}
-        material={{ src: '#upDown', color: 'white', opacity: 0.8 }}
-     
+        material={{ src: '#upDown', color: 'grey',transparent:true }}
+        style={{
+          background: 'rgba(0, 0, 0, 0.20)',
+          backdropFilter: 'blur(4px)',
+        }}
         position={`${mainEntityState.position.x} ${mainEntityState.position.y} ${mainEntityState.position.z}`}
         rotation={`${mainEntityState.rotation.x} ${mainEntityState.rotation.y} ${mainEntityState.rotation.z}`}
         className="clickable"
-        animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
-        animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
+       mixin="animation-scale-on-hover "
         events={{
           click: () => {
             toggleVisibilityAndClickEvents();
@@ -88,17 +90,27 @@ const toggleVisibilityAndClickEvents = () => {
        
 
       />
+   
       <Entity
         id="selectionPlane"
         visible={isSelectionPlaneVisible}
-        geometry={{ primitive: 'plane', width: 13, height: 4.5 }}
-        material={{src:'#plane', color: 'black', opacity: 0.9 }}
+        geometry={{ primitive: 'plane', width: 10, height: 4.5 }}
+        material={{src: '#plane',
+          transparent: true,
+          opacity: 1,
+          color: '#1b1111',
+          shader: 'standard',
+          metalness: 1,
+          roughness: 1}}
         position="2 0 -4.2"
         rotation="0 0 0"
         animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"
-       
+        
+        
      >
 
+      
+  
 
 
 
@@ -110,8 +122,8 @@ const toggleVisibilityAndClickEvents = () => {
       position={image.position}
       rotation="0 0 0"
       className="clickable"
-      animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
-      animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
+      mixin="animation-scale-on-hover "
+      
       events={areHeroClickEventsEnabled ? {
         click: () => {
           console.log('Image clicked in ', image.text);
@@ -119,7 +131,9 @@ const toggleVisibilityAndClickEvents = () => {
         }
       } : {}}
     >
-      <Entity primitive="a-text" value={image.text} color="white" align="center" position="0 -0.8 0.01" width="3" />
+
+<TextEntity text={image.text} color="white" align="center" setPosition="0 -0.8 0.01" width="3"/>
+      {/* <Entity primitive="a-text" value={image.text} color="white" align="center" position="0 -0.8 0.01" width="3" /> */}
     </Entity>  ))}
 
       </Entity>

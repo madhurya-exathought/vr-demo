@@ -5,6 +5,7 @@ import { NavigationButton } from './NavigationButton';
 import SkyEntity from './SkyEntity';
 import { ScenesProps } from './scenetype.type';
 import HotspotEntity from './HotspotEntity';
+import { Bay3HotspotText } from './HotspotText';
 
 const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange, children, onBack }) => {
   console.log('SceneBayThree rendered');
@@ -51,7 +52,9 @@ const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange, children, onBack 
 
       {children}
 
-      <HotspotEntity visible={false} hotspotPosition="0 3 -2.5" boxPosition="3.5 3 -5" />
+      <HotspotEntity visible={false} hotspotPosition='-5 3.5 -0.5' 
+                boxPosition="-6 3 0" text={Bay3HotspotText} 
+                    rotation='0 90 0' textPosition='0 0 1.4'/>
     </Entity>
   );
 };

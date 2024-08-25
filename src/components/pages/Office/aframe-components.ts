@@ -56,7 +56,7 @@ AFRAME.registerComponent('make-visible', {
   }
 }); */
 
-AFRAME.registerComponent('toggle-event', {
+/* AFRAME.registerComponent('toggle-event', {
   schema: {
     target: { type: 'selector' }  // Specify the target selector (e.g., #hero)
   },
@@ -189,7 +189,7 @@ AFRAME.registerComponent('make-visibles', {
     this.el.removeEventListener('click', this.handleAction);
   }
 });
-
+ */
 
 
 AFRAME.registerComponent('move-and-rotate', {
@@ -257,7 +257,7 @@ AFRAME.registerComponent('dynamic-sky', {
   });
 
 
-  AFRAME.registerComponent('hotspot', {
+ /*  AFRAME.registerComponent('hotspot', {
     schema: {
       target: {type: 'string'},
       label: {type: 'string'}
@@ -271,7 +271,7 @@ AFRAME.registerComponent('dynamic-sky', {
     }
   });
 
- 
+  */
 /* 
   // rounded-rect-shader.js
 AFRAME.registerShader('rounded', {

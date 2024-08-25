@@ -52,7 +52,7 @@ const SceneBayTwo: React.FC<ScenesProps> = ({ onSceneChange, children, onBack })
 
       {children}
 
-      <HotspotEntity visible={false} hotspotPosition="0 3 -2.5" boxPosition="3.5 3 -5" />
+     
     </Entity>
   );
 };

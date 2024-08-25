@@ -36,8 +36,8 @@ const SharedEntity: React.FC<SharedEntityProps> = ({
       position={setPosition}
       rotation="0 0 0"
       className="clickable"
-      animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
-      animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
+      mixin="animation-scale-on-hover "
+      
       events={{
         click: NavigationHandler,
       }}
