@@ -27,14 +27,15 @@ const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, 
       <Entity position="1.75 0 -3">
         <NavigationButton
           onBack={handleNavigation}
-          setPosition="0 0 0"
+          setPosition="1.2 0 -1.6"
           setRotation="-60 0 60"
+          scale='2 2 2'
           events={{
             mouseenter: () => setForwardNameTag(true),
             mouseleave: () => setForwardNameTag(false),
           }}
         />
-        {forwardNameTag && <NameTagEntity setPosition="0 0.5 0" text="Enter Office" width="2" />}
+        {forwardNameTag && <NameTagEntity setPosition="-0.4 0.5 -0.25" text="Enter Office" width="3" />}
       </Entity>
 
       {children}

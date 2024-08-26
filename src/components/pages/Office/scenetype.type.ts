@@ -45,6 +45,7 @@ export type ImageEntityProps = {
   position: string;
   handleClick: () => void;
   imageText:string;
+
 };
 
 export type SkyEntityProps={
@@ -58,4 +59,5 @@ export interface NavigationButtonProps {
   setPosition :string;
   setRotation?:string;
   events?:object;
+  scale?:string
 }

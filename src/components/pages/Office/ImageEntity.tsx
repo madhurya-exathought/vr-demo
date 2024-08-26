@@ -2,7 +2,6 @@
 import React from 'react';
 import { Entity } from 'aframe-react';
 import { ImageEntityProps } from './scenetype.type';
-import TextEntity from './TextEntity';
 
 
 
@@ -17,8 +16,8 @@ const ImageEntity: React.FC<ImageEntityProps> = ({ src, position, handleClick,im
     animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
     animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
   >
-   
-    {imageText &&   <TextEntity text={imageText} color='white' align='center' setPosition='0 0 0.01' width='3' />}
+    
+    {imageText &&  <Entity primitive="a-text" value={imageText} color="white" align="center" position="0 0 0.01" width="3" />}
     </Entity>
 );
 

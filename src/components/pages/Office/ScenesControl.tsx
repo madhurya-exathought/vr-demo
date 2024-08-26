@@ -26,7 +26,7 @@ import SceneMeetingRoomAtEntrance from './SceneMeetingRoomAtEntrance';
 const ScenesControl = () => {
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneEntranceOutside');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
@@ -208,23 +208,22 @@ const ScenesControl = () => {
 <Entity primitive="a-mixin" id="animation-loop"  
     animation="property: scale; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 1000" />
 
+ <Entity primitive="a-mixin" id="animation-easing-plane"  
+    animation="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad" />
 
-<Entity primitive="a-mixin" id="animation-fade"  
-    animation__fade={{
+
+{/* <Entity primitive="a-mixin" id="animation-fade"  
+    animation__fade="
       property: 'material.opacity',
       from: 0.5,
       to: 1,
       dur: 1000,
       easing: 'easeInOutQuad',
       startEvents: 'loaded'
-    }} />
+    " /> 
 
+ */}
 
-
-          {/*  
-  <Entity primitive="a-mixin" id="ring" geometry="primitive: ring; width: 1.5; height: 1.5" material="color: beige; shader: flat" 
-    animation__scale="property: scale; to: 1.7 1.7 1.7; dur: 200; startEvents: mouseenter" 
-    animation__scale_reverse="property: scale; to: 1.3 1.3 1.3; dur: 200; startEvents: mouseleave" /> */}
         </Entity>
 
         <VRSetup />
