@@ -5,6 +5,7 @@ import ImageEntity from './ImageEntity';
 import './aframe-components';
 import SkyEntity from './SkyEntity';
 import TextEntity from './TextEntity';
+import PlaneEnity from './PlaneEntity';
 
 type SceneOneProps = {
   onSceneChange: () => void;
@@ -18,6 +19,8 @@ const imagesSceneOne = [
   { src: '#NewDelhi', position: '3 0 0.01', text: 'New Delhi' },
 ];
 
+
+
 const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
   const handleImageClickSceneOne = () => {
     console.log('Image clicked in scene 1');
@@ -28,6 +31,8 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
     <Entity>
       <SkyEntity src="#sky1" setRotation='0 50 0 ' />
 
+    {/*   <PlaneEnity  id='sceneOne'  width={8} height={2} position='0 2 -6' visible={true}/>
+ */}
       <Entity
         geometry={{ primitive: 'plane', width: 8, height: 2 }}
         material={{ src: '#plane'  ,  transparent: true,
@@ -38,8 +43,7 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
           roughness: 1}}
         position="0 2 -6"
         rotation="0 0 0"
-        animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
-      >
+      mixin='animation-easing-plane'     >
 
         <TextEntity setPosition='-3.5 0.8 0.01' text='Select City' color="#FEFEFE" align="left" width="4"/>
 
@@ -56,22 +60,43 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
         ))}
       </Entity>
 
-      {/*  <Entity
-        geometry={{ primitive: 'plane', width: 8, height: 2 }}
-        material={{src:'#plane', color: 'grey', opacity: 0.8 }}
-        position="0 0 -6"
-        rotation="0 0 0"
-        animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad; "
-        
-      >
-        <Entity primitive="a-text" value="Select City" color="white" align="left" position="-3.5 0.8 0.01" width="4" />
+{/* <Entity
+primitive="a-curvedimage"
+src="#plane"
+radius="5"
+  theta-length="72"
+  height="2"
+  rotation="0 100 0"
+ position="0 2 -4"
+material={{
+  transparent: true,
+  opacity: 1,
+  color: '#000000',
+  shader: 'standard',
+  metalness: 1,
+  roughness: 1
+}}
+mixin='animation-easing-plane'
+>
+
 </Entity> */}
+{/* 
+      <Entity 
+  primitive="a-curvedimage"
+  src="#plane"
+  height="2.0"
+  /* width='8' *
+  radius="4"
+  theta-length="120"
+  position="0 0 -3"
+  rotation="0 120 0"
+  scale="0.8 0.8 0.8" 
+>
 
-      {/* 
-
-      <a-curvedimage src="#my-image" height="2.0" radius="5" theta-length="120"   position="0 0 0"
-                 rotation="0 100 0" scale="0.8 0.8 0.8"></a-curvedimage>
- */}
+  </Entity> */}
+   {/*    <a-curvedimage src="#my-image" height="2.0" radius="4" theta-length="120"   position="0 0 -3"
+                 rotation="0 120 0" scale="0.8 0.8 0.8"></a-curvedimage>
+  */}
     </Entity>
   );
 };

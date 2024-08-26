@@ -104,8 +104,7 @@ const toggleVisibilityAndClickEvents = () => {
           roughness: 1}}
         position="2 0 -4.2"
         rotation="0 0 0"
-        animation__scale="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad;"
-        
+       mixin='animation-easing-plane' 
         
      >
 
@@ -116,7 +115,7 @@ const toggleVisibilityAndClickEvents = () => {
 
 {SceneOptions.map((image, index) => (
 <Entity
-      id='hero'
+      id= 'hero' 
       geometry={{ primitive: 'plane', width: 1.5, height: 1 }}
       material={{ src: image.image,transparent: true,alphaTest: 0.9}}
       position={image.position}

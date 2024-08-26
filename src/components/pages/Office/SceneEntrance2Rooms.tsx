@@ -11,7 +11,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
   console.log('SceneEntrance2Rooms rendered');
 
   const [forwardNameTag, setForwardNameTag] = useState(false);
-  const [backwardNameTag, setBackwardNameTag] = useState(false);
+  const [backwardNameTag, setBackwardNameTag] = useState(false)
   const [LeftsideNameTag, setLeftSideNameTag] = useState(false);
   const [RightsideNameTag, setRightSideNameTag] = useState(false);
 
@@ -37,43 +37,43 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       <NavigationButton
         onBack={onBack}
-        setPosition="3 -2.5 1.5"
+        setPosition='0.860 -0.5 0.5'/* "3 -2.5 1.5" */
         setRotation="-90 0 -60"
         events={{
           mouseenter: () => setBackwardNameTag(true),
           mouseleave: () => setBackwardNameTag(false),
         }}
       />
-      {backwardNameTag && <NameTagEntity width="3" text="Towards Bay 3" setPosition="3 -2 1.5" rotation="0 -120 0" />}
+      {backwardNameTag && <NameTagEntity width="3" text="Towards Bay 3" setPosition="2 -2 1.25" rotation="0 -120 0" />}
 
       {/*  Forward Button */}
 
       <NavigationButton
-        setPosition="0 0 -1"
-        setRotation="-90 0 110"
+        setPosition=".2 0 -1.2"
+        setRotation="-90 0 90"
         events={{
           mouseenter: () => setForwardNameTag(true),
           mouseleave: () => setForwardNameTag(false),
           click: handleNavigation1,
         }}
       />
-      {forwardNameTag && <NameTagEntity width="3" text="Towards Conference Room" setPosition="0 0 -1.5" rotation="0 60 0" />}
+      {forwardNameTag && <NameTagEntity width="3" text="Towards Conference Room" setPosition="0 0 -1.5" rotation="0 20 0" />}
 
       {/*  Right Button */}
       <NavigationButton
-        setPosition="0.7 0 -1 "
-        setRotation="-90 0 30"
+        setPosition="1.5 0 -2 "
+        setRotation="-90 0 40"
         events={{
           click: handleNavigation2,
           mouseenter: () => setRightSideNameTag(true),
           mouseleave: () => setRightSideNameTag(false),
         }}
       />
-      {RightsideNameTag && <NameTagEntity width="2" text="Towards Cabin 3" setPosition="1 0 -1.5" rotation="0 -30 0" />}
+      {RightsideNameTag && <NameTagEntity width="2" text="Towards Cabin 3" setPosition="1.5 0 -2.5" rotation="0 -30 0" />}
 
       {/*  Left Button */}
       <NavigationButton
-        setPosition="-0.25 0.5 1"
+        setPosition="-0.6 -.7 1"
         setRotation="-90 0 -140"
         events={{
           click: handleNavigation3,
@@ -81,7 +81,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
           mouseleave: () => setLeftSideNameTag(false),
         }}
       />
-      {LeftsideNameTag && <NameTagEntity width="3" text="Towards Cabin 2" setPosition="-1 0 2" rotation="0 150 0" />}
+      {LeftsideNameTag && <NameTagEntity width="3" text="Towards Cabin 2" setPosition="-1 0 1.5" rotation="0 150 0" />}
 
       {children}
 

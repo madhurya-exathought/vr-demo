@@ -4,7 +4,7 @@ import { Entity } from 'aframe-react';
 import { NavigationButtonProps } from './scenetype.type';
 
 
-const NavigationButton: React.FC<NavigationButtonProps> = ({ onBack,setPosition,setRotation='0 0 0',events }) => {
+const NavigationButton: React.FC<NavigationButtonProps> = ({ onBack,setPosition,setRotation='0 0 0',events,scale='1 1 1' }) => {
   
 
   const handleNavigationButton = () => {
@@ -22,7 +22,8 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ onBack,setPosition,
       position={setPosition}/* "-3 4 -3" */
       className="clickable "
       rotation={setRotation}
-      mixin="animation-scale-on-hover"
+      scale={scale}
+      mixin="animation-scale-on-hover "
        events={{ click: handleNavigationButton , 
               ...events}}
     />
