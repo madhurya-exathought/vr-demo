@@ -45,6 +45,7 @@ export type ImageEntityProps = {
   position: string;
   handleClick: () => void;
   imageText:string;
+  rotation?:string
 
 };
 

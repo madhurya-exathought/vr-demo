@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
-import HotspotEntity from './HotspotEntity';
+import HotspotEntity from '../../common/cta/HotspotEntity';
 import { Entity } from 'aframe-react';
-import { NavigationButton } from './NavigationButton';
+import { NavigationButton } from '../../common/cta/NavigationButton';
 
-import SkyEntity from './SkyEntity';
+import SkyEntity from '../../common/cta/SkyEntity';
 import { SceneNavProps } from './scenetype.type';
-import NameTagEntity from './TextEntity';
+import NameTagEntity from '../../common/cta/TextEntity';
 
 const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {
   console.log('SceneEntrance2Rooms rendered');
 
   const [forwardNameTag, setForwardNameTag] = useState(false);
-  const [backwardNameTag, setBackwardNameTag] = useState(false)
+  const [backwardNameTag, setBackwardNameTag] = useState(false);
   const [LeftsideNameTag, setLeftSideNameTag] = useState(false);
   const [RightsideNameTag, setRightSideNameTag] = useState(false);
 
@@ -37,7 +37,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       <NavigationButton
         onBack={onBack}
-        setPosition='0.860 -0.5 0.5'/* "3 -2.5 1.5" */
+        setPosition="0.860 -0.5 0.5" /* "3 -2.5 1.5" */
         setRotation="-90 0 -60"
         events={{
           mouseenter: () => setBackwardNameTag(true),
@@ -84,8 +84,6 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
       {LeftsideNameTag && <NameTagEntity width="3" text="Towards Cabin 2" setPosition="-1 0 1.5" rotation="0 150 0" />}
 
       {children}
-
-   
     </Entity>
   );
 };

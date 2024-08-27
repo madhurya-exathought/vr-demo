@@ -10,7 +10,7 @@ import SceneTwo from './SceneTwo';
 import SceneThree from './SceneThree';
 import SceneEntranceOutside from './SceneEntranceOutside';
 import SceneEntranceInside from './SceneEntranceInside';
-import SharedOptions from './SharedOptions';
+import SharedOptions from './ScenePicker';
 import SceneBayOne from './SceneBayOne';
 import SceneBayTwo from './SceneBayTwo';
 import SceneBayThree from './SceneBayThree';
@@ -26,7 +26,7 @@ import SceneMeetingRoomAtEntrance from './SceneMeetingRoomAtEntrance';
 const ScenesControl = () => {
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneEntranceOutside');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
@@ -66,6 +66,11 @@ const ScenesControl = () => {
 
       <Scene vr-mode-ui="enabled: true" assets-loader>
         <Entity primitive="a-assets">
+          
+
+        <audio id="intro" src={require('../../../assets/audio/intro.mp3')} preload="auto"></audio>
+
+
           <Entity primitive="a-img" id="sky1" src={require('../../../assets/images/sky/sky2.jpg')} alt="sky1" />
           <Entity
             primitive="a-img"
@@ -135,10 +140,14 @@ const ScenesControl = () => {
 
           <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton" />
           <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/Group.png')} alt="backButton2" />
-          <Entity primitive="a-img" id="upDown" src={require('../../../assets/images/icons/Main.png')} alt="updownIcon" />
+          <Entity primitive="a-img" id="upDown" src={require('../../../assets/images/icons/Layer_1.png')} alt="updownIcon" />
+          <Entity primitive="a-img" id="upDown1" src={require('../../../assets/images/icons/upDown1.png')} alt="updownIcon" />
+         
+         
           <Entity primitive="a-img" id="hotspot" src={require('../../../assets/images/icons/Hotspot.png')} alt="hotspot" />
           <Entity primitive="a-img" id="plane" src={require('../../../assets/images/icons/plane.png')} alt="plane" />
           <Entity primitive="a-img" id="box" src={require('../../../assets/images/icons/descriptionBox.png')} alt="box" />
+          <Entity primitive="a-img" id="scenePicker" src={require('../../../assets/images/icons/scenePicker.png')} alt="box" />
 
           <Entity primitive="a-img" id="my-image" src={require('../../../assets/images/icons/my-image.png')} alt="123" />
 
@@ -224,6 +233,8 @@ const ScenesControl = () => {
 
  */}
 
+        
+        
         </Entity>
 
         <VRSetup />

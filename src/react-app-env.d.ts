@@ -21,7 +21,8 @@ declare namespace JSX {
     'a-text': any;
     'a-asset-item':any
     'a-light':any;
-    'a-curvedimage':any
+    'a-curvedimage':any;
+    'audio':any
 
     // Add more A-Frame elements as needed
   }
@@ -59,6 +60,12 @@ declare module 'aframe-react' {
   export class Scene extends React.Component<SceneProps> {}
 }
 declare module '*.glb' {
+  const value: string;
+  export default value;
+}
+
+
+declare module '*.mp3' {
   const value: string;
   export default value;
 }

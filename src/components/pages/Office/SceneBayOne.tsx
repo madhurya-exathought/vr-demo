@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
-import TextEntity from './TextEntity';
+import TextEntity from '../../common/cta/TextEntity';
 import { Entity } from 'aframe-react';
-import { NavigationButton } from './NavigationButton';
-import SkyEntity from './SkyEntity';
+import { NavigationButton } from '../../common/cta/NavigationButton';
+import SkyEntity from '../../common/cta/SkyEntity';
 import { ScenesProps } from './scenetype.type';
-import HotspotEntity from './HotspotEntity';
+import HotspotEntity from '../../common/cta/HotspotEntity';
 
 const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
-
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setBackwardNameTag] = useState(false);
-
 
   console.log('SceneBayOne rendered');
 
@@ -53,8 +51,6 @@ const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack })
       </Entity>
 
       {children}
-
-     
     </Entity>
   );
 };
