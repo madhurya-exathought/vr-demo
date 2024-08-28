@@ -61,7 +61,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       {/*  Right Button */}
       <NavigationButton
-        setPosition="1.5 0 -2 "
+        setPosition="1.5 -0.4 -2 "
         setRotation="-90 0 40"
         events={{
           click: handleNavigation2,
@@ -69,7 +69,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
           mouseleave: () => setRightSideNameTag(false),
         }}
       />
-      {RightsideNameTag && <NameTagEntity width="2" text="Towards Cabin 3" setPosition="1.5 0 -2.5" rotation="0 -30 0" />}
+      {RightsideNameTag && <NameTagEntity width="2" text="Towards Cabin 3" setPosition="1.5 0 -1.8" rotation="0 -30 0" />}
 
       {/*  Left Button */}
       <NavigationButton

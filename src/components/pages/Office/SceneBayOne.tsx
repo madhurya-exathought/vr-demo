@@ -39,7 +39,7 @@ const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack })
       <Entity>
         <NavigationButton
           onBack={handleNavigation}
-          setPosition="0 0.05 -1.25"
+          setPosition="0 0.05 -1.15"
           setRotation="-90 0 70"
           events={{
             mouseenter: () => setForwardNameTag(true),
@@ -47,7 +47,7 @@ const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack })
           }}
         />
 
-        {forwardNameTag && <TextEntity setPosition="0 0.5 -2" text="Towards Bay 2" width="2" />}
+        {forwardNameTag && <TextEntity setPosition="0 0.5 -1.25" text="Towards Bay 2" width="2" />}
       </Entity>
 
       {children}

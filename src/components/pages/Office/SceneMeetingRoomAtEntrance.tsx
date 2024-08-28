@@ -36,7 +36,7 @@ const SceneMeetingRoomAtEntrance: React.FC<SceneSpacesProps> = ({ children, onBa
         hotspotPosition="0.5 3 -2.5"
         boxPosition="3.5 3 -5"
         height="1.5"
-        width="3.25"
+        width="3.35"
         text={Cabin1HotspotText}
       />
     </Entity>

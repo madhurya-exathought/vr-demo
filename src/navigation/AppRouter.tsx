@@ -6,7 +6,7 @@ const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Scenes />} />
+        <Route path="/vr-demo" element={<Scenes />} />
       </Routes>
     </BrowserRouter>
   );

@@ -25,14 +25,14 @@ const SceneMeetingRoomBig2: React.FC<SceneNavProps> = ({ children, onSceneChange
        */}
       <NavigationButton
         onBack={handleNavigation}
-        setPosition="0 1 -2"
+        setPosition="-1.75 1 -2.5"
         setRotation="-70 0 90"
         events={{
           mouseenter: () => setNameTag(true),
           mouseleave: () => setNameTag(false),
         }}
       />
-      {NameTag && <NameTagEntity text="Towards Hallway" width="3" setPosition="0 1 -2.75 " />}
+      {NameTag && <NameTagEntity text="Towards Hallway" width="3" setPosition="-2.25 1 -3.5 " />}
       {children}
       {/* <HotspotEntity visible={false} hotspotPosition="0 3 -2.5" boxPosition="3.5 3 -5" /> */}
     </Entity>
