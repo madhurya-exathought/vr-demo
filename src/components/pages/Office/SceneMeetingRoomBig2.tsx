@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import HotspotEntity from './HotspotEntity';
+import HotspotEntity from '../../common/cta/HotspotEntity';
 import { Entity } from 'aframe-react';
-import { NavigationButton } from './NavigationButton';
-import NameTagEntity from './TextEntity';
-import SkyEntity from './SkyEntity';
+import { NavigationButton } from '../../common/cta/NavigationButton';
+import NameTagEntity from '../../common/cta/TextEntity';
+import SkyEntity from '../../common/cta/SkyEntity';
 import { SceneNavProps } from './scenetype.type';
 
 const SceneMeetingRoomBig2: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {

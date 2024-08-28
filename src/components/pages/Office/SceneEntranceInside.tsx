@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Entity } from 'aframe-react';
-import { NavigationButton } from './NavigationButton';
-import NameTagEntity from './TextEntity';
-import SkyEntity from './SkyEntity';
-import HotspotEntity from './HotspotEntity';
+import { NavigationButton } from '../../common/cta/NavigationButton';
+import NameTagEntity from '../../common/cta/TextEntity';
+import SkyEntity from '../../common/cta/SkyEntity';
+import HotspotEntity from '../../common/cta/HotspotEntity';
 import { SceneNavProps } from './scenetype.type';
-import { FoyerHotspotText } from './HotspotText';
+import { FoyerHotspotText } from '../../../constants/HotspotText';
 
 const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {
   console.log('EntranceInside rendered');
@@ -32,14 +32,14 @@ const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange,
       <Entity>
         <NavigationButton
           onBack={onBack}
-          setPosition="1 0.5 2"
+          setPosition="0 0 2"
           setRotation="-90 0 -110"
           events={{
             mouseenter: () => setbackwardNameTag(true),
             mouseleave: () => setbackwardNameTag(false),
           }}
         />
-        {backwardNameTag && <NameTagEntity width="3" text="Towards Exit" setPosition="1 0.5 2.75" rotation="0 180 0" />}
+        {backwardNameTag && <NameTagEntity width="3" text="Towards Exit" setPosition="0 0.5 2.5" rotation="0 180 0" />}
       </Entity>
 
       {/*  Forward Button */}
@@ -72,7 +72,7 @@ const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       {children}
 
-      <HotspotEntity visible={false} hotspotPosition="-1 0 -6" boxPosition=" 1 0 -6.5"  text={FoyerHotspotText}/>
+      <HotspotEntity visible={false} hotspotPosition="-1 0 -6" boxPosition=" 1 0 -6.5" text={FoyerHotspotText} />
     </Entity>
   );
 };

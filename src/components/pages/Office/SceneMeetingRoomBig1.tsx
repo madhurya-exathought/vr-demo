@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import HotspotEntity from './HotspotEntity';
+import HotspotEntity from '../../common/cta/HotspotEntity';
 import { Entity } from 'aframe-react';
-import { NavigationButton } from './NavigationButton';
-import NameTagEntity from './TextEntity';
-import SkyEntity from './SkyEntity';
+import { NavigationButton } from '../../common/cta/NavigationButton';
+import NameTagEntity from '../../common/cta/TextEntity';
+import SkyEntity from '../../common/cta/SkyEntity';
 import { ScenesProps } from './scenetype.type';
-import { ConferanceRoomHotspotText } from './HotspotText';
+import { ConferanceRoomHotspotText } from '../../../constants/HotspotText';
 
-const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({children, onSceneChange, onBack }) => {
+const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
   console.log('SceneMeetingRoomBig1 rendered');
 
   const [forwardNameTag, setForwardNameTag] = useState(false);
@@ -47,8 +47,15 @@ const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({children, onSceneChange, o
       />
 
       {forwardNameTag && <NameTagEntity setPosition="0 0 -1.75" text="Inside Conference Room" width="2" />}
-      <HotspotEntity visible={false} hotspotPosition="0 3 -2.5" boxPosition="3.5 3 -5" height='1.5' width='3.25' text={ConferanceRoomHotspotText}/>
-   
+      <HotspotEntity
+        visible={false}
+        hotspotPosition="0 3 -2.5"
+        boxPosition="3.5 3 -5"
+        height="1.5"
+        width="3.25"
+        text={ConferanceRoomHotspotText}
+      />
+
       {children}
     </Entity>
   );

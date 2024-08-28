@@ -1,21 +1,16 @@
-
 import React from 'react';
 import { Entity } from 'aframe-react';
-import { SkyEntityProps } from './scenetype.type';
-import './aframe-components'
+import { SkyEntityProps } from '../../pages/Office/scenetype.type';
+import '../../pages/Office/aframe-components';
 
-
-
-const SkyEntity: React.FC<SkyEntityProps> = ({ src, setRotation='0 0 0' }) => (
-
-
-    <Entity
+const SkyEntity: React.FC<SkyEntityProps> = ({ src, setRotation = '0 0 0' }) => (
+  <Entity
     primitive="a-sky"
     src={src}
-    radius='50'
+    radius="50"
     material="opacity: 1"
     rotation={setRotation}
-    mixin='animation-fade'
+    mixin="animation-fade"
     animation__fade={{
       property: 'material.opacity',
       from: 0.5,
@@ -24,9 +19,8 @@ const SkyEntity: React.FC<SkyEntityProps> = ({ src, setRotation='0 0 0' }) => (
       easing: 'easeInOutQuad',
       startEvents: 'loaded',
     }}
-   /*  dynamic-sky */
+    /*  dynamic-sky */
   />
- 
 );
 
 export default SkyEntity;

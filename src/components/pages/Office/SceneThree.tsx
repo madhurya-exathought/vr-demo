@@ -1,16 +1,16 @@
 import React from 'react';
 import 'aframe';
 import { Entity } from 'aframe-react';
-import {NavigationButton2} from './NavigationButton';
+import { NavigationButton2 } from '../../common/cta/NavigationButton';
 import { ScenesProps } from './scenetype.type';
-import ImageEntity from './ImageEntity';
-import SkyEntity from './SkyEntity';
-import TextEntity from './TextEntity';
+import ImageEntity from '../../common/cta/ImageEntity';
+import SkyEntity from '../../common/cta/SkyEntity';
+import TextEntity from '../../common/cta/TextEntity';
 
 const imagesSceneThree = [
-  { src: '#1BHK', position: '-1.5 0 0.01' ,text:'1 Floor'},
-  { src: '#2BHK', position: '0 0 0.01' ,text:'2 Floors'},
-  { src: '#3BHK', position: '1.5 0 0.01',text:'3 Floors' },
+  { src: '#1BHK', position: '-1.5 0 0.01', text: '1 Floor' },
+  { src: '#2BHK', position: '0 0 0.01', text: '2 Floors' },
+  { src: '#3BHK', position: '1.5 0 0.01', text: '3 Floors' },
 ];
 
 const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
@@ -23,18 +23,16 @@ const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
 
   return (
     <Entity>
-      <SkyEntity src="#sky1" setRotation='0 50 0 ' />
+      <SkyEntity src="#sky1" setRotation="0 50 0 " />
 
       <Entity
-        geometry={{ primitive: 'plane', width: 5, height: 2. }}
-        material={{src:'#plane', color: 'black', opacity: 0.9 }}
-        position="0 2 -6"
+        geometry={{ primitive: 'plane', width: 5, height: 2 }}
+        material={{ src: '#plane', color: 'black', opacity: 0.9 }}
+        position="0 1 -6"
         rotation="0 0 0"
-        mixin='animation-easing-plane'    >
-
-<TextEntity setPosition='-0.75 0.8 0.01' text='Select Number of Floors' color="#FEFEFE" align="center" width="4"/>
-
-      
+        mixin="animation-easing-plane"
+      >
+        <TextEntity setPosition="-0.75 0.8 0.01" text="Select Number of Floors" color="#FEFEFE" align="center" width="4" />
 
         {/*  Back button */}
 
@@ -43,8 +41,13 @@ const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
         {/* Images */}
 
         {imagesSceneThree.map((image, index) => (
-          <ImageEntity key={index} src={image.src} position={image.position} handleClick={handleImageClickSceneThree} imageText={image.text}/>
-          
+          <ImageEntity
+            key={index}
+            src={image.src}
+            position={image.position}
+            handleClick={handleImageClickSceneThree}
+            imageText={image.text}
+          />
         ))}
       </Entity>
     </Entity>

@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
 import { Entity } from 'aframe-react';
-import { NavigationButton } from './NavigationButton';
-import NameTagEntity from './TextEntity';
-import SkyEntity from './SkyEntity';
+import { NavigationButton } from '../../common/cta/NavigationButton';
+import NameTagEntity from '../../common/cta/TextEntity';
+import SkyEntity from '../../common/cta/SkyEntity';
 import { ScenesProps } from './scenetype.type';
-import HotspotEntity from './HotspotEntity';
-import { InsidePathwayHotspotText } from './HotspotText';
-
+import HotspotEntity from '../../common/cta/HotspotEntity';
+import { InsidePathwayHotspotText } from '../../../constants/HotspotText';
 
 const SceneInsidePathway: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
   console.log('SceneInsidePathway rendered');
@@ -49,8 +48,7 @@ const SceneInsidePathway: React.FC<ScenesProps> = ({ children, onSceneChange, on
 
       {children}
 
-      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" text={InsidePathwayHotspotText}/>
-
+      <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" text={InsidePathwayHotspotText} />
     </Entity>
   );
 };
