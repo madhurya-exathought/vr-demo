@@ -61,7 +61,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       {/*  Right Button */}
       <NavigationButton
-        setPosition="1.5 0 -2 "
+        setPosition="1.5 -0.4 -2 "
         setRotation="-90 0 40"
         events={{
           click: handleNavigation2,

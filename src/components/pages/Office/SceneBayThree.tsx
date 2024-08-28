@@ -40,7 +40,7 @@ const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange, children, onBack 
       <Entity>
         <NavigationButton
           onBack={handleNavigation}
-          setPosition="0 0.5 -1.25"
+          setPosition="0 0.05 -1.1"
           setRotation="-90 0 70"
           events={{
             mouseenter: () => setForwardNameTag(true),

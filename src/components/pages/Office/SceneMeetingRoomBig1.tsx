@@ -52,7 +52,7 @@ const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({ children, onSceneChange, 
         hotspotPosition="0 3 -2.5"
         boxPosition="3.5 3 -5"
         height="1.5"
-        width="3.25"
+        width="3.5"
         text={ConferanceRoomHotspotText}
       />
 

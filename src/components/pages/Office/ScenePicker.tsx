@@ -30,7 +30,7 @@ const SceneOptions: SceneOptionType[] = [
  ];
 
 const ScenePicker: React.FC<SharedOptionsType> = ({ onSceneChange }) => {
-  const [isSelectionPlaneVisible, setIsSelectionPlaneVisible] = useState(false);
+  const [isSelectionPlaneVisible, setIsSelectionPlaneVisible] = useState(true);
   const [areHeroClickEventsEnabled, setAreHeroClickEventsEnabled] = useState(false);
   const [buttonOpacity, setButtonOpacity] = useState<number>(0.8);
 

@@ -34,7 +34,7 @@ const HotspotEntity: React.FC<hotspotType> = ({
         position={hotspotPosition}
         rotation={rotation}
         className="clickable"
-        mixin="animation-scale-on-hover animation-loop"
+        mixin="animation-scale-on-hover " /*  animation-loop */
         make-visible="target: #descriptionBox"
       />
 
