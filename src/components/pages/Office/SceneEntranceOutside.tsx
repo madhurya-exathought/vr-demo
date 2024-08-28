@@ -11,10 +11,20 @@ const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, 
   console.log('EntranceOutside rendered');
 
   const [forwardNameTag, setForwardNameTag] = useState(false);
+  const [audioFlag,setAudioFlag]= useState(true)
   const handleNavigation = () => {
     console.log('Button clicked in EntranceOutside');
     onSceneChange();
   };
+  function playAudioOnce() {
+    console.log('audio flag',audioFlag)
+    if (audioFlag) {
+      setAudioFlag(false); // Set audioFlag to false after playing the audio
+      return <Entity primitive="a-sound" id="intro" src="#intro" autoplay={true} loop={false} />;
+    }
+    return null; // Return nothing if audioFlag is false
+  };
+
 
   return (
     <Entity>
@@ -41,8 +51,9 @@ const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, 
       {children}
 
       <HotspotEntity visible={false} hotspotPosition="0.5 3 -2.5" boxPosition="3.5 3 -5" text={Entrance} />
-
-      <Entity primitive="a-sound" id="intro" src="#intro" autoplay={true} />
+    
+  
+      <Entity primitive="a-sound" id="intro" src="#intro" autoplay={true} loop={false}  />
       {/*  <Entity sound="src: #intro; autoplay: true; " /> */}
     </Entity>
   );

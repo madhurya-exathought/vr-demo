@@ -65,7 +65,7 @@ const ScenePicker: React.FC<SharedOptionsType> = ({ onSceneChange }) => {
       <Entity
         id="Main"
         geometry={{ primitive: 'plane', width: 2, height: 0.5 }}
-        material={{ src: '#upDown1', color: '#1e1e1e', opacity: buttonOpacity }}
+        material={{ src: '#upDown1', color: '#1E1E1E', opacity: buttonOpacity }}
         style={{
           background: 'rgba(0, 0, 0, 0.40)',
           backdropFilter: 'blur(4px)',
@@ -109,6 +109,7 @@ const ScenePicker: React.FC<SharedOptionsType> = ({ onSceneChange }) => {
       >
         {SceneOptions.map((image, index) => (
           <Entity
+          key={index}
             id="hero"
             geometry={{ primitive: 'plane', width: 1.2, height: 0.7 }}
             material={{ src: image.image, transparent: true, alphaTest: 0.9 }}

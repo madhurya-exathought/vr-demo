@@ -69,3 +69,14 @@ declare module '*.mp3' {
   const value: string;
   export default value;
 }
+
+
+/// <reference types="react-scripts" />
+
+interface Window {
+  __WB_MANIFEST: any;
+}
+
+interface ServiceWorkerGlobalScope {
+  __WB_MANIFEST: any;
+}

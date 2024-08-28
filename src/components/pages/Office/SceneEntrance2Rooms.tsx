@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import HotspotEntity from '../../common/cta/HotspotEntity';
+
 import { Entity } from 'aframe-react';
 import { NavigationButton } from '../../common/cta/NavigationButton';
 
