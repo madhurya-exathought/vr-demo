@@ -47,7 +47,7 @@ const SceneBayTwo: React.FC<ScenesProps> = ({ onSceneChange, children, onBack })
           }}
         />
 
-        {forwardNameTag && <NameTagEntity setPosition="0 0.5 -2" text="Towards Bay 3" width="2" />}
+        {forwardNameTag && <NameTagEntity setPosition="0 0.5 -1.1" text="Towards Bay 3" width="2" />}
       </Entity>
 
       {children}

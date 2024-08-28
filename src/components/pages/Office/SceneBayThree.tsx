@@ -47,7 +47,7 @@ const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange, children, onBack 
             mouseleave: () => setForwardNameTag(false),
           }}
         />
-        {forwardNameTag && <NameTagEntity setPosition="0 0.5 -2" text="Towards Meeting Rooms" width="2" />}
+        {forwardNameTag && <NameTagEntity setPosition="0 0.5 -1.1" text="Towards Meeting Rooms" width="2" />}
       </Entity>
 
       {children}

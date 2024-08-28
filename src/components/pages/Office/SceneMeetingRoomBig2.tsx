@@ -9,7 +9,7 @@ import { SceneNavProps } from './scenetype.type';
 const SceneMeetingRoomBig2: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {
   console.log('SceenMeetingRoomBig2 rendered');
 
-  const [NameTag, setNameTag] = useState(true);
+  const [NameTag, setNameTag] = useState(false);
 
   const handleNavigation = () => {
     console.log('button pressed in sceneMeetingRoomBig2');
@@ -25,14 +25,14 @@ const SceneMeetingRoomBig2: React.FC<SceneNavProps> = ({ children, onSceneChange
        */}
       <NavigationButton
         onBack={handleNavigation}
-        setPosition="-1.5 1 -2.5"
+        setPosition="-1.75 1 -2.5"
         setRotation="-70 0 90"
         events={{
           mouseenter: () => setNameTag(true),
           mouseleave: () => setNameTag(false),
         }}
       />
-      {NameTag && <NameTagEntity text="Towards Hallway" width="3" setPosition="-1.5 1 -2.75 " />}
+      {NameTag && <NameTagEntity text="Towards Hallway" width="3" setPosition="-2.25 1 -3.5 " />}
       {children}
       {/* <HotspotEntity visible={false} hotspotPosition="0 3 -2.5" boxPosition="3.5 3 -5" /> */}
     </Entity>

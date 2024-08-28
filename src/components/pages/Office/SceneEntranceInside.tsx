@@ -35,7 +35,7 @@ const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange,
           setPosition="0 0 2"
           setRotation="-90 0 -110"
           events={{
-            mouseenter: () => setbackwardNameTag(true),
+            mouseenter: () => setbackwardNameTag(false),
             mouseleave: () => setbackwardNameTag(false),
           }}
         />
@@ -60,7 +60,7 @@ const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange,
       <Entity>
         <NavigationButton
           onBack={handleNavigation1}
-          setPosition="-0.5 0.5 -.5"
+          setPosition="0.5 0.5 -0.5"
           setRotation="-90 0 -30"
           events={{
             mouseenter: () => setsideNameTag(true),
@@ -72,7 +72,7 @@ const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       {children}
 
-      <HotspotEntity visible={true} hotspotPosition="1.75 0 -3" boxPosition=" 0 0 -4.3" text={FoyerHotspotText} />
+      <HotspotEntity visible={false} hotspotPosition="1.75 -.5 -4.3" boxPosition=" -0.25 0 -4.3" text={FoyerHotspotText} />
     </Entity>
   );
 };
