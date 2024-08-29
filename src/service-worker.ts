@@ -74,7 +74,6 @@ const imagesToPreload = [
  '/assets/images/exathought/RoomRight.jpg',
  '/assets/images/sky/sky1.jpg'
  
-  // Add more image paths as needed
 ];
 
 self.addEventListener('install', (event) => {
