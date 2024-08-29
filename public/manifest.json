@@ -1,22 +1,32 @@
 {
-  "short_name": "VR Office Tour",
-  "name": "ExaThought Office Tour",
-  "icons": [
+    "short_name": "VR Office Tour",
+    "name": "ExaThought Office Tour",
+    "icons": [
       {
-          "src": "favicon.ico",
-          "sizes": "64x64 32x32 24x24 16x16",
-          "type": "image/x-icon"
+        "src": "favicon.ico",
+        "sizes": "64x64 32x32 24x24 16x16",
+        "type": "image/x-icon"
       },
       {
-          "src": "logo192.png",
-          "type": "image/png",
-          "sizes": "192x192"
+        "src": "logo192.png",
+        "type": "image/png",
+        "sizes": "192x192"
       },
       {
-          "src": "logo512.png",
-          "type": "image/png",
-          "sizes": "512x512"
+        "src": "logo512.png",
+        "type": "image/png",
+        "sizes": "512x512"
       }
+<<<<<<< HEAD
+    ],
+    "start_url": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "id": "exathought",
+    "description": "VR application test PWA"
+  }
+=======
   ],
   "start_url": ".",
   "display": "standalone",
@@ -25,3 +35,4 @@
   "id": "exathought",
   "description": "VR application test PWA"
 }
+>>>>>>> 6071fd6b4a3724a6952b95bdd557e3d66974777a
