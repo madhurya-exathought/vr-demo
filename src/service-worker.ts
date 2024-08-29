@@ -19,7 +19,7 @@ const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
 // Runtime caching for large images
 registerRoute(
     ({ request }) => request.destination === 'image' && 
-    (request.url.includes('Bay') || request.url.includes('Entrance') || request.url.includes('Room')),
+    (request.url.includes('Bay') || request.url.includes('Entrance') || request.url.includes('Room')) || request.url.includes('sky'),
     new CacheFirst({
       cacheName: 'large-images',
       plugins: [
@@ -56,6 +56,44 @@ registerRoute(
     plugins: [new ExpirationPlugin({ maxEntries: 50 })],
   })
 );
+
+
+// Preload images
+const imagesToPreload = [
+  '/assets/images/exathought/Bay1.jpg',
+  '/assets/images/exathought/Bay2.jpg',
+  '/assets/images/exathought/Bay3.jpg',
+ '/assets/images/exathought/Entrance2Rooms.jpg',
+ '/assets/images/exathought/EntranceInside.jpg',
+ '/assets/images/exathought/EntranceOutside.jpg',
+ '/assets/images/exathought/InsidePathway.jpg',
+ '/assets/images/exathought/MeetingRoomBig.jpg',
+ '/assets/images/exathought/MeetingRoomBig2.jpg',
+ '/assets/images/exathought/RoomAtEntrance.jpg',
+ '/assets/images/exathought/RoomLeft.jpg',
+ '/assets/images/exathought/RoomRight.jpg',
+ '/assets/images/sky/sky1.jpg'
+
+];
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open('preloaded-images').then((cache) => {
+      return cache.addAll(imagesToPreload);
+    })
+  );
+});
+
+// Intercept fetch requests and respond with preloaded images if available
+self.addEventListener('fetch', (event) => {
+  if (event.request.destination === 'image') {
+    event.respondWith(
+      caches.match(event.request).then((response) => {
+        return response || fetch(event.request);
+      })
+    );
+  }
+});
 
 
 self.addEventListener('message', (event) => {
