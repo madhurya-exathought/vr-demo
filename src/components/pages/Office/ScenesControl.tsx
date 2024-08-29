@@ -33,7 +33,7 @@ const ScenesControl = () => {
     setCurrentScene(nextScene);
   };
 
-  useEffect(() => {
+/*   useEffect(() => {
     checkWebXRSupport();
   }, []);
 
@@ -52,7 +52,7 @@ const ScenesControl = () => {
     }
   };
 
-/*   if (isWebXRSupported === null) {
+  if (isWebXRSupported === null) {
     return <div>Checking WebXR support...</div>;
   }
 
