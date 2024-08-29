@@ -73,7 +73,7 @@ const imagesToPreload = [
  '/assets/images/exathought/RoomLeft.jpg',
  '/assets/images/exathought/RoomRight.jpg',
  '/assets/images/sky/sky1.jpg'
- 
+
 ];
 
 self.addEventListener('install', (event) => {
