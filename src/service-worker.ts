@@ -18,7 +18,8 @@ const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
 
 // Runtime caching for large images
 registerRoute(
-    ({ request }) => request.destination === 'image' && request.url.includes('Bay'),
+    ({ request }) => request.destination === 'image' && 
+    (request.url.includes('Bay') || request.url.includes('Entrance') || request.url.includes('Room')),
     new CacheFirst({
       cacheName: 'large-images',
       plugins: [
