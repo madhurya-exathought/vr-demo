@@ -17,6 +17,7 @@
         "type": "image/png",
         "sizes": "512x512"
       }
+<<<<<<< HEAD
     ],
     "start_url": ".",
     "display": "standalone",
@@ -25,3 +26,13 @@
     "id": "exathought",
     "description": "VR application test PWA"
   }
+=======
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "id": "exathought",
+  "description": "VR application test PWA"
+}
+>>>>>>> 6071fd6b4a3724a6952b95bdd557e3d66974777a
