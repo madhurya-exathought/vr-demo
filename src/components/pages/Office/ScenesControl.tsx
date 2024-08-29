@@ -52,17 +52,18 @@ const ScenesControl = () => {
     }
   };
 
-  if (isWebXRSupported === null) {
+/*   if (isWebXRSupported === null) {
     return <div>Checking WebXR support...</div>;
   }
 
   if (!isWebXRSupported) {
     return <div>WebXR is not supported in your browser.</div>;
-  }
+  } */
 
   return (
     <>
       <Header />
+      
 
       <Scene vr-mode-ui="enabled: true" assets-loader>
         <Entity primitive="a-assets">
