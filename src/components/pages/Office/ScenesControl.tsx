@@ -66,7 +66,7 @@ const ScenesControl = () => {
       
 
       <Scene vr-mode-ui="enabled: true" assets-loader>
-        <Entity primitive="a-assets">
+        <Entity primitive="a-assets" preload="true">
           
 
         <audio id="intro" src={require('../../../assets/audio/intro.mp3')} preload="auto"></audio>
