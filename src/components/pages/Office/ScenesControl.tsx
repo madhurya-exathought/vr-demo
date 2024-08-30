@@ -8,6 +8,7 @@ import { SceneType } from './scenetype.type';
 import SceneOne from './SceneOne';
 import SceneTwo from './SceneTwo';
 import SceneThree from './SceneThree';
+import SceneFour from './SceneFour';
 import SceneEntranceOutside from './SceneEntranceOutside';
 import SceneEntranceInside from './SceneEntranceInside';
 import SharedOptions from './ScenePicker';
@@ -26,14 +27,14 @@ import SceneMeetingRoomAtEntrance from './SceneMeetingRoomAtEntrance';
 const ScenesControl = () => {
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneEntranceOutside');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
     setCurrentScene(nextScene);
   };
 
-/*   useEffect(() => {
+  /*   useEffect(() => {
     checkWebXRSupport();
   }, []);
 
@@ -63,14 +64,10 @@ const ScenesControl = () => {
   return (
     <>
       <Header />
-      
 
       <Scene vr-mode-ui="enabled: true" assets-loader>
         <Entity primitive="a-assets" preload="true">
-          
-
-        <audio id="intro" src={require('../../../assets/audio/intro.mp3')} preload="auto"></audio>
-
+          <audio id="intro" src={require('../../../assets/audio/intro.mp3')} preload="auto"></audio>
 
           <Entity primitive="a-img" id="sky1" src={require('../../../assets/images/sky/sky2.jpg')} alt="sky1" />
           <Entity
@@ -139,16 +136,23 @@ const ScenesControl = () => {
           <Entity primitive="a-img" id="2BHK" src={require('../../../assets/images/sceneThree/2BHK.png')} alt="imageRooms" />
           <Entity primitive="a-img" id="3BHK" src={require('../../../assets/images/sceneThree/3BHK.png')} alt="imageRooms" />
 
+          <Entity primitive="a-img" id="Exathought" src={require('../../../assets/images/sceneFour/ExaThought.png')} alt="Exathought" />
+          <Entity primitive="a-img" id="Prestige" src={require('../../../assets/images/sceneFour/Prestige.png')} alt="Prestige" />
+          <Entity primitive="a-img" id="TVS" src={require('../../../assets/images/sceneFour/TVS.png')} alt="TVS" />
+          <Entity primitive="a-img" id="JSW" src={require('../../../assets/images/sceneFour/JSW.png')} alt="JSW" />
+
           <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton" />
           <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/Group.png')} alt="backButton2" />
           <Entity primitive="a-img" id="upDown" src={require('../../../assets/images/icons/Layer_1.png')} alt="updownIcon" />
           <Entity primitive="a-img" id="upDown1" src={require('../../../assets/images/icons/upDown1.png')} alt="updownIcon" />
-         
-         
+
           <Entity primitive="a-img" id="hotspot" src={require('../../../assets/images/icons/Hotspot.png')} alt="hotspot" />
           <Entity primitive="a-img" id="plane" src={require('../../../assets/images/icons/plane.png')} alt="plane" />
           <Entity primitive="a-img" id="box" src={require('../../../assets/images/icons/descriptionBox.png')} alt="box" />
           <Entity primitive="a-img" id="scenePicker" src={require('../../../assets/images/icons/scenePicker.png')} alt="box" />
+
+          <Entity primitive="a-img" id="Home" src={require('../../../assets/images/icons/Home.png')} alt="Home" />
+          <Entity primitive="a-img" id="EndTour" src={require('../../../assets/images/icons/EndTour.png')} alt="EndTour" />
 
           <Entity primitive="a-img" id="my-image" src={require('../../../assets/images/icons/my-image.png')} alt="123" />
 
@@ -198,7 +202,7 @@ const ScenesControl = () => {
             alt="imagebathroom"
           />
 
-{/* 
+          {/* 
 <a-mixin
         id="scale-on-hover"
         animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
@@ -208,21 +212,27 @@ const ScenesControl = () => {
         id="scale-loop"
         animation="property: scale; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 1000"
       /> */}
-    
 
+          <Entity
+            primitive="a-mixin"
+            id="animation-scale-on-hover"
+            animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
+            animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
+          />
 
-<Entity primitive="a-mixin" id="animation-scale-on-hover"  
-    animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
-    animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared" />
+          <Entity
+            primitive="a-mixin"
+            id="animation-loop"
+            animation="property: scale; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 1000"
+          />
 
-<Entity primitive="a-mixin" id="animation-loop"  
-    animation="property: scale; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 1000" />
+          <Entity
+            primitive="a-mixin"
+            id="animation-easing-plane"
+            animation="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad"
+          />
 
- <Entity primitive="a-mixin" id="animation-easing-plane"  
-    animation="property: scale; from: 0 0 0; to: 1 1 1; dur: 1000; easing: easeInOutQuad" />
-
-
-{/* <Entity primitive="a-mixin" id="animation-fade"  
+          {/* <Entity primitive="a-mixin" id="animation-fade"  
     animation__fade="
       property: 'material.opacity',
       from: 0.5,
@@ -233,9 +243,6 @@ const ScenesControl = () => {
     " /> 
 
  */}
-
-        
-        
         </Entity>
 
         <VRSetup />
@@ -246,7 +253,11 @@ const ScenesControl = () => {
         )}
 
         {currentScene === 'sceneThree' && (
-          <SceneThree onSceneChange={() => handleSceneChange('sceneEntranceOutside')} onBack={() => handleSceneChange('sceneTwo')} />
+          <SceneThree onSceneChange={() => handleSceneChange('sceneFour')} onBack={() => handleSceneChange('sceneTwo')} />
+        )}
+
+        {currentScene === 'sceneFour' && (
+          <SceneFour onSceneChange={() => handleSceneChange('sceneEntranceOutside')} onBack={() => handleSceneChange('sceneThree')} />
         )}
 
         {currentScene === 'sceneEntranceOutside' && (
