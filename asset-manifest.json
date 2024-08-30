@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/vr-demo/static/css/main.fe6cf5d4.css",
-    "main.js": "/vr-demo/static/js/main.430c6fd0.js",
+    "main.css": "/vr-demo/static/css/main.f1f1de87.css",
+    "main.js": "/vr-demo/static/js/main.fff408c1.js",
     "static/js/453.19d0d6bb.chunk.js": "/vr-demo/static/js/453.19d0d6bb.chunk.js",
     "static/media/sky2.jpg": "/vr-demo/static/media/sky2.b978f3e676ceba17bef2.jpg",
     "static/media/RoomatEntrance.jpg": "/vr-demo/static/media/RoomatEntrance.4b2ff9e80b3d404232f1.jpg",
@@ -16,7 +16,6 @@
     "static/media/Bay2.jpg": "/vr-demo/static/media/Bay2.8e7d4811cd7f82576f84.jpg",
     "static/media/RoomRight.jpg": "/vr-demo/static/media/RoomRight.67ff559bc4a2ca97ae1d.jpg",
     "static/media/Bay3.jpg": "/vr-demo/static/media/Bay3.a960afc5b4814afc22db.jpg",
-    "static/media/my-image.png": "/vr-demo/static/media/my-image.77665946b210d93f98c4.png",
     "static/media/descriptionBox.png": "/vr-demo/static/media/descriptionBox.e3afb78b6ec928213923.png",
     "static/media/ExaThought.png": "/vr-demo/static/media/ExaThought.9e34c48ee78a49bb86b9.png",
     "static/media/TVS.png": "/vr-demo/static/media/TVS.8f693b7db40906f3c7fa.png",
@@ -45,16 +44,16 @@
     "static/media/scenePicker.png": "/vr-demo/static/media/scenePicker.1c70ead4beee86bafbbe.png",
     "static/media/JSW.png": "/vr-demo/static/media/JSW.4660fef1ee4bab286ad9.png",
     "static/media/Hyderabad.png": "/vr-demo/static/media/Hyderabad.d61622e2c2dde9fe4355.png",
-    "static/media/Group.png": "/vr-demo/static/media/Group.d318454cd928b4982a72.png",
+    "static/media/backButton2.png": "/vr-demo/static/media/backButton2.d318454cd928b4982a72.png",
     "service-worker.js": "/vr-demo/service-worker.js",
-    "static/media/backbutton2.png": "/vr-demo/static/media/backbutton2.5bc4af5c54116009eb83.png",
+    "static/media/backbutton.png": "/vr-demo/static/media/backbutton.5bc4af5c54116009eb83.png",
     "index.html": "/vr-demo/index.html",
-    "main.fe6cf5d4.css.map": "/vr-demo/static/css/main.fe6cf5d4.css.map",
-    "main.430c6fd0.js.map": "/vr-demo/static/js/main.430c6fd0.js.map",
+    "main.f1f1de87.css.map": "/vr-demo/static/css/main.f1f1de87.css.map",
+    "main.fff408c1.js.map": "/vr-demo/static/js/main.fff408c1.js.map",
     "453.19d0d6bb.chunk.js.map": "/vr-demo/static/js/453.19d0d6bb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.fe6cf5d4.css",
-    "static/js/main.430c6fd0.js"
+    "static/css/main.f1f1de87.css",
+    "static/js/main.fff408c1.js"
   ]
 }
