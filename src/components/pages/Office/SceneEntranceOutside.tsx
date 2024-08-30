@@ -11,19 +11,12 @@ const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, 
   console.log('EntranceOutside rendered');
 
   const [forwardNameTag, setForwardNameTag] = useState(false);
-  const [audioFlag,setAudioFlag]= useState(true)
+ 
   const handleNavigation = () => {
     console.log('Button clicked in EntranceOutside');
     onSceneChange();
   };
-  function playAudioOnce() {
-    console.log('audio flag',audioFlag)
-    if (audioFlag) {
-      setAudioFlag(false); // Set audioFlag to false after playing the audio
-      return <Entity primitive="a-sound" id="intro" src="#intro" autoplay={true} loop={false} />;
-    }
-    return null; // Return nothing if audioFlag is false
-  };
+
 
 
   return (
@@ -54,7 +47,7 @@ const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, 
     
   
       <Entity primitive="a-sound" id="intro" src="#intro" autoplay={true} loop={false}  />
-      {/*  <Entity sound="src: #intro; autoplay: true; " /> */}
+
     </Entity>
   );
 };

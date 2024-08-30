@@ -6,12 +6,8 @@ import { ScenesProps } from './scenetype.type';
 import ImageEntity from '../../common/cta/ImageEntity';
 import SkyEntity from '../../common/cta/SkyEntity';
 import TextEntity from '../../common/cta/TextEntity';
+import { imagesSceneThree } from '../../../constants/Imageloops';
 
-const imagesSceneThree = [
-  { src: '#1BHK', position: '-1.5 0 0.01', text: '1 Floor' },
-  { src: '#2BHK', position: '0 0 0.01', text: '2 Floors' },
-  { src: '#3BHK', position: '1.5 0 0.01', text: '3 Floors' },
-];
 
 const SceneThree: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   console.log('SceneThree rendered');

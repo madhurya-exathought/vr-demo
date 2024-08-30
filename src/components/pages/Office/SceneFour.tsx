@@ -6,13 +6,8 @@ import { ScenesProps } from './scenetype.type';
 import ImageEntity from '../../common/cta/ImageEntity';
 import SkyEntity from '../../common/cta/SkyEntity';
 import TextEntity from '../../common/cta/TextEntity';
+import { imagesSceneFour } from '../../../constants/Imageloops';
 
-const imagesSceneFour = [
-  { src: '#Exathought', position: '-2.25 0 0.01', text: 'ExaThought' },
-  { src: '#Prestige', position: '-0.75 0 0.01', text: 'Prestige' },
-  { src: '#TVS', position: '0.75 0 0.01', text: 'TVS' },
-  { src: '#JSW', position: '2.25 0 0.01', text: 'JSW' },
-];
 
 const SceneFour: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
   console.log('SceneFour rendered');
