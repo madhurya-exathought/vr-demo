@@ -27,7 +27,7 @@ import SceneMeetingRoomAtEntrance from './SceneMeetingRoomAtEntrance';
 const ScenesControl = () => {
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneEntranceOutside');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
@@ -150,7 +150,8 @@ const ScenesControl = () => {
 
           <Entity primitive="a-img" id="Home" src={require('../../../assets/images/icons/Home.png')} alt="Home" />
           <Entity primitive="a-img" id="EndTour" src={require('../../../assets/images/icons/EndTour.png')} alt="EndTour" />
-
+          <Entity primitive='a-img' id="cross" src={require('../../../assets/images/icons/cross.png')} alt='cross' />
+          <Entity primitive='a-img' id="EndTourRed" src={require('../../../assets/images/icons/Actions.png')} alt='EndRed' />
         
           <Entity primitive="a-img" id="cabin1" src={require('../../../assets/images/sceneSpaces/Cabin1.png')} alt="imagebathroom" />
           <Entity primitive="a-img" id="cabin2" src={require('../../../assets/images/sceneSpaces/Cabin2.png')} alt="imagebathroom" />

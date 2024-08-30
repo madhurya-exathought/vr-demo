@@ -5,19 +5,12 @@ import ImageEntity from '../../common/cta/ImageEntity';
 import './aframe-components';
 import SkyEntity from '../../common/cta/SkyEntity';
 import TextEntity from '../../common/cta/TextEntity';
-import PlaneEnity from '../../common/cta/PlaneEntity';
+import { imagesSceneOne } from '../../../constants/Imageloops';
 
 type SceneOneProps = {
   onSceneChange: () => void;
 };
 
-const imagesSceneOne = [
-  { src: '#Bengaluru', position: '-3 0 0.01', text: 'Bengaluru' },
-  { src: '#Chennai', position: '-1.5 0 0.01', text: 'Chennai' },
-  { src: '#Mumbai', position: '0 0 0.01', text: 'Mumbai' },
-  { src: '#Hyderabad', position: '1.5 0 0.01', text: 'Hyderabad' },
-  { src: '#NewDelhi', position: '3 0 0.01', text: 'New Delhi' },
-];
 
 const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
   const handleImageClickSceneOne = () => {

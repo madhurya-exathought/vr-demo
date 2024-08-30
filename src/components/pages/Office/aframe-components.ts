@@ -30,5 +30,16 @@ AFRAME.registerComponent('make-visible', {
   }
 });
 
+AFRAME.registerComponent('alert-on-click', {
+  schema: {
+    type: 'string',
+    default: 'Button clicked!'
+  },
 
+  init: function () {
+    this.el.addEventListener('click', () => {
+      alert(this.data);
+    });
+  }
+});
 
