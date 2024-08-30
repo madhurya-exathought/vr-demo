@@ -1,10 +1,10 @@
 module.exports = {
 	globDirectory: 'build/',
 	globPatterns: [
-		'**/*.{json,ico,html,png,webmanifest,txt,js,css,jpg,mp3}'
+		'**/*.{json,ico,html,png,webmanifest,txt,css,js,jpg,mp3}'
 	],
-	swDest: 'build/service-worker.js',
 	maximumFileSizeToCacheInBytes: 10 * 1024 * 1024, // 10 MB limit
+	swDest: 'build/service-worker.js',
 	ignoreURLParametersMatching: [
 		/^utm_/,
 		/^fbclid$/
@@ -23,3 +23,4 @@ module.exports = {
 		},
 	  ],
 	};
+
