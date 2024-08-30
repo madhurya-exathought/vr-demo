@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
-
 import { Entity } from 'aframe-react';
 import { NavigationButton } from '../../common/cta/NavigationButton';
-
 import SkyEntity from '../../common/cta/SkyEntity';
 import { SceneNavProps } from './scenetype.type';
 import NameTagEntity from '../../common/cta/TextEntity';
@@ -37,7 +35,7 @@ const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange,
 
       <NavigationButton
         onBack={onBack}
-        setPosition="0.860 -0.5 0.5" /* "3 -2.5 1.5" */
+        setPosition="0.860 -0.5 0.5"
         setRotation="-90 0 -60"
         events={{
           mouseenter: () => setBackwardNameTag(true),

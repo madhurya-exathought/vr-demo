@@ -29,9 +29,7 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
     <Entity>
       <SkyEntity src="#sky1" setRotation="0 50 0 " />
 
-      {/*   <PlaneEnity  id='sceneOne'  width={8} height={2} position='0 2 -6' visible={true}/>
-       */}
-      <Entity
+     <Entity
         geometry={{ primitive: 'plane', width: 8, height: 2 }}
         material={{ src: '#plane', transparent: true, opacity: 1, color: '#000000', shader: 'standard', metalness: 1, roughness: 1 }}
         position="0 1 -6"
@@ -53,13 +51,7 @@ const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
         ))}
       </Entity>
 
-      {/*  <a-curvedimage src="#my-image" height="2.0" radius="4" theta-length="160"   position="0 0 -5"
-                 rotation="0 100 0" scale="1 1 1"></a-curvedimage> */}
 
-      {/*        <TextEntity setPosition='1 1 -1' text='Select City' color="white" align="left" width="4" rotation='0 -120 0'/>
-       <ImageEntity position='1 1 -1.5' handleClick={handleImageClickSceneOne} imageText='test' src='#Bengaluru' rotation='0 -90 0' />
-       <ImageEntity position='1 1 -0.3' handleClick={handleImageClickSceneOne} imageText='test' src='#Chennai' rotation='0 -120 0' />
-       */}
     </Entity>
   );
 };

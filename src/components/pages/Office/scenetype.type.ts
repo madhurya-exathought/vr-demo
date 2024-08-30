@@ -56,6 +56,13 @@ export type SkyEntityProps={
 }
 
 
+export type SceneOptionType = {
+  image: string;
+  position: string;
+  text: string;
+  next: SceneType;
+};
+
 export interface NavigationButtonProps {
   onBack?: () => void;
   setPosition :string;

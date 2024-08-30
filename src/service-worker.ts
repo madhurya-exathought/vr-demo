@@ -16,22 +16,21 @@ precacheAndRoute(self.__WB_MANIFEST);
 
 const fileExtensionRegexp = new RegExp('/[^/?]+\\.[^/]+$');
 
-// Runtime caching for large images
+// Large image caching
 registerRoute(
-    ({ request }) => request.destination === 'image' && 
-    (request.url.includes('Bay') || request.url.includes('Entrance') || request.url.includes('Room')) || request.url.includes('sky'),
-    new CacheFirst({
-      cacheName: 'large-images',
-      plugins: [
-        new ExpirationPlugin({
-          maxEntries: 15,
-          maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
-        }),
-      ],
-    })
-  );
-
-  
+  ({ request }) => request.destination === 'image' && 
+    (request.url.includes('Bay') || request.url.includes('Entrance') || 
+     request.url.includes('Room') || request.url.includes('sky')),
+  new CacheFirst({
+    cacheName: 'large-images',
+    plugins: [
+      new ExpirationPlugin({
+        maxEntries: 15,
+        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+      }),
+    ],
+  })
+);
 
 registerRoute(
   ({ request, url }: { request: Request; url: URL }) => {
