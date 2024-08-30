@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vr-demo/static/css/main.f1f1de87.css",
-    "main.js": "/vr-demo/static/js/main.fff408c1.js",
+    "main.js": "/vr-demo/static/js/main.b7e6e22b.js",
     "static/js/453.19d0d6bb.chunk.js": "/vr-demo/static/js/453.19d0d6bb.chunk.js",
     "static/media/sky2.jpg": "/vr-demo/static/media/sky2.b978f3e676ceba17bef2.jpg",
     "static/media/RoomatEntrance.jpg": "/vr-demo/static/media/RoomatEntrance.4b2ff9e80b3d404232f1.jpg",
@@ -45,15 +45,14 @@
     "static/media/JSW.png": "/vr-demo/static/media/JSW.4660fef1ee4bab286ad9.png",
     "static/media/Hyderabad.png": "/vr-demo/static/media/Hyderabad.d61622e2c2dde9fe4355.png",
     "static/media/backButton2.png": "/vr-demo/static/media/backButton2.d318454cd928b4982a72.png",
-    "service-worker.js": "/vr-demo/service-worker.js",
     "static/media/backbutton.png": "/vr-demo/static/media/backbutton.5bc4af5c54116009eb83.png",
     "index.html": "/vr-demo/index.html",
     "main.f1f1de87.css.map": "/vr-demo/static/css/main.f1f1de87.css.map",
-    "main.fff408c1.js.map": "/vr-demo/static/js/main.fff408c1.js.map",
+    "main.b7e6e22b.js.map": "/vr-demo/static/js/main.b7e6e22b.js.map",
     "453.19d0d6bb.chunk.js.map": "/vr-demo/static/js/453.19d0d6bb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f1f1de87.css",
-    "static/js/main.fff408c1.js"
+    "static/js/main.b7e6e22b.js"
   ]
 }
