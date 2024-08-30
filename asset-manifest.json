@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vr-demo/static/css/main.f1f1de87.css",
-    "main.js": "/vr-demo/static/js/main.2bb45e36.js",
+    "main.js": "/vr-demo/static/js/main.fde8cdf5.js",
     "static/js/453.19d0d6bb.chunk.js": "/vr-demo/static/js/453.19d0d6bb.chunk.js",
     "static/media/sky2.jpg": "/vr-demo/static/media/sky2.b978f3e676ceba17bef2.jpg",
     "static/media/RoomatEntrance.jpg": "/vr-demo/static/media/RoomatEntrance.4b2ff9e80b3d404232f1.jpg",
@@ -48,11 +48,11 @@
     "static/media/backbutton.png": "/vr-demo/static/media/backbutton.5bc4af5c54116009eb83.png",
     "index.html": "/vr-demo/index.html",
     "main.f1f1de87.css.map": "/vr-demo/static/css/main.f1f1de87.css.map",
-    "main.2bb45e36.js.map": "/vr-demo/static/js/main.2bb45e36.js.map",
+    "main.fde8cdf5.js.map": "/vr-demo/static/js/main.fde8cdf5.js.map",
     "453.19d0d6bb.chunk.js.map": "/vr-demo/static/js/453.19d0d6bb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f1f1de87.css",
-    "static/js/main.2bb45e36.js"
+    "static/js/main.fde8cdf5.js"
   ]
 }
