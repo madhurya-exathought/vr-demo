@@ -27,7 +27,7 @@ import SceneMeetingRoomAtEntrance from './SceneMeetingRoomAtEntrance';
 const ScenesControl = () => {
   const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
 
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneEntranceOutside');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
 
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
