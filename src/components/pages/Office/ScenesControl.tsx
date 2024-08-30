@@ -250,7 +250,7 @@ const ScenesControl = () => {
         {currentScene === 'sceneEntranceOutside' && (
           <SceneEntranceOutside
             onSceneChange={() => handleSceneChange('sceneEntranceInside')}
-            onBack={() => handleSceneChange('sceneThree')}
+            onBack={() => handleSceneChange('sceneFour')}
           >
             <SharedOptions onSceneChange={handleSceneChange} />{' '}
           </SceneEntranceOutside>
