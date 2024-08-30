@@ -5,7 +5,7 @@ import { NavigationButton } from '../../common/cta/NavigationButton';
 import SkyEntity from '../../common/cta/SkyEntity';
 import { ScenesProps } from './scenetype.type';
 import NameTagEntity from '../../common/cta/TextEntity';
-import HotspotEntity from '../../common/cta/HotspotEntity';
+
 
 const SceneBayTwo: React.FC<ScenesProps> = ({ onSceneChange, children, onBack }) => {
   console.log('SceneBayThree rendered');

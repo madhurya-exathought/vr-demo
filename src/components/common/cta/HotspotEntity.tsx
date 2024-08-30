@@ -14,7 +14,6 @@ type hotspotType = {
   textPosition?: string;
 };
 
-const RandomText = ` Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod modi quis quas corporis esse earum fugit quae maxime iusto similique laudantium impedit repellat possimus, dignissimos cumque qui laborum neque non!Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos odio aperiam fugit eaque id officia placeat reprehenderit. Ea ducimus molestiae quis voluptatibus eveniet non iste porro aliquam vero, voluptates hic.`;
 
 const HotspotEntity: React.FC<hotspotType> = ({
   visible,

@@ -3,7 +3,6 @@ import 'aframe';
 import { Entity } from 'aframe-react';
 import { SceneType } from './scenetype.type';
 import TextEntity from '../../common/cta/TextEntity';
-import { click } from '@testing-library/user-event/dist/click';
 
 interface SharedOptionsType {
   onSceneChange: (nextScene: SceneType) => void;
@@ -22,8 +21,7 @@ const SceneOptions: SceneOptionType[] = [
   { image: '#FloorView2', position: '0 0.8 0.01', text: 'Floor View 2', next: 'sceneInsidePathway' },
   { image: '#cabin1', position: '1.5 0.8 0.01', text: 'Cabin 1', next: 'sceneMeetingRoomAtEntrance' },
   { image: '#FloorView3', position: '3 0.8 0.01', text: 'Floor View 3', next: 'sceneBay1' },
- /*  { image: '#Home', position: '2 1.65 0.01', text: '', next: 'sceneOne' }, */
- 
+  
   { image: '#FloorView4', position: '-3 -1 0.01', text: 'Floor View 4', next: 'sceneBay3' },
   { image: '#FloorView5', position: '-1.5 -1 0.01', text: 'Floor View 5', next: 'sceneEntrance2Rooms' },
   { image: '#cabin2', position: '0 -1 0.01', text: 'Cabin 2', next: 'sceneMeetingRoomLeft' },

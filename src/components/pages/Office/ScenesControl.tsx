@@ -65,32 +65,29 @@ const ScenesControl = () => {
     <>
       <Header />
 
-      <Scene vr-mode-ui="enabled: true" assets-loader>
+      <Scene vr-mode-ui="enabled: true" >
         <Entity primitive="a-assets" preload="true">
+
+
           <audio id="intro" src={require('../../../assets/audio/intro.mp3')} preload="auto"></audio>
 
-          <Entity primitive="a-img" id="sky1" src={require('../../../assets/images/sky/sky2.jpg')} alt="sky1" />
           <Entity
-            primitive="a-img"
-            id="skyEntranceOutside"
-            src={require('../../../assets/images/exathought/EntranceOutside.jpg')}
-            alt="skyEntrance"
+           primitive="a-img" id="sky1" src={require('../../../assets/images/sky/sky2.jpg')} alt="sky1" />
+          <Entity
+           primitive="a-img" id="skyEntranceOutside" src={require('../../../assets/images/exathought/EntranceOutside.jpg')} alt="skyEntrance" />
+          <Entity
+            primitive="a-img" id="skyEntranceInside" src={require('../../../assets/images/exathought/EntranceInside.jpg')} alt="skyEntrance"
           />
+          <Entity 
+            primitive="a-img" id="Bay1" src={require('../../../assets/images/exathought/Bay1.jpg')} alt="Bay1" />
+          <Entity 
+            primitive="a-img" id="Bay2" src={require('../../../assets/images/exathought/Bay2.jpg')} alt="Bay2" />
           <Entity
-            primitive="a-img"
-            id="skyEntranceInside"
-            src={require('../../../assets/images/exathought/EntranceInside.jpg')}
-            alt="skyEntrance"
-          />
-          <Entity primitive="a-img" id="Bay1" src={require('../../../assets/images/exathought/Bay1.jpg')} alt="Bay1" />
-          <Entity primitive="a-img" id="Bay2" src={require('../../../assets/images/exathought/Bay2.jpg')} alt="Bay2" />
-          <Entity primitive="a-img" id="Bay3" src={require('../../../assets/images/exathought/Bay3.jpg')} alt="Bay3" />
-          <Entity primitive="a-img" id="Entrance2Rooms" src={require('../../../assets/images/exathought/Entrance2Rooms.jpg')} alt="Bay3" />
+             primitive="a-img" id="Bay3" src={require('../../../assets/images/exathought/Bay3.jpg')} alt="Bay3" />
           <Entity
-            primitive="a-img"
-            id="MeetingRoomBig1"
-            src={require('../../../assets/images/exathought/MeetingRoomBig2.jpg')}
-            alt="MeetingRoomBig1"
+             primitive="a-img" id="Entrance2Rooms" src={require('../../../assets/images/exathought/Entrance2Rooms.jpg')} alt="Bay3" />
+          <Entity
+            primitive="a-img" id="MeetingRoomBig1" src={require('../../../assets/images/exathought/MeetingRoomBig2.jpg')} alt="MeetingRoomBig1"
           />
           <Entity
             primitive="a-img"
@@ -141,9 +138,9 @@ const ScenesControl = () => {
           <Entity primitive="a-img" id="TVS" src={require('../../../assets/images/sceneFour/TVS.png')} alt="TVS" />
           <Entity primitive="a-img" id="JSW" src={require('../../../assets/images/sceneFour/JSW.png')} alt="JSW" />
 
-          <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton2.png')} alt="backButton" />
-          <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/Group.png')} alt="backButton2" />
-          <Entity primitive="a-img" id="upDown" src={require('../../../assets/images/icons/Layer_1.png')} alt="updownIcon" />
+          <Entity primitive="a-img" id="backButton" src={require('../../../assets/images/icons/backbutton.png')} alt="backButton" />
+          <Entity primitive="a-img" id="backButton2" src={require('../../../assets/images/icons/backButton2.png')} alt="backButton2" />
+          <Entity primitive="a-img" id="upDown" src={require('../../../assets/images/icons/upDown.png')} alt="updownIcon" />
           <Entity primitive="a-img" id="upDown1" src={require('../../../assets/images/icons/upDown1.png')} alt="updownIcon" />
 
           <Entity primitive="a-img" id="hotspot" src={require('../../../assets/images/icons/Hotspot.png')} alt="hotspot" />
@@ -154,8 +151,7 @@ const ScenesControl = () => {
           <Entity primitive="a-img" id="Home" src={require('../../../assets/images/icons/Home.png')} alt="Home" />
           <Entity primitive="a-img" id="EndTour" src={require('../../../assets/images/icons/EndTour.png')} alt="EndTour" />
 
-          <Entity primitive="a-img" id="my-image" src={require('../../../assets/images/icons/my-image.png')} alt="123" />
-
+        
           <Entity primitive="a-img" id="cabin1" src={require('../../../assets/images/sceneSpaces/Cabin1.png')} alt="imagebathroom" />
           <Entity primitive="a-img" id="cabin2" src={require('../../../assets/images/sceneSpaces/Cabin2.png')} alt="imagebathroom" />
           <Entity primitive="a-img" id="cabin3" src={require('../../../assets/images/sceneSpaces/Cabin3.png')} alt="imagebathroom" />
@@ -163,55 +159,45 @@ const ScenesControl = () => {
             primitive="a-img"
             id="ConferenceRoom"
             src={require('../../../assets/images/sceneSpaces/ConferenceRoom.png')}
-            alt="imagebathroom"
+            alt="imagConferenceRoomebathroom"
           />
           <Entity
             primitive="a-img"
             id="FloorView1"
             src={require('../../../assets/images/sceneSpaces/FloorView1.png')}
-            alt="imagebathroom"
+            alt="FloorView1"
           />
           <Entity
             primitive="a-img"
             id="FloorView2"
             src={require('../../../assets/images/sceneSpaces/FloorView2.png')}
-            alt="imagebathroom"
+            alt="FloorView2"
           />
           <Entity
             primitive="a-img"
             id="FloorView3"
             src={require('../../../assets/images/sceneSpaces/FloorView3.png')}
-            alt="imagebathroom"
+            alt="FloorView3"
           />
           <Entity
             primitive="a-img"
             id="FloorView4"
             src={require('../../../assets/images/sceneSpaces/FloorView4.png')}
-            alt="imagebathroom"
+            alt="FloorView4"
           />
           <Entity
             primitive="a-img"
             id="FloorView5"
             src={require('../../../assets/images/sceneSpaces/FloorView5.png')}
-            alt="imagebathroom"
+            alt="FloorView5"
           />
           <Entity
             primitive="a-img"
             id="OfficeEntrance"
             src={require('../../../assets/images/sceneSpaces/OfficeEntrance.png')}
-            alt="imagebathroom"
+            alt="OfficeEntrance"
           />
 
-          {/* 
-<a-mixin
-        id="scale-on-hover"
-        animation__mouseenter="property: scale; to: 1.2 1.2 1; dur: 300; startEvents: raycaster-intersected"
-        animation__mouseleave="property: scale; to: 1 1 1; dur: 300; startEvents: raycaster-intersected-cleared"
-      />
-      <a-mixin
-        id="scale-loop"
-        animation="property: scale; to: 1.2 1.2 1.2; dir: alternate; loop: true; dur: 1000"
-      /> */}
 
           <Entity
             primitive="a-mixin"

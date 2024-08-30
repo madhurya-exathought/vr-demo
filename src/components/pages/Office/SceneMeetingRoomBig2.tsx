@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import HotspotEntity from '../../common/cta/HotspotEntity';
 import { Entity } from 'aframe-react';
 import { NavigationButton } from '../../common/cta/NavigationButton';
 import NameTagEntity from '../../common/cta/TextEntity';
@@ -20,9 +19,6 @@ const SceneMeetingRoomBig2: React.FC<SceneNavProps> = ({ children, onSceneChange
       <SkyEntity src="#MeetingRoomBig2" setRotation="0 -50 0" />
 
       {/*  Back button */}
-
-      {/*  <NavigationButton onBack={onBack} setPosition="-2 3 -3" />
-       */}
       <NavigationButton
         onBack={handleNavigation}
         setPosition="-1.75 1 -2.5"
@@ -34,8 +30,7 @@ const SceneMeetingRoomBig2: React.FC<SceneNavProps> = ({ children, onSceneChange
       />
       {NameTag && <NameTagEntity text="Towards Hallway" width="3" setPosition="-2.25 1 -3.5 " />}
       {children}
-      {/* <HotspotEntity visible={false} hotspotPosition="0 3 -2.5" boxPosition="3.5 3 -5" /> */}
-    </Entity>
+         </Entity>
   );
 };
 

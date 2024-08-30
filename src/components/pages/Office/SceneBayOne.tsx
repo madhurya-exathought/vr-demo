@@ -4,7 +4,7 @@ import { Entity } from 'aframe-react';
 import { NavigationButton } from '../../common/cta/NavigationButton';
 import SkyEntity from '../../common/cta/SkyEntity';
 import { ScenesProps } from './scenetype.type';
-import HotspotEntity from '../../common/cta/HotspotEntity';
+
 
 const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
   const [forwardNameTag, setForwardNameTag] = useState(false);
