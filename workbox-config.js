@@ -1,8 +1,8 @@
 module.exports = {
     globDirectory: 'build/',
     globPatterns: ['**/*.{js,ts,css,html,png,jpg,jpeg,svg}'],
-    swDest: 'build/service-worker.js',
+    swDest: 'build/service-worker.ts',
     clientsClaim: true,
     skipWaiting: true,
-    maximumFileSizeToCacheInBytes: 9 * 1024 * 1024, // 8 MB
+    maximumFileSizeToCacheInBytes: 15 * 1024 * 1024, // 8 MB
   };
