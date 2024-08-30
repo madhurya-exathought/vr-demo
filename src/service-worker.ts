@@ -49,6 +49,10 @@ registerRoute(
   createHandlerBoundToURL(process.env.PUBLIC_URL + '/index.html')
 );
 
+
+// An example runtime caching route for requests that aren't handled by the
+// precache, in this case same-origin .png requests like those from in public/
+  // Add in any other file extensions or routing criteria as needed.
 registerRoute(
   ({ url }) => url.origin === self.location.origin && url.pathname.endsWith('.png'),
   new StaleWhileRevalidate({
