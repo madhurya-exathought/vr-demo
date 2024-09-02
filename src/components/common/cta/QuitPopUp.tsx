@@ -26,7 +26,7 @@ const QuitButton:React.FC<QuitType> = ({onClickCLosePopUp}) => {
           
          
        >
-        <TextEntity setPosition='-1.25 0.25 0.03' width='2' text='Are you sure to end the tour?' color='white' align='left' />
+        <TextEntity setPosition='-1.25 0.25 0.03' width='3' text='Are you sure to end the tour?' color='white' align='left' />
         <Entity
           id="cross"
           geometry={{ primitive: 'plane', width: 0.1, height: 0.1 }}
