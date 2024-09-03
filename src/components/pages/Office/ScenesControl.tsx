@@ -25,41 +25,13 @@ import SceneInsidePathway2 from './SceneInsidePathway2';
 import SceneMeetingRoomAtEntrance from './SceneMeetingRoomAtEntrance';
 
 const ScenesControl = () => {
-  const [isWebXRSupported, setIsWebXRSupported] = useState<boolean | null>(null);
-
+  
   const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
-
+  
   const handleSceneChange = (nextScene: SceneType) => {
     console.log('Changing scene from', currentScene, 'to', nextScene);
     setCurrentScene(nextScene);
   };
-
-  /*   useEffect(() => {
-    checkWebXRSupport();
-  }, []);
-
-  const checkWebXRSupport = () => {
-    if ('xr' in navigator) {
-      const xr = (navigator as any).xr;
-      xr.isSessionSupported('immersive-vr').then((supported: boolean) => {
-        if (supported) {
-          setIsWebXRSupported(supported);
-          console.log('WebXR  supported');
-        } else {
-          setIsWebXRSupported(false);
-          console.log('WebXR not supported');
-        }
-      });
-    }
-  };
-
-  if (isWebXRSupported === null) {
-    return <div>Checking WebXR support...</div>;
-  }
-
-  if (!isWebXRSupported) {
-    return <div>WebXR is not supported in your browser.</div>;
-  } */
 
   return (
     <>
