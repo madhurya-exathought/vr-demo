@@ -56,15 +56,16 @@ const VRSetup = () => {
     />
   </Entity>
 ) : (
-  <Entity primitive="a-camera" position="0 4.6 0" rotation="0 50 0">
+  <Entity primitive="a-camera" position="0 1.6 0.55" rotation="0 150 0">
     <Entity
       primitive="a-cursor"
       raycaster="objects: .clickable"
       position="0 0 -1"
-      geometry="primitive: ring; radiusInner: 0.01; radiusOuter: 0.02"
+      geometry="primitive: ring; radiusInner: 0.001; radiusOuter: 0.002"
       material="color: white; shader: flat"
       cursor="fuse: false; rayOrigin: mouse"
     />
+    
   </Entity>
 )}
     </>
