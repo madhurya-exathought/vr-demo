@@ -38,6 +38,7 @@ const ScenesControl = () => {
       <Header />
 
       <Scene vr-mode-ui="enabled: true" >
+      <VRSetup />
         <Entity primitive="a-assets" preload="true">
 
 
@@ -204,7 +205,7 @@ const ScenesControl = () => {
  */}
         </Entity>
 
-        <VRSetup />
+        
 
         {currentScene === 'sceneOne' && <SceneOne onSceneChange={() => handleSceneChange('sceneTwo')} />}
         {currentScene === 'sceneTwo' && (
