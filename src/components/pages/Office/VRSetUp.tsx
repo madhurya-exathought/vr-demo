@@ -3,10 +3,34 @@ import { Entity } from 'aframe-react';
 
 const VRSetup = () => {
   const [isWebXRSupported, setIsWebXRSupported] = useState(false);
+  const [isInVRMode, setIsInVRMode] = useState(false);
 
-  // Function to check WebXR support
+
+   // Check WebXR support on component mount
+   useEffect(() => {
+    checkWebXRSupport();
+  }, []);
 
 
+    // Event listeners to track VR session state
+    useEffect(() => {
+      if (!isWebXRSupported || !navigator.xr) return;
+
+      const xr = navigator.xr as any; // Type assertion
+      const onSessionStart = () => setIsInVRMode(true);
+      const onSessionEnd = () => setIsInVRMode(false);
+
+      xr.addEventListener('sessionstart', onSessionStart);
+      xr.addEventListener('sessionend', onSessionEnd);
+
+      // Cleanup event listeners on component unmount
+      return () => {
+        xr.removeEventListener('sessionstart', onSessionStart);
+        xr.removeEventListener('sessionend', onSessionEnd);
+      };
+    }, [isWebXRSupported]);
+
+// Function to check WebXR support
   const checkWebXRSupport = () => {
     if ('xr' in navigator) {
       const xr = (navigator as any).xr;
@@ -24,11 +48,7 @@ const VRSetup = () => {
 
 
 
-  // Check WebXR support on component mount
-  useEffect(() => {
-    checkWebXRSupport();
-  }, []);
-
+ 
   return (
     <>
       {/* Left and Right Controllers */}
@@ -47,7 +67,7 @@ const VRSetup = () => {
 
 
 
-      {isWebXRSupported ? (
+       {isWebXRSupported && isInVRMode ?  (
   <Entity primitive="a-camera" position="0 4.6 0" rotation="0 50 0">
     <Entity
       primitive="a-cursor"
