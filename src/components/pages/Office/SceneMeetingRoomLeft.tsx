@@ -8,8 +8,8 @@ import { SceneSpacesProps } from './scenetype.type';
 import { Cabin2HotspotText } from '../../../constants/HotspotText';
 
 const SceneMeetingRoomLeft: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
-  console.log('SceneMeetingRoomLeft rendered');
-
+ /*  console.log('SceneMeetingRoomLeft rendered');
+ */
   const [NameTag, setNameTag] = useState(false);
 
   return (

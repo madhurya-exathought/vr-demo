@@ -8,14 +8,14 @@ import HotspotEntity from '../../common/cta/HotspotEntity';
 import { InsidePathwayHotspotText } from '../../../constants/HotspotText';
 
 const SceneInsidePathway: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
-  console.log('SceneInsidePathway rendered');
-
+  /* console.log('SceneInsidePathway rendered');
+ */
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setBackwardNameTag] = useState(false);
 
   const handleNavigation = () => {
-    console.log('Button clicked in SceneInsidePathway');
-    onSceneChange();
+   /*  console.log('Button clicked in SceneInsidePathway');
+    */ onSceneChange();
   };
 
   return (

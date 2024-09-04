@@ -14,8 +14,8 @@ type SceneOneProps = {
 
 const SceneOne: React.FC<SceneOneProps> = ({ onSceneChange }) => {
   const handleImageClickSceneOne = () => {
-    console.log('Image clicked in scene 1');
-    onSceneChange();
+   /*  console.log('Image clicked in scene 1');
+    */ onSceneChange();
   };
 
   return (

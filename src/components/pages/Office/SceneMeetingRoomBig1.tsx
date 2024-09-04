@@ -8,8 +8,8 @@ import { ScenesProps } from './scenetype.type';
 import { ConferanceRoomHotspotText } from '../../../constants/HotspotText';
 
 const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
-  console.log('SceneMeetingRoomBig1 rendered');
-
+  /* console.log('SceneMeetingRoomBig1 rendered');
+ */
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setBackwardNameTag] = useState(false);
 

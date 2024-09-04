@@ -29,8 +29,8 @@ const ScenesControl = () => {
   const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
   
   const handleSceneChange = (nextScene: SceneType) => {
-    console.log('Changing scene from', currentScene, 'to', nextScene);
-    setCurrentScene(nextScene);
+  /*   console.log('Changing scene from', currentScene, 'to', nextScene);
+  */   setCurrentScene(nextScene);
   };
 
   return (

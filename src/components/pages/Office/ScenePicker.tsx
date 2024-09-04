@@ -143,8 +143,8 @@ const ScenePicker: React.FC<SharedOptionsType> = ({ onSceneChange }) => {
               areHeroClickEventsEnabled
                 ? {
                     click: () => {
-                      console.log('Image clicked in ', image.text);
-                      onSceneChange(image.next);
+                     /*  console.log('Image clicked in ', image.text);
+               */        onSceneChange(image.next);
                     },
                   }
                 : {}

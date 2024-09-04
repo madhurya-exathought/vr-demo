@@ -6,25 +6,25 @@ import { SceneNavProps } from './scenetype.type';
 import NameTagEntity from '../../common/cta/TextEntity';
 
 const SceneEntrance2Rooms: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {
-  console.log('SceneEntrance2Rooms rendered');
-
+ /*  console.log('SceneEntrance2Rooms rendered');
+ */
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setBackwardNameTag] = useState(false);
   const [LeftsideNameTag, setLeftSideNameTag] = useState(false);
   const [RightsideNameTag, setRightSideNameTag] = useState(false);
 
   const handleNavigation1 = () => {
-    console.log('Button1 clicked in SceneEntrance2Rooms');
-    onSceneChange('sceneMeetingRoomBig1');
+  /*   console.log('Button1 clicked in SceneEntrance2Rooms');
+ */    onSceneChange('sceneMeetingRoomBig1');
   };
 
   const handleNavigation2 = () => {
-    console.log('Button2 clicked in SceneEntrance2Rooms');
-    onSceneChange('sceneMeetingRoomRight');
+ /*    console.log('Button2 clicked in SceneEntrance2Rooms');
+  */   onSceneChange('sceneMeetingRoomRight');
   };
   const handleNavigation3 = () => {
-    console.log('Button3 clicked in SceneEntrance2Rooms');
-    onSceneChange('sceneMeetingRoomLeft');
+  /*   console.log('Button3 clicked in SceneEntrance2Rooms');
+  */   onSceneChange('sceneMeetingRoomLeft');
   };
 
   return (
