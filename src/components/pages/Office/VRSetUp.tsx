@@ -16,19 +16,21 @@ const VRSetup = () => {
     useEffect(() => {
       if (!isWebXRSupported || !navigator.xr) return;
 
-      const xr = navigator.xr as any; // Type assertion
+      const xr = navigator.xr as any;
       const onSessionStart = () => setIsInVRMode(true);
       const onSessionEnd = () => setIsInVRMode(false);
 
       xr.addEventListener('sessionstart', onSessionStart);
       xr.addEventListener('sessionend', onSessionEnd);
 
+      console.log(isInVRMode)
+
       // Cleanup event listeners on component unmount
       return () => {
         xr.removeEventListener('sessionstart', onSessionStart);
         xr.removeEventListener('sessionend', onSessionEnd);
       };
-    }, [isWebXRSupported]);
+    }, []);
 
 // Function to check WebXR support
   const checkWebXRSupport = () => {
@@ -51,6 +53,7 @@ const VRSetup = () => {
  
   return (
     <>
+    
       {/* Left and Right Controllers */}
       <Entity
         laser-controls="hand: left"
@@ -76,7 +79,7 @@ const VRSetup = () => {
     />
   </Entity>
 ) : (
-  <Entity primitive="a-camera" position="0 1.6 0.55" rotation="0 150 0">
+  <Entity primitive="a-camera" position="0 1.6 0.65" rotation="0 0 0">
     <Entity
       primitive="a-cursor"
       raycaster="objects: .clickable"
