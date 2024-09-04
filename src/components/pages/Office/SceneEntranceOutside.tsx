@@ -8,13 +8,13 @@ import HotspotEntity from '../../common/cta/HotspotEntity';
 import { Entrance } from '../../../constants/HotspotText';
 
 const SceneEntranceOutside: React.FC<ScenesProps> = ({ children, onSceneChange, onBack }) => {
-  console.log('EntranceOutside rendered');
-
+ /*  console.log('EntranceOutside rendered');
+ */
   const [forwardNameTag, setForwardNameTag] = useState(false);
  
   const handleNavigation = () => {
-    console.log('Button clicked in EntranceOutside');
-    onSceneChange();
+  /*   console.log('Button clicked in EntranceOutside');
+    */ onSceneChange();
   };
 
 

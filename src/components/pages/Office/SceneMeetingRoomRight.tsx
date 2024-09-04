@@ -8,8 +8,8 @@ import HotspotEntity from '../../common/cta/HotspotEntity';
 import { Cabin3HotspotText } from '../../../constants/HotspotText';
 
 const SceneMeetingRoomRight: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
-  console.log('SceneMeetingRoomRight rendered');
-
+ /*  console.log('SceneMeetingRoomRight rendered');
+ */
   const [NameTag, setNameTag] = useState(false);
 
   return (

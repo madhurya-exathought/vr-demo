@@ -8,8 +8,8 @@ import NameTagEntity from '../../common/cta/TextEntity';
 import { Cabin1HotspotText } from '../../../constants/HotspotText';
 
 const SceneMeetingRoomAtEntrance: React.FC<SceneSpacesProps> = ({ children, onBack }) => {
-  console.log('MeetingRoomAtEntrance rendered');
-
+  /* console.log('MeetingRoomAtEntrance rendered');
+ */
   const [NameTag, setNameTag] = useState(false);
 
   return (

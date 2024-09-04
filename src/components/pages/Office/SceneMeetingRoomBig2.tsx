@@ -6,9 +6,9 @@ import SkyEntity from '../../common/cta/SkyEntity';
 import { SceneNavProps } from './scenetype.type';
 
 const SceneMeetingRoomBig2: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {
-  console.log('SceenMeetingRoomBig2 rendered');
+  /* console.log('SceenMeetingRoomBig2 rendered');
 
-  const [NameTag, setNameTag] = useState(false);
+  */ const [NameTag, setNameTag] = useState(false);
 
   const handleNavigation = () => {
     console.log('button pressed in sceneMeetingRoomBig2');

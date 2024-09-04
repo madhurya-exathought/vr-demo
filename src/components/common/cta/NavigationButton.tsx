@@ -5,8 +5,8 @@ import { NavigationButtonProps } from '../../pages/Office/scenetype.type';
 
 const NavigationButton: React.FC<NavigationButtonProps> = ({ onBack, setPosition, setRotation = '0 0 0', events, scale = '1 1 1' }) => {
   const handleNavigationButton = () => {
-    console.log('back button pressed');
-    if (onBack) {
+   /*  console.log('back button pressed');
+    */ if (onBack) {
       onBack();
     }
   };
@@ -27,8 +27,8 @@ const NavigationButton: React.FC<NavigationButtonProps> = ({ onBack, setPosition
 
 const NavigationButton2: React.FC<NavigationButtonProps> = ({ onBack, setPosition, setRotation = '0 0 0', events }) => {
   const handleNavigationButton = () => {
-    console.log('back button pressed');
-    if (onBack) {
+  /*   console.log('back button pressed');
+   */  if (onBack) {
       onBack();
     }
   };

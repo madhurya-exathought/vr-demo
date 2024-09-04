@@ -8,14 +8,14 @@ import NameTagEntity from '../../common/cta/TextEntity';
 
 
 const SceneBayTwo: React.FC<ScenesProps> = ({ onSceneChange, children, onBack }) => {
-  console.log('SceneBayThree rendered');
-
+ /*  console.log('SceneBayThree rendered');
+ */
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setBackwardNameTag] = useState(false);
 
   const handleNavigation = () => {
-    console.log('Button clicked in SceneBayThree');
-    onSceneChange();
+  /*   console.log('Button clicked in SceneBayThree');
+    */ onSceneChange();
   };
 
   return (

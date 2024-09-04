@@ -8,14 +8,14 @@ import HotspotEntity from '../../common/cta/HotspotEntity';
 import { Bay3HotspotText } from '../../../constants/HotspotText';
 
 const SceneBayThree: React.FC<ScenesProps> = ({ onSceneChange, children, onBack }) => {
-  console.log('SceneBayThree rendered');
+ /*  console.log('SceneBayThree rendered'); */
 
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setBackwardNameTag] = useState(false);
 
   const handleNavigation = () => {
-    console.log('Button clicked in SceneBayThree');
-    onSceneChange();
+   /*  console.log('Button clicked in SceneBayThree');
+    */ onSceneChange();
   };
   return (
     <Entity>

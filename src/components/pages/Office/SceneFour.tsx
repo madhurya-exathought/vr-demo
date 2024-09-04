@@ -10,11 +10,11 @@ import { imagesSceneFour } from '../../../constants/Imageloops';
 
 
 const SceneFour: React.FC<ScenesProps> = ({ onSceneChange, onBack }) => {
-  console.log('SceneFour rendered');
-
+  /* console.log('SceneFour rendered');
+ */
   const handleImageClickSceneFour = () => {
-    console.log('Image clicked in scene 4');
-    onSceneChange();
+   /*  console.log('Image clicked in scene 4');
+    */ onSceneChange();
   };
 
   return (

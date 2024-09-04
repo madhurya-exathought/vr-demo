@@ -8,20 +8,20 @@ import { SceneNavProps } from './scenetype.type';
 import { FoyerHotspotText } from '../../../constants/HotspotText';
 
 const SceneEntranceInside: React.FC<SceneNavProps> = ({ children, onSceneChange, onBack }) => {
-  console.log('EntranceInside rendered');
-
+ /*  console.log('EntranceInside rendered');
+ */
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setbackwardNameTag] = useState(false);
   const [sideNameTag, setsideNameTag] = useState(false);
 
   const handleNavigation = () => {
-    console.log('Button clicked in EntranceInside');
-    onSceneChange('sceneBay1');
+   /*  console.log('Button clicked in EntranceInside');
+    */ onSceneChange('sceneBay1');
   };
 
   const handleNavigation1 = () => {
-    console.log('Button clicked in EntranceInside');
-    onSceneChange('sceneInsidePathway');
+   /*  console.log('Button clicked in EntranceInside');
+    */ onSceneChange('sceneInsidePathway');
   };
 
   return (

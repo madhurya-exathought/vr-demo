@@ -10,11 +10,11 @@ const SceneBayOne: React.FC<ScenesProps> = ({ children, onSceneChange, onBack })
   const [forwardNameTag, setForwardNameTag] = useState(false);
   const [backwardNameTag, setBackwardNameTag] = useState(false);
 
-  console.log('SceneBayOne rendered');
+ /*  console.log('SceneBayOne rendered'); */
 
   const handleNavigation = () => {
-    console.log('Button clicked in SceneBayOne');
-    onSceneChange();
+    /* console.log('Button clicked in SceneBayOne');
+  */   onSceneChange();
   };
 
   return (
