@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/vr-demo/static/css/main.1f055e96.css",
-    "main.js": "/vr-demo/static/js/main.ab2f7798.js",
+    "main.js": "/vr-demo/static/js/main.85ed9d3f.js",
     "static/js/453.19d0d6bb.chunk.js": "/vr-demo/static/js/453.19d0d6bb.chunk.js",
     "static/media/sky2.jpg": "/vr-demo/static/media/sky2.b978f3e676ceba17bef2.jpg",
     "static/media/RoomatEntrance.jpg": "/vr-demo/static/media/RoomatEntrance.4b2ff9e80b3d404232f1.jpg",
@@ -32,6 +32,7 @@
     "static/media/NewDelhi.png": "/vr-demo/static/media/NewDelhi.5c90d8ddffb3642a0e70.png",
     "static/media/Apartment.png": "/vr-demo/static/media/Apartment.e67d12756a2e266b9e8e.png",
     "static/media/Villa.png": "/vr-demo/static/media/Villa.088065b59a1d9e256036.png",
+    "static/media/tooltip3.png": "/vr-demo/static/media/tooltip3.230a387825eed4efb303.png",
     "static/media/Mumbai.png": "/vr-demo/static/media/Mumbai.18d3005c6be8b280caab.png",
     "static/media/intro.mp3": "/vr-demo/static/media/intro.4cf563a8ccce5e47b18c.mp3",
     "static/media/3BHK.png": "/vr-demo/static/media/3BHK.1820da39bd248f9f2e41.png",
@@ -49,11 +50,11 @@
     "static/media/backbutton.png": "/vr-demo/static/media/backbutton.5bc4af5c54116009eb83.png",
     "index.html": "/vr-demo/index.html",
     "main.1f055e96.css.map": "/vr-demo/static/css/main.1f055e96.css.map",
-    "main.ab2f7798.js.map": "/vr-demo/static/js/main.ab2f7798.js.map",
+    "main.85ed9d3f.js.map": "/vr-demo/static/js/main.85ed9d3f.js.map",
     "453.19d0d6bb.chunk.js.map": "/vr-demo/static/js/453.19d0d6bb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.1f055e96.css",
-    "static/js/main.ab2f7798.js"
+    "static/js/main.85ed9d3f.js"
   ]
 }
