@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Header from '../../common/Header';
 import { Scene, Entity } from 'aframe-react';
 import VRSetup from './VRSetUp';
@@ -26,7 +26,7 @@ import SceneMeetingRoomAtEntrance from './SceneMeetingRoomAtEntrance';
 
 const ScenesControl = () => {
   
-  const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
+  const [currentScene, setCurrentScene] = useState<SceneType>('sceneEntranceOutside');
   
   const handleSceneChange = (nextScene: SceneType) => {
   /*   console.log('Changing scene from', currentScene, 'to', nextScene);
@@ -126,6 +126,8 @@ const ScenesControl = () => {
           <Entity primitive='a-img' id="cross" src={require('../../../assets/images/icons/cross.png')} alt='cross' />
           <Entity primitive='a-img' id="EndTourRed" src={require('../../../assets/images/icons/Actions.png')} alt='EndRed' />
         
+          <Entity primitive="a-img" id="tooltip" src={require('../../../assets/images/icons/tooltip3.png')} alt="tooltip1" />
+          
           <Entity primitive="a-img" id="cabin1" src={require('../../../assets/images/sceneSpaces/Cabin1.png')} alt="imagebathroom" />
           <Entity primitive="a-img" id="cabin2" src={require('../../../assets/images/sceneSpaces/Cabin2.png')} alt="imagebathroom" />
           <Entity primitive="a-img" id="cabin3" src={require('../../../assets/images/sceneSpaces/Cabin3.png')} alt="imagebathroom" />

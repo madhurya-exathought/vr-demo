@@ -44,8 +44,8 @@ const ScenePicker: React.FC<SharedOptionsType> = ({ onSceneChange }) => {
     setAreHeroClickEventsEnabled(prevState => !prevState);
   };
   const goToHome = () => {
-    console.log('Hoe Button Clicked');
-    onSceneChange('sceneOne');
+    /* console.log('Hoe Button Clicked');
+    */ onSceneChange('sceneOne');
   };
 
 
