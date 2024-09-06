@@ -14,8 +14,8 @@ const SceneMeetingRoomBig1: React.FC<ScenesProps> = ({ children, onSceneChange, 
   const [backwardNameTag, setBackwardNameTag] = useState(false);
 
   const handleNavigation = () => {
-    console.log('Button1 clicked in SceneMeetingRoomBig1');
-    onSceneChange();
+   /*  console.log('Button1 clicked in SceneMeetingRoomBig1');
+    */ onSceneChange();
   };
 
   return (

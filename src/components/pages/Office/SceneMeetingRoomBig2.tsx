@@ -11,8 +11,8 @@ const SceneMeetingRoomBig2: React.FC<SceneNavProps> = ({ children, onSceneChange
   */ const [NameTag, setNameTag] = useState(false);
 
   const handleNavigation = () => {
-    console.log('button pressed in sceneMeetingRoomBig2');
-    onSceneChange('sceneMeetingRoomBig1');
+   /*  console.log('button pressed in sceneMeetingRoomBig2');
+    */ onSceneChange('sceneMeetingRoomBig1');
   };
   return (
     <Entity>
