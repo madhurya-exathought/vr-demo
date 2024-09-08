@@ -27,10 +27,12 @@ import SceneMeetingRoomAtEntrance from './SceneMeetingRoomAtEntrance';
 const ScenesControl = () => {
   
   const [currentScene, setCurrentScene] = useState<SceneType>('sceneOne');
+ 
   
   const handleSceneChange = (nextScene: SceneType) => {
   /*   console.log('Changing scene from', currentScene, 'to', nextScene);
   */   setCurrentScene(nextScene);
+ 
   };
 
   return (
@@ -226,6 +228,7 @@ const ScenesControl = () => {
           <SceneEntranceOutside
             onSceneChange={() => handleSceneChange('sceneEntranceInside')}
             onBack={() => handleSceneChange('sceneFour')}
+           
           >
             <SharedOptions onSceneChange={handleSceneChange} />{' '}
           </SceneEntranceOutside>
